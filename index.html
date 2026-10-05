@@ -115,6 +115,23 @@ td.c{text-align:center;white-space:nowrap}
 .ps b{display:block;color:var(--navy);font-size:.9rem;line-height:1.35;margin-bottom:4px}
 .ps span{font-size:.8rem;color:var(--muted);display:block;line-height:1.45}
 
+/* How to apply */
+.how-intro{font-size:.88rem;color:var(--muted);margin-bottom:14px}
+.how{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
+.hw{position:relative;text-align:center;border:1px solid var(--line);border-radius:8px;padding:22px 16px 18px;background:linear-gradient(180deg,#fff,#fafbfd)}
+.hw:not(:last-child)::after{content:"";position:absolute;right:-22px;top:50%;width:16px;height:16px;border-top:2px solid #b9c3d3;border-right:2px solid #b9c3d3;transform:translateY(-50%) rotate(45deg)}
+.hw .hn{position:absolute;top:10px;left:12px;width:22px;height:22px;border-radius:50%;background:var(--c1);color:#fff;font-size:.72rem;font-weight:700;display:grid;place-items:center}
+.hw .hic{width:38px;height:38px;margin:0 auto 12px;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;display:grid;place-items:center;box-shadow:0 5px 12px var(--sh)}
+.hw .hic svg{width:19px;height:19px}
+.hw b{display:block;color:var(--navy);font-size:.98rem;margin-bottom:6px}
+.hw .hd{display:block;font-size:.82rem;color:var(--muted);line-height:1.5}
+.hw.k-fac{--c1:#0a2a5e;--c2:#3f6fb5;--sh:#0a2a5e40}
+.hw.k-sr{--c1:#00695c;--c2:#26a69a;--sh:#00695c40}
+.hw.k-nur{--c1:#b34700;--c2:#f59e0b;--sh:#b3470040}
+.how-cta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn-reg{background:#c96a05;color:#fff;padding:11px 26px}
+.btn-reg:hover{background:#a85700;color:#fff}
+@media (max-width:700px){.how{grid-template-columns:1fr;gap:22px}.hw:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%) rotate(135deg)}}
 /* Post categories */
 .integ{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .svc-item{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:6px;padding:14px;background:#fff;transition:transform .15s,box-shadow .15s,border-color .15s;position:relative;overflow:hidden}
@@ -292,7 +309,6 @@ footer p a{color:#ffd7a8}
     <a href="#instructions">Instructions</a>
     <a href="#">FAQs</a>
     <a href="#contact">Contact Us</a>
-    <a href="login.html" class="login">Candidate Login</a>
   </div>
 </nav>
 
@@ -316,8 +332,7 @@ footer p a{color:#ffd7a8}
       <p>Online applications are invited only through this portal for posts advertised by AIIMS Gorakhpur. Candidates are advised to read the advertisement and instructions carefully before applying.</p>
     </div>
     <div class="btns">
-      <a href="register.html" class="btn btn-p">New Registration</a>
-      <a href="login.html" class="btn btn-o">Candidate Login</a>
+      <a href="candidate.html" class="btn btn-reg">Login / Register »</a>
     </div>
   </div>
 </div>
@@ -350,6 +365,15 @@ footer p a{color:#ffd7a8}
             </tbody>
           </table>
           <p id="none" style="display:none;padding:14px 16px;font-size:.88rem;color:var(--muted)">No current advertisement in this category.</p>
+        </div>
+      </section>
+
+      <section class="panel" id="howto" aria-labelledby="how-h">
+        <div class="ph"><h2 id="how-h" style="font-size:1rem">How to Apply</h2></div>
+        <div class="pb">
+          <p class="how-intro">Follow these three simple steps to apply for Faculty, Senior Resident, Junior Resident and Nursing posts at AIIMS Gorakhpur.</p>
+          <ol class="how"><li class="hw k-fac"><span class="hn">1</span><span class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M19 8v6M16 11h6"/></svg></span><b>Register on the Portal</b><span class="hd">Click Login / Register and sign up with DigiLocker in one step, or register with your mobile number, e-mail ID and Aadhaar, verified by OTP.</span></li><li class="hw k-sr"><span class="hn">2</span><span class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span><b>Apply for the Post</b><span class="hd">Log in, choose an advertisement, fill in qualification and experience details, and upload documents or fetch them from DigiLocker.</span></li><li class="hw k-nur"><span class="hn">3</span><span class="hic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><b>Track & Get Updates</b><span class="hd">Track your application and receive shortlisting, interview call letter and result updates by SMS and e-mail.</span></li></ol>
+          <div class="how-cta"><a href="candidate.html" class="btn btn-reg">Login / Register »</a></div>
         </div>
       </section>
 
@@ -391,12 +415,12 @@ footer p a{color:#ffd7a8}
       <section class="panel" aria-labelledby="svc-h">
         <div class="ph"><h2 id="svc-h" style="font-size:1rem">Candidate Services</h2></div>
         <ul class="svc">
-          <li><a href="register.html">New Registration</a></li>
-          <li><a href="login.html">Candidate Login</a></li>
-          <li><a href="login.html">Track Application Status</a></li>
-          <li><a href="login.html">Download Interview Call Letter</a></li>
+          <li><a href="candidate.html#register">New Registration</a></li>
+          <li><a href="candidate.html">Candidate Login</a></li>
+          <li><a href="candidate.html">Track Application Status</a></li>
+          <li><a href="candidate.html">Download Interview Call Letter</a></li>
           <li><a href="#">Results &amp; Merit Lists</a></li>
-          <li><a href="login.html#forgot">Forgot Password</a></li>
+          <li><a href="candidate.html#forgot">Forgot Password</a></li>
         </ul>
       </section>
 
@@ -443,7 +467,7 @@ footer p a{color:#ffd7a8}
     </div>
     <div>
       <h2>Candidates</h2>
-      <ul><li><a href="register.html">New Registration</a></li><li><a href="login.html">Candidate Login</a></li><li><a href="#instructions">Instructions</a></li><li><a href="#">FAQs</a></li></ul>
+      <ul><li><a href="candidate.html#register">New Registration</a></li><li><a href="candidate.html">Candidate Login</a></li><li><a href="#instructions">Instructions</a></li><li><a href="#">FAQs</a></li></ul>
     </div>
     <div>
       <h2>Important Links</h2>
@@ -549,6 +573,13 @@ var HI={
 "E-mail":"ई-मेल","Registration, interview call letters, results and offer letters":"पंजीकरण, साक्षात्कार बुलावा पत्र, परिणाम एवं नियुक्ति प्रस्ताव पत्र",
 "SMS":"एसएमएस","One-Time Passwords (OTP) and important alerts":"वन-टाइम पासवर्ड (ओटीपी) एवं महत्वपूर्ण सूचनाएं",
 "reCAPTCHA":"रीकैप्चा","Protection against automated and bot submissions":"स्वचालित एवं बॉट द्वारा भेजे गए आवेदनों से सुरक्षा",
+"How to Apply":"आवेदन कैसे करें",
+"Follow these three simple steps to apply for Faculty, Senior Resident, Junior Resident and Nursing posts at AIIMS Gorakhpur.":"एम्स गोरखपुर में संकाय, सीनियर रेजिडेंट, जूनियर रेजिडेंट एवं नर्सिंग पदों हेतु आवेदन करने के लिए इन तीन सरल चरणों का पालन करें।",
+"Register on the Portal":"पोर्टल पर पंजीकरण करें","Click Login / Register and sign up with DigiLocker in one step, or register with your mobile number, e-mail ID and Aadhaar, verified by OTP.":"लॉगिन / पंजीकरण पर क्लिक करें और डिजीलॉकर से एक ही चरण में पंजीकरण करें, या मोबाइल नंबर, ई-मेल आईडी एवं आधार से ओटीपी सत्यापन द्वारा पंजीकरण करें।",
+"Apply for the Post":"पद हेतु आवेदन करें","Log in, choose an advertisement, fill in qualification and experience details, and upload documents or fetch them from DigiLocker.":"लॉगिन करें, विज्ञापन चुनें, योग्यता एवं अनुभव का विवरण भरें तथा दस्तावेज़ अपलोड करें या डिजीलॉकर से प्राप्त करें।",
+"Track & Get Updates":"स्थिति देखें एवं सूचना प्राप्त करें","Track your application and receive shortlisting, interview call letter and result updates by SMS and e-mail.":"अपने आवेदन की स्थिति देखें तथा शॉर्टलिस्टिंग, साक्षात्कार बुलावा पत्र एवं परिणाम की सूचना एसएमएस एवं ई-मेल से प्राप्त करें।",
+"Register Now »":"अभी पंजीकरण करें »","Already registered? Login":"पहले से पंजीकृत? लॉगिन करें",
+"Login / Register »":"लॉगिन / पंजीकरण »","Login / Register":"लॉगिन / पंजीकरण",
 "Posts":"पद","View advertisements »":"विज्ञापन देखें »",
 "Professor, Additional, Associate & Assistant Professor":"प्रोफेसर, अतिरिक्त प्रोफेसर, सह-प्रोफेसर एवं सहायक प्रोफेसर",
 "Under Govt. of India Residency Scheme":"भारत सरकार रेजिडेंसी योजना के अंतर्गत","Non-Academic":"गैर-शैक्षणिक","Nursing Officer & Nursing cadre":"नर्सिंग अधिकारी एवं नर्सिंग संवर्ग",
@@ -614,8 +645,8 @@ var CB={
  faq:[
   {k:['apply','how to','register','registration','form','आवेदन','पंजीकरण','कैसे'],
    q:{en:'How to apply?',hi:'आवेदन कैसे करें?'},
-   a:{en:'<ol><li>Click <b>New Registration</b> and verify your mobile number and e-mail with OTP.</li><li>Log in and select the advertisement.</li><li>Fill in personal, category, qualification and experience details.</li><li>Upload documents (or fetch them from DigiLocker).</li><li>Submit and note your Application ID.</li></ol>',
-      hi:'<ol><li><b>नया पंजीकरण</b> पर क्लिक करें और ओटीपी से मोबाइल नंबर व ई-मेल सत्यापित करें।</li><li>लॉगिन करके विज्ञापन चुनें।</li><li>व्यक्तिगत, श्रेणी, योग्यता एवं अनुभव का विवरण भरें।</li><li>दस्तावेज़ अपलोड करें (या डिजीलॉकर से प्राप्त करें)।</li><li>आवेदन जमा करें और अपनी आवेदन आईडी नोट करें।</li></ol>'}},
+   a:{en:'<ol><li>Click <b>Login / Register</b>. Use <b>Continue with DigiLocker</b> for the fastest sign-up, or open the <b>New Registration</b> tab and verify your mobile number and e-mail with OTP.</li><li>Log in and select the advertisement.</li><li>Fill in personal, category, qualification and experience details.</li><li>Upload documents (or fetch them from DigiLocker).</li><li>Submit and note your Application ID.</li></ol>',
+      hi:'<ol><li><b>लॉगिन / पंजीकरण</b> पर क्लिक करें। शीघ्र पंजीकरण हेतु <b>डिजीलॉकर</b> का उपयोग करें, या <b>नया पंजीकरण</b> टैब खोलकर ओटीपी से मोबाइल नंबर व ई-मेल सत्यापित करें।</li><li>लॉगिन करके विज्ञापन चुनें।</li><li>व्यक्तिगत, श्रेणी, योग्यता एवं अनुभव का विवरण भरें।</li><li>दस्तावेज़ अपलोड करें (या डिजीलॉकर से प्राप्त करें)।</li><li>आवेदन जमा करें और अपनी आवेदन आईडी नोट करें।</li></ol>'}},
   {k:['vacanc','post','opening','advertisement','job','current','पद','विज्ञापन','रिक्ति'],
    q:{en:'Current vacancies',hi:'वर्तमान रिक्तियां'},
    a:{en:'All open advertisements are listed in the <b>Current Recruitment Advertisements</b> table on this page. Use the tabs to filter by Faculty, Senior Resident, Junior Resident or Nursing.',
@@ -631,7 +662,7 @@ var CB={
       hi:'सामान्यतः आवश्यक: <ul><li>डिग्री / योग्यता प्रमाण-पत्र</li><li>अनुभव प्रमाण-पत्र</li><li>भारत सरकार प्रारूप में श्रेणी प्रमाण-पत्र (अ.जा./अ.ज.जा./अ.पि.व.-एनसीएल/ईडब्ल्यूएस/पीडब्ल्यूबीडी)</li><li>मेडिकल / नर्सिंग परिषद पंजीकरण</li><li>फ़ोटो एवं हस्ताक्षर</li></ul>मान्य प्रारूप एवं आकार सीमा अपलोड पृष्ठ पर दी गई है।'}},
   {k:['status','track','application id','स्थिति','ट्रैक'],
    q:{en:'Track application',hi:'आवेदन की स्थिति'},
-   a:{en:'Log in with your registered mobile / e-mail and open <b>Track Application Status</b>. You will also receive SMS and e-mail updates at each stage.',
+   a:{en:'Click <b>Login / Register</b>, log in with your Registration ID, mobile or e-mail (or DigiLocker), and open <b>Track Application Status</b>. You will also receive SMS and e-mail updates at each stage.',
       hi:'पंजीकृत मोबाइल / ई-मेल से लॉगिन करें और <b>आवेदन की स्थिति देखें</b> खोलें। प्रत्येक चरण पर आपको एसएमएस एवं ई-मेल से सूचना भी मिलेगी।'}},
   {k:['interview','call letter','admit','schedule','साक्षात्कार','बुलावा'],
    q:{en:'Interview call letter',hi:'साक्षात्कार बुलावा पत्र'},
@@ -647,8 +678,8 @@ var CB={
       hi:'आवेदन शुल्क एवं छूट (यदि कोई हो) प्रत्येक विज्ञापन में दी गई है। शुल्क का भुगतान केवल इस पोर्टल के माध्यम से ऑनलाइन किया जाता है।'}},
   {k:['password','forgot','login','otp','पासवर्ड','लॉगिन','ओटीपी'],
    q:{en:'Forgot password',hi:'पासवर्ड भूल गए'},
-   a:{en:'Click <b>Forgot Password</b> and enter your registered mobile number or e-mail. An OTP will be sent to reset your password. Never share your OTP with anyone.',
-      hi:'<b>पासवर्ड भूल गए</b> पर क्लिक करें और पंजीकृत मोबाइल नंबर या ई-मेल दर्ज करें। पासवर्ड बदलने हेतु ओटीपी भेजा जाएगा। अपना ओटीपी किसी के साथ साझा न करें।'}},
+   a:{en:'On the <b>Login / Register</b> page, click <b>Forgot Password</b> and enter your Registration ID (or registered mobile / e-mail) and date of birth. An OTP will be sent to reset your password. Never share your OTP with anyone.',
+      hi:'<b>लॉगिन / पंजीकरण</b> पृष्ठ पर <b>पासवर्ड भूल गए</b> पर क्लिक करें और पंजीकरण आईडी (या पंजीकृत मोबाइल / ई-मेल) एवं जन्म तिथि दर्ज करें। पासवर्ड बदलने हेतु ओटीपी भेजा जाएगा। अपना ओटीपी किसी के साथ साझा न करें।'}},
   {k:['fraud','agent','money','fake','scam','धोखा','एजेंट','पैसा'],
    q:{en:'Beware of fraud',hi:'धोखाधड़ी से सावधान'},
    a:{en:'AIIMS Gorakhpur does not appoint any agent and never asks for money for selection. Official notices are published only on aiimsgorakhpur.edu.in and this portal.',

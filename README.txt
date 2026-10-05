@@ -3,16 +3,23 @@ AIIMS Gorakhpur - Recruitment Portal (front-end prototype)
 
 Files
 -----
-index.html     Home page (advertisements, posts, services, instructions,
-               Hindi/English switch, help chatbot, compliance footer)
-register.html  New Registration (4 steps: personal details, mobile/e-mail/
-               Aadhaar OTP verification, password + CAPTCHA, review & declaration)
-login.html     Candidate Login (password or OTP login, Forgot Password,
-               Forgot Registration ID, 5-attempt lockout)
+index.html      Home page (advertisements, posts, How to Apply, services,
+                instructions, Hindi/English switch, help chatbot, compliance footer).
+                One "Login / Register" button opens candidate.html.
+candidate.html  Candidate Login & Registration on ONE page:
+                - "Continue with DigiLocker" button (logs in registered candidates,
+                  pre-fills registration for new candidates)
+                - Login tab: password or OTP login, Forgot Password,
+                  Forgot Registration ID, 5-attempt lockout
+                - New Registration tab: 4 steps (personal details, mobile/e-mail/
+                  Aadhaar OTP, password + CAPTCHA, review & declaration)
+                Deep links: candidate.html#register, candidate.html#forgot
+register.html,  Old addresses kept only as redirects to candidate.html
+login.html      (#register / login tab), so old links and bookmarks still work.
 
 How to use
 ----------
-Keep all three files in the same folder and open index.html in a browser.
+Keep all files in the same folder and open index.html in a browser.
 All Home links and the header logo go to index.html.
 The AIIMS logo loads from aiimsgorakhpur.edu.in, so an internet connection is
 needed to see it. For offline use, save the logo as logo.png in this folder and
@@ -25,7 +32,7 @@ Test Aadhaar (register):      2345 6789 0124
 Already-registered mobile:    9876543210
 Login:                        AGKP26123456 or 9123456789 / Demo@1234
 Date of birth for reset:      15.08.1990
-To switch the demo off, set  var DEMO=false  in register.html and login.html
+To switch the demo off, set  var DEMO=false  in candidate.html
 (this also removes the dark "PROTOTYPE" note).
 
 Before go-live (backend team)
@@ -40,3 +47,11 @@ Before go-live (backend team)
 - Confirm with legal/administration whether Aadhaar may be mandatory
   (Aadhaar Act notification); otherwise make it optional with an alternative ID.
 - Delete aiims-gkp-rms-landing.html (old page) if it is still in your folder.
+
+Campus photo on the login page (optional)
+-----------------------------------------
+The left panel of candidate.html shows a blueprint-style sketch of the AIIMS
+Gorakhpur campus (built into the page, no extra file needed).
+To use a real AIIMS Gorakhpur campus photo instead, save it in this folder as
+campus.jpg and, in candidate.html, change  .side-l{--photo:none}  to
+.side-l{--photo:url('campus.jpg')}. The navy overlay keeps the text readable.
