@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recruitment Portal | AIIMS Gorakhpur</title>
+<meta name="description" content="Official Recruitment Portal of All India Institute of Medical Sciences, Gorakhpur for Faculty, Senior Resident, Junior Resident and Nursing posts.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a2a5e; --navy-2:#13407f; --navy-l:#eaf0f8;
+  --saffron:#f28c1b; --saffron-d:#c96a05; --green:#138808;
+  --ink:#1d2433; --muted:#4f5a6b; --line:#d5dce7; --bg:#f4f6f9; --white:#fff;
+  --fs:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fs)}
+body{font-family:'Noto Sans','Noto Sans Devanagari',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:1rem}
+a{color:var(--navy-2)}
+a:hover{color:var(--saffron-d)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.sr-only{position:absolute;left:-9999px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--saffron);color:#fff;padding:8px 14px;z-index:99}
+.skip:focus{left:8px}
+
+/* GoI strip */
+.gov{background:#1c1c1c;color:#e5e5e5;font-size:.8rem}
+.gov .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:5px;padding-bottom:5px}
+.gov .l{display:flex;gap:6px;align-items:center}
+.gov .r{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.gov a,.gov button{color:#e5e5e5;text-decoration:none;background:none;border:0;font:inherit;cursor:pointer;padding:2px 8px;border-left:1px solid #555}
+.gov a:first-child{border-left:0}
+.gov a:hover,.gov button:hover{color:#ffb35c}
+.gov .fs button{border:1px solid #666;padding:0 7px;margin-left:3px;border-radius:2px}
+.tri{height:4px;background:linear-gradient(90deg,#ff9933 0 33.3%,#fff 33.3% 66.6%,#138808 66.6%)}
+
+/* Header */
+header{background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:16px;padding-top:14px;padding-bottom:14px}
+.logo{width:84px;height:84px;object-fit:contain;flex:none}
+.logo-fb{display:none;width:72px;height:72px;border-radius:50%;border:3px solid var(--navy);color:var(--navy);font-weight:700;place-items:center;flex:none}
+.hi{font-family:'Noto Sans Devanagari',sans-serif;color:var(--navy);font-weight:700;font-size:1.15rem;line-height:1.3}
+.en{color:var(--navy);font-weight:700;font-size:1.3rem;line-height:1.3;letter-spacing:.2px}
+.sub{color:var(--muted);font-size:.82rem}
+.portal-name{margin-left:auto;text-align:right;padding-left:16px;border-left:3px solid var(--saffron)}
+.portal-name b{display:block;color:var(--navy);font-size:1.05rem}
+.portal-name span{display:block;font-family:'Noto Sans Devanagari',sans-serif;color:var(--muted);font-size:.85rem}
+
+/* Nav */
+nav{background:var(--navy)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:stretch}
+nav a{color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:12px 14px}
+nav a:hover,nav a.on{background:var(--navy-2);color:#fff;box-shadow:inset 0 -3px 0 var(--saffron)}
+nav .login{margin-left:auto;background:var(--saffron);color:#fff}
+nav .login:hover{background:var(--saffron-d);box-shadow:none}
+
+/* What's new */
+.new{background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:stretch}
+.new .lbl{background:#b3261e;color:#fff;font-weight:700;font-size:.82rem;padding:8px 14px;flex:none;display:flex;align-items:center}
+.new .track{overflow:hidden;flex:1;display:flex;align-items:center}
+.new .run{display:flex;gap:40px;white-space:nowrap;animation:run 45s linear infinite;font-size:.88rem;padding-left:100%}
+.new .run a{text-decoration:none}
+.new:hover .run{animation-play-state:paused}
+.new .pause{flex:none;border:0;border-left:1px solid var(--line);background:#fff;padding:0 12px;cursor:pointer;font-size:.8rem;color:var(--muted)}
+@keyframes run{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.new .run{animation:none;padding-left:12px}}
+
+/* Banner */
+.banner{background:var(--navy-l);border-bottom:1px solid var(--line)}
+.banner .wrap{padding-top:22px;padding-bottom:22px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.banner h1{color:var(--navy);font-size:1.45rem;line-height:1.3}
+.banner p{color:var(--muted);font-size:.95rem;margin-top:4px;max-width:720px}
+.crumb{font-size:.8rem;color:var(--muted);margin-bottom:6px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.92rem;padding:10px 18px;border-radius:3px;border:1px solid transparent}
+.btn-p{background:var(--navy);color:#fff}
+.btn-p:hover{background:var(--navy-2);color:#fff}
+.btn-o{border-color:var(--navy);color:var(--navy);background:#fff}
+.btn-o:hover{background:var(--navy);color:#fff}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+
+main{padding:26px 0 40px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:22px}
+.grid>*{min-width:0}
+.panel{background:#fff;border:1px solid var(--line);border-radius:3px;margin-bottom:22px}
+.ph{background:var(--navy);color:#fff;padding:10px 16px;font-size:1rem;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ph a{color:#ffd7a8;font-size:.82rem;font-weight:600;text-decoration:none}
+.ph a:hover{color:#fff}
+.pb{padding:16px}
+
+/* Tabs for post types */
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line);background:#f8fafc}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;padding:10px 16px;font:inherit;font-size:.88rem;font-weight:600;color:var(--muted);cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--saffron);background:#fff}
+
+/* Table */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:var(--navy-l);color:var(--navy);font-weight:700;white-space:nowrap}
+tbody tr:nth-child(even){background:#fafbfd}
+td.c{text-align:center;white-space:nowrap}
+.badge{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 7px;border-radius:2px;margin-left:4px;vertical-align:middle}
+.b-new{background:#b3261e;color:#fff}
+.b-open{background:#e3f2e1;color:#0e6b06;border:1px solid #b9dfb4}
+.b-closed{background:#eee;color:#555;border:1px solid #ddd}
+.docs a{display:inline-block;margin:0 6px 2px 0;font-size:.8rem}
+.docs a::before{content:"📄 ";}
+
+/* Selection process */
+.process{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.ps{padding:16px 12px;border-right:1px solid var(--line);position:relative;background:#fff}
+.ps:last-child{border-right:0}
+.ps .n{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;display:grid;place-items:center;font-size:.85rem;margin-bottom:8px}
+.ps b{display:block;color:var(--navy);font-size:.9rem;line-height:1.35;margin-bottom:4px}
+.ps span{font-size:.8rem;color:var(--muted);display:block;line-height:1.45}
+
+/* Post categories */
+.integ{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.svc-item{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:6px;padding:14px;background:#fff;transition:transform .15s,box-shadow .15s,border-color .15s;position:relative;overflow:hidden}
+.svc-item::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c1)}
+.svc-item:hover{transform:translateY(-2px);box-shadow:0 8px 20px #0a2a5e1a;border-color:var(--c1)}
+.svc-item .si{width:36px;height:36px;flex:none;border-radius:9px;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;display:grid;place-items:center;box-shadow:0 3px 8px var(--sh)}
+.svc-item .si svg{width:19px;height:19px}
+.svc-item b{display:block;color:var(--navy);font-size:.95rem;margin-top:1px}
+.svc-item span:not(.si){display:block;font-size:.8rem;color:var(--muted);line-height:1.45}
+.svc-item.c-dl{--c1:#1565c0;--c2:#42a5f5;--sh:#1565c040}
+.svc-item.c-aa{--c1:#c75000;--c2:#f9a825;--sh:#c7500040}
+.svc-item.c-pm{--c1:#00695c;--c2:#26a69a;--sh:#00695c40}
+.svc-item.c-em{--c1:#4527a0;--c2:#7e57c2;--sh:#4527a040}
+.svc-item.c-sm{--c1:#2e7d32;--c2:#66bb6a;--sh:#2e7d3240}
+.svc-item.c-rc{--c1:#0a2a5e;--c2:#3f6fb5;--sh:#0a2a5e40}
+@media (prefers-reduced-motion:reduce){.svc-item,.svc-item:hover{transition:none;transform:none}}
+@media (max-width:1000px){.integ{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.integ{grid-template-columns:1fr}}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cat{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:6px;padding:16px;text-decoration:none;color:var(--ink);background:#fff;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s,border-color .15s}
+.cat::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.cat:hover{transform:translateY(-3px);box-shadow:0 10px 22px #0a2a5e1f;border-color:var(--c1);color:var(--ink)}
+.cat .ci{width:34px;height:34px;border-radius:9px;flex:none;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;display:grid;place-items:center;box-shadow:0 3px 8px var(--sh)}
+.cat .ch{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.cat .ci svg{width:19px;height:19px}
+.cat b{display:block;color:var(--navy);font-size:.9rem;line-height:1.25}
+.cat .cd{display:block;font-size:.8rem;color:var(--muted);margin:0 0 10px;flex:1}
+.cat .cnt{display:inline-block;align-self:flex-start;white-space:nowrap;font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--cbg);color:var(--c1);margin-bottom:10px}
+.cat .cnt.zero{background:#eef0f3;color:#5f6b7c}
+.cat em{font-style:normal;font-size:.82rem;font-weight:700;color:var(--c1);border-top:1px dashed var(--line);padding-top:10px}
+.cat.k-fac{--c1:#0a2a5e;--c2:#3f6fb5;--sh:#0a2a5e40;--cbg:#e6edf8}
+.cat.k-sr{--c1:#00695c;--c2:#26a69a;--sh:#00695c40;--cbg:#e0f2ef}
+.cat.k-jr{--c1:#1565c0;--c2:#42a5f5;--sh:#1565c040;--cbg:#e3effc}
+.cat.k-nur{--c1:#b34700;--c2:#f59e0b;--sh:#b3470040;--cbg:#fdeedd}
+@media (prefers-reduced-motion:reduce){.cat,.cat:hover{transition:none;transform:none}}
+
+/* Instructions */
+ol.inst{padding-left:20px;font-size:.88rem}
+ol.inst li{margin-bottom:8px}
+.alert{background:#fdecea;border:1px solid #f3c2bd;border-left:4px solid #b3261e;padding:12px 14px;font-size:.86rem;color:#6d1a14;border-radius:2px;margin-top:12px}
+
+/* Sidebar */
+.svc{list-style:none}
+.svc li{border-bottom:1px solid var(--line)}
+.svc li:last-child{border-bottom:0}
+.svc a{display:flex;justify-content:space-between;align-items:center;padding:11px 16px;text-decoration:none;font-size:.9rem;font-weight:600;color:var(--navy)}
+.svc a::after{content:"›";color:var(--saffron-d);font-size:1.2rem}
+.svc a:hover{background:var(--navy-l)}
+.info{font-size:.86rem}
+.info dt{font-weight:700;color:var(--navy);margin-top:8px}
+.info dt:first-child{margin-top:0}
+.info dd{color:var(--muted)}
+.links{list-style:none;font-size:.86rem}
+.links li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.links li:last-child{border-bottom:0}
+
+/* Footer */
+footer{background:#0b1e3d;color:#c4cede;font-size:.85rem;line-height:1.6}
+footer .top,footer .comp{display:grid;grid-template-columns:1.35fr 1fr 1fr 1.15fr;column-gap:32px;row-gap:24px}
+footer .top{padding-top:34px;padding-bottom:26px}
+footer .comp{border-top:1px solid #ffffff1f;padding-top:26px;padding-bottom:28px}
+footer .comp .span2{grid-column:span 2}
+footer h2{color:#fff;font-size:.95rem;font-weight:700;line-height:1.3;margin-bottom:12px;padding-bottom:7px;border-bottom:2px solid var(--saffron);display:inline-block}
+footer ul{list-style:none}
+footer li{margin-bottom:7px;padding-left:14px;position:relative}
+footer li::before{content:"›";position:absolute;left:0;top:0;color:var(--saffron);font-weight:700}
+footer a{color:#c4cede;text-decoration:none}
+footer a:hover{color:#ffb35c;text-decoration:underline}
+footer strong{color:#fff}
+footer p a{color:#ffd7a8}
+.f-brand{display:flex;gap:14px;align-items:flex-start}
+.f-logo{width:56px;height:56px;flex:none;object-fit:contain;background:#fff;border-radius:50%;padding:3px;box-shadow:0 0 0 2px #ffffff26}
+.ph-txt{color:#ffd7a8;font-style:italic}
+@media (max-width:1000px){footer .top,footer .comp{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){footer .top,footer .comp{grid-template-columns:1fr}footer .comp .span2{grid-column:auto}}
+.policy{border-top:1px solid #ffffff1f;padding:12px 16px;text-align:center}
+.policy a{margin:0 8px;display:inline-block}
+.bottom{background:#071429;padding:9px 16px;text-align:center;font-size:.68rem;color:#93a1ba;line-height:1.6}
+
+@media (max-width:1000px){
+  .grid{grid-template-columns:1fr}
+  .process{grid-template-columns:repeat(3,1fr)}
+  .ps:nth-child(3){border-right:0}
+  .ps:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .portal-name{display:none}
+}
+@media (max-width:600px){
+  .gov .l{display:none}
+  .logo{width:58px;height:58px}
+  .hi{font-size:.95rem}.en{font-size:.95rem}.sub{font-size:.72rem}
+  nav a{padding:10px 10px;font-size:.84rem}
+  nav .login{margin-left:0}
+  .process{grid-template-columns:1fr 1fr}
+  .ps{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)}
+  .ps:nth-child(2n){border-right:0!important}
+  .cats{grid-template-columns:1fr}
+  .banner h1{font-size:1.2rem}
+}
+/* Chatbot */
+.cb-launch{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;border:0;cursor:pointer;background:#e07000;color:#fff;box-shadow:0 6px 18px #0004;display:grid;place-items:center;transition:transform .15s}
+.cb-launch:hover{transform:scale(1.06);background:#c96a05}
+.cb-launch svg{width:28px;height:28px}
+.cb-tip{position:fixed;right:90px;bottom:34px;z-index:60;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:.8rem;box-shadow:0 4px 12px #0002;white-space:nowrap}
+.cb{position:fixed;right:20px;bottom:92px;z-index:61;width:360px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:#fff;border-radius:10px;box-shadow:0 12px 40px #0004;display:none;flex-direction:column;overflow:hidden;border:1px solid #f0c08a}
+.cb.open{display:flex}
+.cb-h{background:#b85c00;color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+.cb-av{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;overflow:hidden}
+.cb-av img{width:30px;height:30px;object-fit:contain}
+.cb-h b{display:block;font-size:.95rem;line-height:1.2}
+.cb-h span{font-size:.75rem;opacity:.9}
+.cb-h button{margin-left:auto;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;padding:2px 6px}
+.cb-body{flex:1;overflow-y:auto;padding:14px;background:#fff8f0;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:9px 12px;border-radius:10px;font-size:.86rem;line-height:1.5}
+.msg.bot{background:#fff;border:1px solid #f3d5b3;color:var(--ink);align-self:flex-start;border-top-left-radius:2px}
+.msg.user{background:#b85c00;color:#fff;align-self:flex-end;border-top-right-radius:2px}
+.msg ol,.msg ul{padding-left:18px;margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{background:#fff;border:1px solid #e07000;color:#a35200;border-radius:99px;padding:5px 11px;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer}
+.chips button:hover{background:#e07000;color:#fff}
+.cb-f{display:flex;gap:8px;padding:10px;border-top:1px solid #f3d5b3;background:#fff}
+.cb-f input{flex:1;border:1px solid var(--line);border-radius:6px;padding:9px 10px;font:inherit;font-size:.86rem}
+.cb-f input:focus{outline:2px solid #e07000;border-color:#e07000}
+.cb-f button{background:#b85c00;color:#fff;border:0;border-radius:6px;padding:0 14px;font:inherit;font-weight:600;cursor:pointer}
+.cb-f button:hover{background:#9a4d00}
+.cb-note{font-size:.7rem;color:var(--muted);text-align:center;padding:0 10px 8px;background:#fff}
+@media (max-width:600px){.cb{right:8px;bottom:84px;height:calc(100vh - 110px)}.cb-tip{display:none}.cb-launch{right:14px;bottom:14px}}
+@media print{.cb,.cb-launch,.cb-tip{display:none!important}}
+@media print{.gov,nav,.new,.btns,aside,footer .top{display:none}}
+.home-link{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit}.home-link:hover{color:inherit}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="gov">
+  <div class="wrap">
+    <div class="l">🇮🇳 <span>Government of India &nbsp;|&nbsp; भारत सरकार</span></div>
+    <div class="r">
+      <a href="#main">Skip to Main Content</a>
+      <a href="#">Screen Reader Access</a>
+      <span class="fs" role="group" aria-label="Text size">
+        <button type="button" onclick="setFs(-1)" aria-label="Decrease text size">A-</button><button type="button" onclick="setFs(0)" aria-label="Normal text size">A</button><button type="button" onclick="setFs(1)" aria-label="Increase text size">A+</button>
+      </span>
+      <a href="#" id="langBtn" lang="hi" data-skip onclick="toggleLang();return false;">हिन्दी</a>
+    </div>
+  </div>
+</div>
+<div class="tri"></div>
+
+<header>
+  <div class="wrap"><a href="index.html" class="home-link" aria-label="AIIMS Gorakhpur Recruitment Portal – Home">
+    <img class="logo" src="https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/01/Logo-300x300.png" alt="AIIMS Gorakhpur logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+    <div class="logo-fb" aria-hidden="true" data-skip>AIIMS</div>
+    <div>
+      <div data-skip>
+      <div class="hi" lang="hi">अखिल भारतीय आयुर्विज्ञान संस्थान, गोरखपुर</div>
+      <div class="en">ALL INDIA INSTITUTE OF MEDICAL SCIENCES, GORAKHPUR</div>
+      </div>
+      <div class="sub">An autonomous organization under the Ministry of Health &amp; Family Welfare, Govt. of India</div>
+    </div></a>
+    <div class="portal-name" data-skip>
+      <b>Recruitment Portal</b>
+      <span lang="hi">भर्ती पोर्टल</span>
+    </div>
+  </div>
+</header>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a href="index.html" class="on" aria-current="page">Home</a>
+    <a href="#advt">Current Advertisements</a>
+    <a href="#advt">Results</a>
+    <a href="#">Archives</a>
+    <a href="#instructions">Instructions</a>
+    <a href="#">FAQs</a>
+    <a href="#contact">Contact Us</a>
+    <a href="login.html" class="login">Candidate Login</a>
+  </div>
+</nav>
+
+<div class="new" role="region" aria-label="What's New">
+  <div class="lbl">What's New</div>
+  <div class="track">
+    <div class="run" id="ticker">
+      <a href="#advt">Recruitment of posts on temporary basis in Extramural Project funded by UPSACS, NACO – 22.09.2026</a>
+      <a href="#advt">Corrigendum-2: Rolling advertisement for Faculty (Group A) posts – 14.09.2026</a>
+      <a href="#advt">Result: Senior Resident walk-in interview held on 09 &amp; 10.09.2026</a>
+    </div>
+  </div>
+  <button class="pause" id="pauseBtn" data-skip type="button" onclick="toggleTicker(this)" aria-label="Pause scrolling news">❚❚ Pause</button>
+</div>
+
+<div class="banner">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="index.html">Home</a> › Recruitment</div>
+      <h1>Recruitment Portal – Faculty, Senior Resident, Junior Resident &amp; Nursing</h1>
+      <p>Online applications are invited only through this portal for posts advertised by AIIMS Gorakhpur. Candidates are advised to read the advertisement and instructions carefully before applying.</p>
+    </div>
+    <div class="btns">
+      <a href="register.html" class="btn btn-p">New Registration</a>
+      <a href="login.html" class="btn btn-o">Candidate Login</a>
+    </div>
+  </div>
+</div>
+
+<main id="main" tabindex="-1">
+  <div class="wrap grid">
+    <div>
+
+      <section class="panel" id="advt" aria-labelledby="advt-h">
+        <div class="ph"><h2 id="advt-h" style="font-size:1rem">Current Recruitment Advertisements</h2><a href="#">View Archive »</a></div>
+        <div class="tabs" role="tablist" aria-label="Filter by post">
+          <button role="tab" aria-selected="true" data-f="all">All</button>
+          <button role="tab" aria-selected="false" data-f="fac">Faculty</button>
+          <button role="tab" aria-selected="false" data-f="sr">Senior Resident</button>
+          <button role="tab" aria-selected="false" data-f="jr">Junior Resident</button>
+          <button role="tab" aria-selected="false" data-f="nur">Nursing</button>
+          <button role="tab" aria-selected="false" data-f="oth">Others</button>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <caption class="sr-only">List of current recruitment advertisements</caption>
+            <thead><tr><th scope="col">S.No.</th><th scope="col">Advertisement</th><th scope="col">Published On</th><th scope="col">Last Date</th><th scope="col">Documents</th></tr></thead>
+            <tbody id="rows">
+              <tr data-t="oth"><td class="c">1</td><td>Recruitment of posts on a purely temporary basis in the Extramural Project funded by UPSACS, NACO, India <span class="badge b-new">NEW</span></td><td class="c">22.09.2026</td><td class="c">—</td><td class="docs"><a href="#">Advertisement</a></td></tr>
+              <tr data-t="fac"><td class="c">2</td><td>Rolling advertisement for recruitment to the posts of Faculty (Group A) on Direct Recruitment / Deputation / Contractual basis in various Departments <span class="badge b-open">OPEN</span></td><td class="c">14.09.2026</td><td class="c">Rolling</td><td class="docs"><a href="#">Advertisement</a><a href="#">Annexure A–C</a><a href="#">Application Form</a><a href="#">Corrigendum-2</a></td></tr>
+              <tr data-t="oth"><td class="c">3</td><td>Walk-in Interview for Temporary Project Positions under ICMR-funded Extramural Research Project – Department of Cardiology</td><td class="c">05.09.2026</td><td class="c">—</td><td class="docs"><a href="#">Notice</a><a href="#">Application Form</a></td></tr>
+              <tr data-t="sr"><td class="c">4</td><td>Senior Residents in various Departments under Govt. of India Residency Scheme (Interview on 09.09.2026 &amp; 10.09.2026) <span class="badge b-closed">RESULT DECLARED</span></td><td class="c">28.08.2026</td><td class="c">09.09.2026</td><td class="docs"><a href="#">Advertisement</a><a href="#">Annexure A–B</a><a href="#">Result</a><a href="#">Corrigendum</a></td></tr>
+              <tr data-t="oth"><td class="c">5</td><td>Recruitment of Project Staff under Extramural Research Projects – Data Entry Operator <span class="badge b-closed">RESULT DECLARED</span></td><td class="c">24.08.2026</td><td class="c">—</td><td class="docs"><a href="#">Advertisement</a><a href="#">Result</a></td></tr>
+              <tr data-t="oth"><td class="c">6</td><td>Recruitment of Non-Faculty (Group A, B &amp; C) posts on deputation basis</td><td class="c">22.08.2026</td><td class="c">—</td><td class="docs"><a href="#">Advertisement</a><a href="#">Annexure B–E</a><a href="#">Corrigendum</a></td></tr>
+            </tbody>
+          </table>
+          <p id="none" style="display:none;padding:14px 16px;font-size:.88rem;color:var(--muted)">No current advertisement in this category.</p>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="cat-h">
+        <div class="ph"><h2 id="cat-h" style="font-size:1rem">Posts</h2></div>
+        <div class="pb cats">
+          <a class="cat k-fac" href="#advt" data-go="fac"><span class="ch"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg></span><b>Faculty</b></span><span class="cd">Professor, Additional, Associate &amp; Assistant Professor</span><span class="cnt" data-cnt="fac" data-skip></span><em>View advertisements »</em></a>
+          <a class="cat k-sr" href="#advt" data-go="sr"><span class="ch"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M4 3h4M12 3h4"/><path d="M10 13v2a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></svg></span><b>Senior Resident</b></span><span class="cd">Under Govt. of India Residency Scheme</span><span class="cnt" data-cnt="sr" data-skip></span><em>View advertisements »</em></a>
+          <a class="cat k-jr" href="#advt" data-go="jr"><span class="ch"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M12 11v5M9.5 13.5h5"/></svg></span><b>Junior Resident</b></span><span class="cd">Non-Academic</span><span class="cnt" data-cnt="jr" data-skip></span><em>View advertisements »</em></a>
+          <a class="cat k-nur" href="#advt" data-go="nur"><span class="ch"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 12.6L12 20l-7.5-7.4A4.9 4.9 0 0 1 12 6.1a4.9 4.9 0 0 1 7.5 6.5z"/><path d="M12 10v5M9.5 12.5h5"/></svg></span><b>Nursing</b></span><span class="cd">Nursing Officer &amp; Nursing cadre</span><span class="cnt" data-cnt="nur" data-skip></span><em>View advertisements »</em></a>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="int-h">
+        <div class="ph"><h2 id="int-h" style="font-size:1rem">Integrated Government Services</h2></div>
+        <div class="pb">
+          <div class="integ"><div class="svc-item c-dl"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M9.5 15.5l2 2 3.5-3.5"/></svg></span><div><b>DigiLocker</b><span>Fetch verified certificates directly at the time of application</span></div></div><div class="svc-item c-aa"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 11a2 2 0 0 0-2 2v2"/><path d="M8 9.5A5 5 0 0 1 17 13v1.5"/><path d="M5.5 8A8 8 0 0 1 19.5 9"/><path d="M14 13v3a6 6 0 0 1-.6 2.6"/><path d="M6 12.5v1a9 9 0 0 0 1.5 5"/><path d="M10 17.5a4 4 0 0 0 .4 2.5"/></svg></span><div><b>Aadhaar (UIDAI)</b><span>OTP-based identity authentication to prevent duplicate registrations</span></div></div><div class="svc-item c-pm"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/></svg></span><div><b>PubMed</b><span>Verification of publication details for Faculty posts</span></div></div><div class="svc-item c-em"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M3 7l9 6.5L21 7"/></svg></span><div><b>E-mail</b><span>Registration, interview call letters, results and offer letters</span></div></div><div class="svc-item c-sm"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.5-4.8A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" stroke-width="2.6"/></svg></span><div><b>SMS</b><span>One-Time Passwords (OTP) and important alerts</span></div></div><div class="svc-item c-rc"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.5 2.9v5.6c0 4.6-3.2 8.6-7.5 9.9-4.3-1.3-7.5-5.3-7.5-9.9V5.7z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg></span><div><b>reCAPTCHA</b><span>Protection against automated and bot submissions</span></div></div></div>
+        </div>
+      </section>
+
+      <section class="panel" id="instructions" aria-labelledby="ins-h">
+        <div class="ph"><h2 id="ins-h" style="font-size:1rem">Important Instructions to Candidates</h2><a href="#">Detailed Instructions (PDF) »</a></div>
+        <div class="pb">
+          <ol class="inst">
+            <li>Applications will be accepted only through this online portal. Applications sent by post, e-mail or by hand will not be entertained unless specified in the advertisement.</li>
+            <li>Candidates must register using a valid mobile number and e-mail ID. One candidate may hold only one registration.</li>
+            <li>Candidates must fulfil all eligibility conditions as on the closing date mentioned in the advertisement.</li>
+            <li>Category certificates (SC/ST/OBC-NCL/EWS/PwBD) must be in the format prescribed by the Government of India.</li>
+            <li>Mere submission of an application does not entitle a candidate to be called for interview. Candidature is provisional, subject to verification of original documents.</li>
+            <li>Canvassing in any form will lead to disqualification.</li>
+          </ol>
+          <div class="alert" data-hi="&lt;strong&gt;धोखाधड़ी से सावधान:&lt;/strong&gt; एम्स गोरखपुर भर्ती हेतु किसी एजेंट की नियुक्ति नहीं करता और चयन के लिए कभी भी धनराशि की मांग नहीं करता। सभी आधिकारिक सूचनाएं केवल aiimsgorakhpur.edu.in एवं इस पोर्टल पर प्रकाशित की जाती हैं।"><strong>Beware of fraud:</strong> AIIMS Gorakhpur does not appoint any agent for recruitment and never asks for money for selection. All official notices are published only on aiimsgorakhpur.edu.in and this portal.</div>
+        </div>
+      </section>
+
+    </div>
+
+    <aside>
+      <section class="panel" aria-labelledby="svc-h">
+        <div class="ph"><h2 id="svc-h" style="font-size:1rem">Candidate Services</h2></div>
+        <ul class="svc">
+          <li><a href="register.html">New Registration</a></li>
+          <li><a href="login.html">Candidate Login</a></li>
+          <li><a href="login.html">Track Application Status</a></li>
+          <li><a href="login.html">Download Interview Call Letter</a></li>
+          <li><a href="#">Results &amp; Merit Lists</a></li>
+          <li><a href="login.html#forgot">Forgot Password</a></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="contact" aria-labelledby="hd-h">
+        <div class="ph"><h2 id="hd-h" style="font-size:1rem">Recruitment Helpdesk</h2></div>
+        <div class="pb">
+          <dl class="info">
+            <dt>Address</dt><dd>Recruitment Cell, AIIMS Gorakhpur, Kunraghat, Gorakhpur, Uttar Pradesh – 273008</dd>
+            <dt>Phone</dt><dd>[Helpdesk number]</dd>
+            <dt>E-mail</dt><dd>[recruitment e-mail]</dd>
+            <dt>Working Hours</dt><dd>Monday – Friday, 9:00 AM – 5:00 PM<br>(except Gazetted Holidays)</dd>
+          </dl>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="ql-h">
+        <div class="ph"><h2 id="ql-h" style="font-size:1rem">Quick Links</h2></div>
+        <div class="pb">
+          <ul class="links">
+            <li><a href="https://aiimsgorakhpur.edu.in/">AIIMS Gorakhpur – Main Website</a></li>
+            <li><a href="#">Reservation Rules (DoPT)</a></li>
+            <li><a href="#">Prescribed Certificate Formats</a></li>
+            <li><a href="https://aiimsgorakhpur.edu.in/rti-act/">RTI</a></li>
+            <li><a href="#">Staff Login</a></li>
+          </ul>
+        </div>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap top">
+    <div class="f-brand">
+      <img class="f-logo" src="https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/01/Logo-300x300.png" alt="" onerror="this.remove()">
+      <div>
+        <h2>AIIMS Gorakhpur</h2>
+        <p>All India Institute of Medical Sciences, Kunraghat, Gorakhpur, Uttar Pradesh – 273008</p>
+      </div>
+    </div>
+    <div>
+      <h2>Recruitment</h2>
+      <ul><li><a href="#advt">Current Advertisements</a></li><li><a href="#advt">Results</a></li><li><a href="#">Archived Advertisements</a></li><li><a href="#">Archived Results</a></li></ul>
+    </div>
+    <div>
+      <h2>Candidates</h2>
+      <ul><li><a href="register.html">New Registration</a></li><li><a href="login.html">Candidate Login</a></li><li><a href="#instructions">Instructions</a></li><li><a href="#">FAQs</a></li></ul>
+    </div>
+    <div>
+      <h2>Important Links</h2>
+      <ul><li><a href="https://mohfw.gov.in/">Ministry of Health &amp; Family Welfare</a></li><li><a href="https://dopt.gov.in/">Department of Personnel &amp; Training</a></li><li><a href="https://www.india.gov.in/">National Portal of India</a></li></ul>
+    </div>
+  </div>
+  <div class="wrap comp">
+    <div>
+      <h2>Compliance &amp; Accessibility</h2>
+      <ul>
+        <li data-hi="इलेक्ट्रॉनिकी एवं सूचना प्रौद्योगिकी मंत्रालय के &lt;strong&gt;GIGW 3.0&lt;/strong&gt; (भारत सरकार की वेबसाइटों एवं ऐप्स हेतु दिशानिर्देश) के अनुसार निर्मित">Designed as per <strong>GIGW 3.0</strong> (Guidelines for Indian Government Websites &amp; Apps), MeitY</li>
+        <li data-hi="&lt;strong&gt;WCAG 2.1 Level AA&lt;/strong&gt; एवं दिव्यांगजन अधिकार अधिनियम, 2016 के अनुसार सुगम्यता">Accessibility as per <strong>WCAG 2.1 Level AA</strong> and the RPwD Act, 2016</li>
+        <li>Bilingual content (Hindi &amp; English) as per the Official Languages Act</li>
+        <li>STQC Certificate No.: <span class="ph-txt">[to be updated]</span></li>
+        <li>Security Audit (CERT-In empanelled auditor): <span class="ph-txt">[date]</span></li>
+      </ul>
+    </div>
+    <div class="span2">
+      <h2>Privacy &amp; Data Protection</h2>
+      <p>Personal data, including Aadhaar details, is collected only for recruitment, processed as per the Digital Personal Data Protection Act, 2023 and UIDAI regulations, and is not shared with any third party except as required by law. <a href="#">Read Privacy Policy »</a></p>
+    </div>
+    <div>
+      <h2>Feedback &amp; Grievance</h2>
+      <ul>
+        <li><a href="#">Feedback</a></li>
+        <li><a href="https://pgportal.gov.in/">Public Grievance (CPGRAMS)</a></li>
+        <li><a href="https://aiimsgorakhpur.edu.in/rti-act/">RTI</a></li>
+        <li><a href="#">Screen Reader Access</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="policy">
+    <a href="#">Website Policies</a>|<a href="#">Privacy Policy</a>|<a href="#">Terms &amp; Conditions</a>|<a href="#">Hyperlinking Policy</a>|<a href="#">Copyright Policy</a>|<a href="#">Content Archival Policy</a>|<a href="#">Accessibility Statement</a>|<a href="#">Disclaimer</a>|<a href="#">Help</a>|<a href="#">Sitemap</a>
+  </div>
+  <div class="bottom" data-hi="सामग्री का स्वामित्व, रखरखाव एवं अद्यतन अखिल भारतीय आयुर्विज्ञान संस्थान, गोरखपुर द्वारा।&lt;br&gt;वेबसाइट होस्टिंग: &lt;span class=&quot;ph-txt&quot;&gt;[एनआईसी / मेइटी-पैनलबद्ध क्लाउड]&lt;/span&gt; &amp;nbsp;|&amp;nbsp; क्रोम, फ़ायरफ़ॉक्स, एज एवं सफ़ारी के नवीनतम संस्करणों में सर्वोत्तम रूप से देखें&lt;br&gt;© 2026 एम्स गोरखपुर। सर्वाधिकार सुरक्षित। &amp;nbsp;|&amp;nbsp; अंतिम अद्यतन: 05.10.2026 &amp;nbsp;|&amp;nbsp; आगंतुक: &lt;span class=&quot;ph-txt&quot;&gt;[काउंटर]&lt;/span&gt;">
+    Content owned, maintained and updated by All India Institute of Medical Sciences, Gorakhpur.<br>
+    Website hosted by <span class="ph-txt">[NIC / MeitY-empanelled cloud]</span> &nbsp;|&nbsp; Best viewed in the latest versions of Chrome, Firefox, Edge and Safari<br>
+    © 2026 AIIMS Gorakhpur. All rights reserved. &nbsp;|&nbsp; Last Updated: 05.10.2026 &nbsp;|&nbsp; Visitors: <span class="ph-txt">[counter]</span>
+  </div>
+</footer>
+
+<!-- Chatbot -->
+<div data-skip>
+  <div class="cb-tip" id="cbTip">Need help? Ask us</div>
+  <button class="cb-launch" id="cbLaunch" type="button" aria-label="Open recruitment help chat" aria-expanded="false" aria-controls="cb">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>
+  </button>
+  <div class="cb" id="cb" role="dialog" aria-modal="false" aria-labelledby="cbTitle">
+    <div class="cb-h">
+      <div class="cb-av"><img src="https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/01/Logo-300x300.png" alt="" onerror="this.remove()"></div>
+      <div><b id="cbTitle">Recruitment Help Desk</b><span id="cbSub">AIIMS Gorakhpur · Virtual Assistant</span></div>
+      <button type="button" id="cbClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="cb-body" id="cbBody" aria-live="polite"></div>
+    <form class="cb-f" id="cbForm">
+      <label for="cbIn" class="sr-only">Type your question</label>
+      <input id="cbIn" type="text" autocomplete="off" placeholder="Type your question…">
+      <button type="submit" id="cbSend">Send</button>
+    </form>
+    <div class="cb-note" id="cbNote">Automated assistant. Do not share Aadhaar, password or OTP here.</div>
+  </div>
+</div>
+
+<script>
+var base=16;
+function setFs(d){var cur=parseFloat(getComputedStyle(document.documentElement).fontSize);var v=d===0?base:Math.min(20,Math.max(13,cur+d));document.documentElement.style.setProperty('--fs',v+'px');}
+var LANG='en', paused=false;
+function pauseLabel(){var b=document.getElementById('pauseBtn');var hi=LANG==='hi';
+  b.textContent=paused?(hi?'▶ चलाएं':'▶ Play'):(hi?'❚❚ रोकें':'❚❚ Pause');
+  b.setAttribute('aria-label',paused?(hi?'समाचार चलाएं':'Play scrolling news'):(hi?'समाचार रोकें':'Pause scrolling news'));}
+function toggleTicker(){paused=!paused;document.getElementById('ticker').style.animationPlayState=paused?'paused':'running';pauseLabel();}
+
+/* ---- Hindi / English ---- */
+var HI={
+"Skip to main content":"मुख्य सामग्री पर जाएं","Skip to Main Content":"मुख्य सामग्री पर जाएं","Screen Reader Access":"स्क्रीन रीडर एक्सेस",
+"An autonomous organization under the Ministry of Health & Family Welfare, Govt. of India":"स्वास्थ्य एवं परिवार कल्याण मंत्रालय, भारत सरकार के अधीन एक स्वायत्त संस्थान",
+"Home":"मुख्य पृष्ठ","Current Advertisements":"वर्तमान विज्ञापन","Results":"परिणाम","Archives":"अभिलेखागार","Instructions":"निर्देश","FAQs":"अक्सर पूछे जाने वाले प्रश्न","Contact Us":"संपर्क करें","Candidate Login":"अभ्यर्थी लॉगिन",
+"What's New":"नया क्या है",
+"Recruitment of posts on temporary basis in Extramural Project funded by UPSACS, NACO – 22.09.2026":"यूपीएसएसीएस, नाको द्वारा वित्तपोषित एक्स्ट्राम्यूरल परियोजना में अस्थायी आधार पर पदों की भर्ती – 22.09.2026",
+"Corrigendum-2: Rolling advertisement for Faculty (Group A) posts – 14.09.2026":"शुद्धिपत्र-2: संकाय (समूह 'क') पदों हेतु रोलिंग विज्ञापन – 14.09.2026",
+"Result: Senior Resident walk-in interview held on 09 & 10.09.2026":"परिणाम: 09 एवं 10.09.2026 को आयोजित सीनियर रेजिडेंट वॉक-इन साक्षात्कार",
+"Home › Recruitment":"मुख्य पृष्ठ › भर्ती",
+"Recruitment Portal – Faculty, Senior Resident, Junior Resident & Nursing":"भर्ती पोर्टल – संकाय, सीनियर रेजिडेंट, जूनियर रेजिडेंट एवं नर्सिंग",
+"Online applications are invited only through this portal for posts advertised by AIIMS Gorakhpur. Candidates are advised to read the advertisement and instructions carefully before applying.":"एम्स गोरखपुर द्वारा विज्ञापित पदों हेतु ऑनलाइन आवेदन केवल इस पोर्टल के माध्यम से आमंत्रित किए जाते हैं। अभ्यर्थियों को सलाह दी जाती है कि आवेदन करने से पूर्व विज्ञापन एवं निर्देशों को ध्यानपूर्वक पढ़ें।",
+"New Registration":"नया पंजीकरण",
+"Current Recruitment Advertisements":"वर्तमान भर्ती विज्ञापन","View Archive »":"अभिलेखागार देखें »",
+"All":"सभी","Faculty":"संकाय","Senior Resident":"सीनियर रेजिडेंट","Junior Resident":"जूनियर रेजिडेंट","Nursing":"नर्सिंग","Others":"अन्य",
+"List of current recruitment advertisements":"वर्तमान भर्ती विज्ञापनों की सूची",
+"S.No.":"क्र.सं.","Advertisement":"विज्ञापन","Published On":"प्रकाशन तिथि","Last Date":"अंतिम तिथि","Documents":"दस्तावेज़",
+"Recruitment of posts on a purely temporary basis in the Extramural Project funded by UPSACS, NACO, India":"यूपीएसएसीएस, नाको, भारत द्वारा वित्तपोषित एक्स्ट्राम्यूरल परियोजना में पूर्णतः अस्थायी आधार पर पदों की भर्ती",
+"NEW":"नया","OPEN":"खुला","RESULT DECLARED":"परिणाम घोषित","Rolling":"रोलिंग",
+"Rolling advertisement for recruitment to the posts of Faculty (Group A) on Direct Recruitment / Deputation / Contractual basis in various Departments":"विभिन्न विभागों में सीधी भर्ती / प्रतिनियुक्ति / संविदा आधार पर संकाय (समूह 'क') पदों की भर्ती हेतु रोलिंग विज्ञापन",
+"Annexure A–C":"अनुलग्नक A–C","Annexure A–B":"अनुलग्नक A–B","Annexure B–E":"अनुलग्नक B–E","Application Form":"आवेदन पत्र","Corrigendum-2":"शुद्धिपत्र-2","Corrigendum":"शुद्धिपत्र","Notice":"सूचना","Result":"परिणाम",
+"Walk-in Interview for Temporary Project Positions under ICMR-funded Extramural Research Project – Department of Cardiology":"आईसीएमआर द्वारा वित्तपोषित एक्स्ट्राम्यूरल अनुसंधान परियोजना के अंतर्गत अस्थायी परियोजना पदों हेतु वॉक-इन साक्षात्कार – हृदय रोग विभाग",
+"Senior Residents in various Departments under Govt. of India Residency Scheme (Interview on 09.09.2026 & 10.09.2026)":"भारत सरकार रेजिडेंसी योजना के अंतर्गत विभिन्न विभागों में सीनियर रेजिडेंट (साक्षात्कार 09.09.2026 एवं 10.09.2026)",
+"Recruitment of Project Staff under Extramural Research Projects – Data Entry Operator":"एक्स्ट्राम्यूरल अनुसंधान परियोजनाओं के अंतर्गत परियोजना कर्मचारियों की भर्ती – डाटा एंट्री ऑपरेटर",
+"Recruitment of Non-Faculty (Group A, B & C) posts on deputation basis":"प्रतिनियुक्ति आधार पर गैर-संकाय (समूह 'क', 'ख' एवं 'ग') पदों की भर्ती",
+"No current advertisement in this category.":"इस श्रेणी में कोई वर्तमान विज्ञापन नहीं है।",
+"Integrated Government Services":"एकीकृत सरकारी सेवाएं",
+"DigiLocker":"डिजीलॉकर","Fetch verified certificates directly at the time of application":"आवेदन के समय सत्यापित प्रमाण-पत्र सीधे प्राप्त करें",
+"Aadhaar (UIDAI)":"आधार (यूआईडीएआई)","OTP-based identity authentication to prevent duplicate registrations":"दोहरे पंजीकरण रोकने हेतु ओटीपी आधारित पहचान प्रमाणीकरण",
+"PubMed":"पबमेड","Verification of publication details for Faculty posts":"संकाय पदों हेतु प्रकाशन विवरण का सत्यापन",
+"E-mail":"ई-मेल","Registration, interview call letters, results and offer letters":"पंजीकरण, साक्षात्कार बुलावा पत्र, परिणाम एवं नियुक्ति प्रस्ताव पत्र",
+"SMS":"एसएमएस","One-Time Passwords (OTP) and important alerts":"वन-टाइम पासवर्ड (ओटीपी) एवं महत्वपूर्ण सूचनाएं",
+"reCAPTCHA":"रीकैप्चा","Protection against automated and bot submissions":"स्वचालित एवं बॉट द्वारा भेजे गए आवेदनों से सुरक्षा",
+"Posts":"पद","View advertisements »":"विज्ञापन देखें »",
+"Professor, Additional, Associate & Assistant Professor":"प्रोफेसर, अतिरिक्त प्रोफेसर, सह-प्रोफेसर एवं सहायक प्रोफेसर",
+"Under Govt. of India Residency Scheme":"भारत सरकार रेजिडेंसी योजना के अंतर्गत","Non-Academic":"गैर-शैक्षणिक","Nursing Officer & Nursing cadre":"नर्सिंग अधिकारी एवं नर्सिंग संवर्ग",
+"Important Instructions to Candidates":"अभ्यर्थियों हेतु महत्वपूर्ण निर्देश","Detailed Instructions (PDF) »":"विस्तृत निर्देश (पीडीएफ) »",
+"Applications will be accepted only through this online portal. Applications sent by post, e-mail or by hand will not be entertained unless specified in the advertisement.":"आवेदन केवल इस ऑनलाइन पोर्टल के माध्यम से स्वीकार किए जाएंगे। डाक, ई-मेल अथवा हाथ से भेजे गए आवेदनों पर विचार नहीं किया जाएगा, जब तक कि विज्ञापन में ऐसा उल्लेख न हो।",
+"Candidates must register using a valid mobile number and e-mail ID. One candidate may hold only one registration.":"अभ्यर्थी वैध मोबाइल नंबर एवं ई-मेल आईडी से पंजीकरण करें। एक अभ्यर्थी केवल एक पंजीकरण कर सकता है।",
+"Candidates must fulfil all eligibility conditions as on the closing date mentioned in the advertisement.":"अभ्यर्थियों को विज्ञापन में उल्लिखित अंतिम तिथि तक सभी पात्रता शर्तें पूरी करनी होंगी।",
+"Category certificates (SC/ST/OBC-NCL/EWS/PwBD) must be in the format prescribed by the Government of India.":"श्रेणी प्रमाण-पत्र (अ.जा./अ.ज.जा./अ.पि.व.-एनसीएल/ईडब्ल्यूएस/पीडब्ल्यूबीडी) भारत सरकार द्वारा निर्धारित प्रारूप में होने चाहिए।",
+"Mere submission of an application does not entitle a candidate to be called for interview. Candidature is provisional, subject to verification of original documents.":"केवल आवेदन प्रस्तुत करने से अभ्यर्थी साक्षात्कार हेतु बुलाए जाने का पात्र नहीं हो जाता। अभ्यर्थिता मूल दस्तावेज़ों के सत्यापन के अधीन अनंतिम है।",
+"Canvassing in any form will lead to disqualification.":"किसी भी प्रकार की सिफ़ारिश करवाने पर अभ्यर्थिता रद्द कर दी जाएगी।",
+"Candidate Services":"अभ्यर्थी सेवाएं","Track Application Status":"आवेदन की स्थिति देखें","Download Interview Call Letter":"साक्षात्कार बुलावा पत्र डाउनलोड करें","Results & Merit Lists":"परिणाम एवं मेरिट सूची","Forgot Password":"पासवर्ड भूल गए",
+"Recruitment Helpdesk":"भर्ती सहायता केंद्र","Address":"पता","Phone":"फ़ोन","E-mail":"ई-मेल","Working Hours":"कार्य समय",
+"Recruitment Cell, AIIMS Gorakhpur, Kunraghat, Gorakhpur, Uttar Pradesh – 273008":"भर्ती प्रकोष्ठ, एम्स गोरखपुर, कुनराघाट, गोरखपुर, उत्तर प्रदेश – 273008",
+"[Helpdesk number]":"[सहायता केंद्र नंबर]","[recruitment e-mail]":"[भर्ती ई-मेल]",
+"Monday – Friday, 9:00 AM – 5:00 PM":"सोमवार – शुक्रवार, प्रातः 9:00 – सायं 5:00","(except Gazetted Holidays)":"(राजपत्रित अवकाश को छोड़कर)",
+"Quick Links":"त्वरित लिंक","AIIMS Gorakhpur – Main Website":"एम्स गोरखपुर – मुख्य वेबसाइट","Reservation Rules (DoPT)":"आरक्षण नियम (कार्मिक एवं प्रशिक्षण विभाग)","Prescribed Certificate Formats":"निर्धारित प्रमाण-पत्र प्रारूप","RTI":"सूचना का अधिकार","Staff Login":"कर्मचारी लॉगिन",
+"AIIMS Gorakhpur":"एम्स गोरखपुर","All India Institute of Medical Sciences, Kunraghat, Gorakhpur, Uttar Pradesh – 273008":"अखिल भारतीय आयुर्विज्ञान संस्थान, कुनराघाट, गोरखपुर, उत्तर प्रदेश – 273008",
+"Recruitment":"भर्ती","Archived Advertisements":"पुराने विज्ञापन","Archived Results":"पुराने परिणाम","Candidates":"अभ्यर्थी",
+"Important Links":"महत्वपूर्ण लिंक","Ministry of Health & Family Welfare":"स्वास्थ्य एवं परिवार कल्याण मंत्रालय","Department of Personnel & Training":"कार्मिक एवं प्रशिक्षण विभाग","National Portal of India":"भारत का राष्ट्रीय पोर्टल",
+"Compliance & Accessibility":"अनुपालन एवं सुगम्यता",
+"Bilingual content (Hindi & English) as per the Official Languages Act":"राजभाषा अधिनियम के अनुसार द्विभाषी सामग्री (हिन्दी एवं अंग्रेज़ी)",
+"STQC Certificate No.:":"एसटीक्यूसी प्रमाण-पत्र सं.:","[to be updated]":"[अद्यतन किया जाना है]",
+"Security Audit (CERT-In empanelled auditor):":"सुरक्षा ऑडिट (सर्ट-इन पैनलबद्ध ऑडिटर):","[date]":"[तिथि]",
+"Privacy & Data Protection":"गोपनीयता एवं डेटा संरक्षण",
+"Personal data, including Aadhaar details, is collected only for recruitment, processed as per the Digital Personal Data Protection Act, 2023 and UIDAI regulations, and is not shared with any third party except as required by law.":"आधार विवरण सहित व्यक्तिगत डेटा केवल भर्ती के प्रयोजन हेतु एकत्र किया जाता है, डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम, 2023 एवं यूआईडीएआई विनियमों के अनुसार संसाधित किया जाता है, तथा विधि द्वारा अपेक्षित स्थिति के अतिरिक्त किसी तृतीय पक्ष के साथ साझा नहीं किया जाता।",
+"Read Privacy Policy »":"गोपनीयता नीति पढ़ें »",
+"Feedback & Grievance":"प्रतिक्रिया एवं शिकायत","Feedback":"प्रतिक्रिया","Public Grievance (CPGRAMS)":"लोक शिकायत (सीपीग्राम्स)",
+"Website Policies":"वेबसाइट नीतियां","Privacy Policy":"गोपनीयता नीति","Terms & Conditions":"नियम एवं शर्तें","Hyperlinking Policy":"हाइपरलिंकिंग नीति","Copyright Policy":"कॉपीराइट नीति","Content Archival Policy":"सामग्री संग्रहण नीति","Accessibility Statement":"सुगम्यता विवरण","Disclaimer":"अस्वीकरण","Help":"सहायता","Sitemap":"साइटमैप"
+};
+function norm(s){return s.replace(/[\s ]+/g,' ').trim();}
+var textNodes=null;
+function collect(){
+  textNodes=[];
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+    var p=n.parentElement; if(!p||p.closest('script,style,[data-skip],[data-hi]'))return NodeFilter.FILTER_REJECT;
+    return HI[norm(n.nodeValue)]?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT;}});
+  while(w.nextNode()){var n=w.currentNode;n._en=n.nodeValue;textNodes.push(n);}
+  document.querySelectorAll('[data-hi]').forEach(function(e){e._en=e.innerHTML;});
+}
+function setLang(l){
+  if(!textNodes)collect();
+  LANG=l; var hi=l==='hi';
+  textNodes.forEach(function(n){var k=norm(n._en);n.nodeValue=hi?n._en.replace(k,HI[k]):n._en;});
+  document.querySelectorAll('[data-hi]').forEach(function(e){e.innerHTML=hi?e.getAttribute('data-hi'):e._en;});
+  document.documentElement.lang=hi?'hi':'en';
+  document.title=hi?'भर्ती पोर्टल | एम्स गोरखपुर':'Recruitment Portal | AIIMS Gorakhpur';
+  var b=document.getElementById('langBtn'); b.textContent=hi?'English':'हिन्दी'; b.lang=hi?'en':'hi';
+  pauseLabel();
+  if(window.cbLang)cbLang();
+  if(window.postCounts)postCounts();
+  try{localStorage.setItem('rms-lang',l);}catch(e){}
+}
+function toggleLang(){setLang(LANG==='hi'?'en':'hi');}
+
+/* ---- Chatbot (rule-based FAQ assistant) ---- */
+var CB={
+ ui:{en:{title:'Recruitment Help Desk',sub:'AIIMS Gorakhpur · Virtual Assistant',ph:'Type your question…',send:'Send',note:'Automated assistant. Do not share Aadhaar, password or OTP here.',tip:'Need help? Ask us',open:'Open recruitment help chat',close:'Close chat',
+   hello:'Namaste! 🙏 I can help you with recruitment at AIIMS Gorakhpur. Choose a topic or type your question.',more:'Anything else I can help with?',
+   fallback:'Sorry, I could not find an answer to that. Please choose a topic below, or contact the Recruitment Helpdesk (Mon–Fri, 9:00 AM – 5:00 PM).'},
+  hi:{title:'भर्ती सहायता केंद्र',sub:'एम्स गोरखपुर · वर्चुअल सहायक',ph:'अपना प्रश्न लिखें…',send:'भेजें',note:'स्वचालित सहायक। यहां आधार, पासवर्ड या ओटीपी साझा न करें।',tip:'सहायता चाहिए? पूछें',open:'भर्ती सहायता चैट खोलें',close:'चैट बंद करें',
+   hello:'नमस्ते! 🙏 मैं एम्स गोरखपुर की भर्ती से संबंधित जानकारी में आपकी सहायता कर सकता हूं। कोई विषय चुनें या अपना प्रश्न लिखें।',more:'क्या मैं और कोई सहायता कर सकता हूं?',
+   fallback:'क्षमा करें, इस प्रश्न का उत्तर उपलब्ध नहीं है। कृपया नीचे कोई विषय चुनें, या भर्ती सहायता केंद्र से संपर्क करें (सोमवार–शुक्रवार, प्रातः 9:00 – सायं 5:00)।'}},
+ faq:[
+  {k:['apply','how to','register','registration','form','आवेदन','पंजीकरण','कैसे'],
+   q:{en:'How to apply?',hi:'आवेदन कैसे करें?'},
+   a:{en:'<ol><li>Click <b>New Registration</b> and verify your mobile number and e-mail with OTP.</li><li>Log in and select the advertisement.</li><li>Fill in personal, category, qualification and experience details.</li><li>Upload documents (or fetch them from DigiLocker).</li><li>Submit and note your Application ID.</li></ol>',
+      hi:'<ol><li><b>नया पंजीकरण</b> पर क्लिक करें और ओटीपी से मोबाइल नंबर व ई-मेल सत्यापित करें।</li><li>लॉगिन करके विज्ञापन चुनें।</li><li>व्यक्तिगत, श्रेणी, योग्यता एवं अनुभव का विवरण भरें।</li><li>दस्तावेज़ अपलोड करें (या डिजीलॉकर से प्राप्त करें)।</li><li>आवेदन जमा करें और अपनी आवेदन आईडी नोट करें।</li></ol>'}},
+  {k:['vacanc','post','opening','advertisement','job','current','पद','विज्ञापन','रिक्ति'],
+   q:{en:'Current vacancies',hi:'वर्तमान रिक्तियां'},
+   a:{en:'All open advertisements are listed in the <b>Current Recruitment Advertisements</b> table on this page. Use the tabs to filter by Faculty, Senior Resident, Junior Resident or Nursing.',
+      hi:'सभी खुले विज्ञापन इस पृष्ठ पर <b>वर्तमान भर्ती विज्ञापन</b> तालिका में दिए गए हैं। संकाय, सीनियर रेजिडेंट, जूनियर रेजिडेंट या नर्सिंग के अनुसार देखने के लिए टैब का उपयोग करें।'},
+   go:'#advt'},
+  {k:['eligib','qualification','age','experience','पात्रता','योग्यता','आयु','अनुभव'],
+   q:{en:'Eligibility & age limit',hi:'पात्रता एवं आयु सीमा'},
+   a:{en:'Eligibility (qualification, experience, registration with NMC / State Council and age limit) differs for each post and is given in that post\'s advertisement. Conditions must be met as on the closing date. Age relaxation applies as per Government of India rules.',
+      hi:'पात्रता (योग्यता, अनुभव, एनएमसी / राज्य परिषद पंजीकरण एवं आयु सीमा) प्रत्येक पद के लिए अलग है और संबंधित विज्ञापन में दी गई है। शर्तें अंतिम तिथि तक पूरी होनी चाहिए। आयु में छूट भारत सरकार के नियमों के अनुसार है।'}},
+  {k:['document','certificate','upload','digilocker','file','size','दस्तावेज़','दस्तावेज','प्रमाण','अपलोड'],
+   q:{en:'Documents required',hi:'आवश्यक दस्तावेज़'},
+   a:{en:'Generally required: <ul><li>Degree / qualification certificates</li><li>Experience certificates</li><li>Category certificate (SC/ST/OBC-NCL/EWS/PwBD) in the GoI format</li><li>Medical / Nursing Council registration</li><li>Photo and signature</li></ul>Accepted formats and size limits are shown on the upload screen.',
+      hi:'सामान्यतः आवश्यक: <ul><li>डिग्री / योग्यता प्रमाण-पत्र</li><li>अनुभव प्रमाण-पत्र</li><li>भारत सरकार प्रारूप में श्रेणी प्रमाण-पत्र (अ.जा./अ.ज.जा./अ.पि.व.-एनसीएल/ईडब्ल्यूएस/पीडब्ल्यूबीडी)</li><li>मेडिकल / नर्सिंग परिषद पंजीकरण</li><li>फ़ोटो एवं हस्ताक्षर</li></ul>मान्य प्रारूप एवं आकार सीमा अपलोड पृष्ठ पर दी गई है।'}},
+  {k:['status','track','application id','स्थिति','ट्रैक'],
+   q:{en:'Track application',hi:'आवेदन की स्थिति'},
+   a:{en:'Log in with your registered mobile / e-mail and open <b>Track Application Status</b>. You will also receive SMS and e-mail updates at each stage.',
+      hi:'पंजीकृत मोबाइल / ई-मेल से लॉगिन करें और <b>आवेदन की स्थिति देखें</b> खोलें। प्रत्येक चरण पर आपको एसएमएस एवं ई-मेल से सूचना भी मिलेगी।'}},
+  {k:['interview','call letter','admit','schedule','साक्षात्कार','बुलावा'],
+   q:{en:'Interview call letter',hi:'साक्षात्कार बुलावा पत्र'},
+   a:{en:'Shortlisted candidates can download the call letter from <b>Download Interview Call Letter</b> after login. It shows the date, time slot and venue. Selection is on the basis of interview only.',
+      hi:'चयनित अभ्यर्थी लॉगिन के बाद <b>साक्षात्कार बुलावा पत्र डाउनलोड करें</b> से पत्र प्राप्त कर सकते हैं। इसमें तिथि, समय एवं स्थान दिया होता है। चयन केवल साक्षात्कार के आधार पर होता है।'}},
+  {k:['result','merit','selected','waiting','परिणाम','मेरिट','प्रतीक्षा'],
+   q:{en:'Results & merit list',hi:'परिणाम एवं मेरिट सूची'},
+   a:{en:'Results, category-wise merit lists and waiting lists are published under <b>Results & Merit Lists</b> and in the advertisement table. Candidates can also view their scorecard after login.',
+      hi:'परिणाम, श्रेणीवार मेरिट सूची एवं प्रतीक्षा सूची <b>परिणाम एवं मेरिट सूची</b> तथा विज्ञापन तालिका में प्रकाशित की जाती है। अभ्यर्थी लॉगिन के बाद अपना स्कोरकार्ड भी देख सकते हैं।'}},
+  {k:['fee','payment','charge','शुल्क','भुगतान'],
+   q:{en:'Application fee',hi:'आवेदन शुल्क'},
+   a:{en:'The application fee and exemptions (if any) are given in each advertisement. Fee is paid only online through this portal.',
+      hi:'आवेदन शुल्क एवं छूट (यदि कोई हो) प्रत्येक विज्ञापन में दी गई है। शुल्क का भुगतान केवल इस पोर्टल के माध्यम से ऑनलाइन किया जाता है।'}},
+  {k:['password','forgot','login','otp','पासवर्ड','लॉगिन','ओटीपी'],
+   q:{en:'Forgot password',hi:'पासवर्ड भूल गए'},
+   a:{en:'Click <b>Forgot Password</b> and enter your registered mobile number or e-mail. An OTP will be sent to reset your password. Never share your OTP with anyone.',
+      hi:'<b>पासवर्ड भूल गए</b> पर क्लिक करें और पंजीकृत मोबाइल नंबर या ई-मेल दर्ज करें। पासवर्ड बदलने हेतु ओटीपी भेजा जाएगा। अपना ओटीपी किसी के साथ साझा न करें।'}},
+  {k:['fraud','agent','money','fake','scam','धोखा','एजेंट','पैसा'],
+   q:{en:'Beware of fraud',hi:'धोखाधड़ी से सावधान'},
+   a:{en:'AIIMS Gorakhpur does not appoint any agent and never asks for money for selection. Official notices are published only on aiimsgorakhpur.edu.in and this portal.',
+      hi:'एम्स गोरखपुर किसी एजेंट की नियुक्ति नहीं करता और चयन हेतु कभी धनराशि नहीं मांगता। आधिकारिक सूचनाएं केवल aiimsgorakhpur.edu.in एवं इस पोर्टल पर प्रकाशित होती हैं।'}},
+  {k:['contact','helpdesk','phone','email','call','address','संपर्क','फ़ोन','फोन','सहायता'],
+   q:{en:'Contact helpdesk',hi:'सहायता केंद्र से संपर्क'},
+   a:{en:'Recruitment Cell, AIIMS Gorakhpur, Kunraghat, Gorakhpur, Uttar Pradesh – 273008.<br>Monday – Friday, 9:00 AM – 5:00 PM (except Gazetted Holidays).',
+      hi:'भर्ती प्रकोष्ठ, एम्स गोरखपुर, कुनराघाट, गोरखपुर, उत्तर प्रदेश – 273008।<br>सोमवार – शुक्रवार, प्रातः 9:00 – सायं 5:00 (राजपत्रित अवकाश को छोड़कर)।'},
+   go:'#contact'}
+ ]
+};
+(function(){
+  var cb=document.getElementById('cb'),body=document.getElementById('cbBody'),inp=document.getElementById('cbIn'),
+      launch=document.getElementById('cbLaunch'),tip=document.getElementById('cbTip'),started=false;
+  function t(){return CB.ui[LANG];}
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function add(html,who){var m=document.createElement('div');m.className='msg '+who;m.innerHTML=html;body.appendChild(m);body.scrollTop=body.scrollHeight;return m;}
+  function chips(){var c=document.createElement('div');c.className='chips';
+    CB.faq.forEach(function(f,i){var b=document.createElement('button');b.type='button';b.textContent=f.q[LANG];b.onclick=function(){ask(i,true)};c.appendChild(b);});
+    body.appendChild(c);body.scrollTop=body.scrollHeight;}
+  function ask(i,fromChip){var f=CB.faq[i];if(fromChip)add(esc(f.q[LANG]),'user');
+    setTimeout(function(){add(f.a[LANG],'bot');if(f.go){var el=document.querySelector(f.go);if(el&&window.innerWidth>600)el.scrollIntoView({behavior:'smooth',block:'start'});}
+      setTimeout(function(){add(t().more,'bot');chips();},250);},300);}
+  function match(q){q=q.toLowerCase();var best=-1,score=0;
+    CB.faq.forEach(function(f,i){var s=0;f.k.forEach(function(k){if(q.indexOf(k)>-1)s+=k.length;});if(s>score){score=s;best=i;}});return best;}
+  function start(){body.innerHTML='';add(t().hello,'bot');chips();started=true;}
+  window.cbLang=function(){var u=t();document.getElementById('cbTitle').textContent=u.title;document.getElementById('cbSub').textContent=u.sub;
+    inp.placeholder=u.ph;document.getElementById('cbSend').textContent=u.send;document.getElementById('cbNote').textContent=u.note;tip.textContent=u.tip;
+    launch.setAttribute('aria-label',u.open);document.getElementById('cbClose').setAttribute('aria-label',u.close);if(started)start();};
+  function open(){cb.classList.add('open');tip.style.display='none';launch.setAttribute('aria-expanded','true');if(!started)start();inp.focus();}
+  function close(){cb.classList.remove('open');launch.setAttribute('aria-expanded','false');launch.focus();}
+  launch.onclick=function(){cb.classList.contains('open')?close():open();};
+  document.getElementById('cbClose').onclick=close;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&cb.classList.contains('open'))close();});
+  document.getElementById('cbForm').onsubmit=function(e){e.preventDefault();var q=inp.value.trim();if(!q)return;inp.value='';add(esc(q),'user');
+    if(/\b\d{4}\s?\d{4}\s?\d{4}\b/.test(q)){setTimeout(function(){add(LANG==='hi'?'कृपया आधार संख्या यहां साझा न करें।':'Please do not share your Aadhaar number here.','bot');},300);return;}
+    var i=match(q);if(i>-1)ask(i,false);else setTimeout(function(){add(t().fallback,'bot');chips();},300);};
+  cbLang();
+})();
+try{if(localStorage.getItem('rms-lang')==='hi')setLang('hi');}catch(e){}
+var tabs=document.querySelectorAll('.tabs button');
+function filter(f){
+  tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.f===f?'true':'false')});
+  var n=0,i=0;
+  document.querySelectorAll('#rows tr').forEach(function(r){var s=f==='all'||r.dataset.t===f;r.style.display=s?'':'none';if(s){n++;r.cells[0].textContent=++i;}});
+  document.getElementById('none').style.display=n?'none':'block';
+  document.querySelector('table thead').style.display=n?'':'none';
+}
+tabs.forEach(function(t){t.addEventListener('click',function(){filter(t.dataset.f)})});
+document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('click',function(){filter(a.dataset.go)})});
+
+function postCounts(){var hi=window.LANG==='hi';document.querySelectorAll('[data-cnt]').forEach(function(e){
+  var n=0;document.querySelectorAll('#rows tr[data-t="'+e.dataset.cnt+'"]').forEach(function(r){if(!r.querySelector('.b-closed'))n++});
+  e.classList.toggle('zero',!n);
+  e.textContent=n?(hi?n+' खुला':n+' Open'):(hi?'कोई खुला नहीं':'None open');e.title=n?(hi?n+' खुले विज्ञापन':n+' open advertisement(s)'):(hi?'वर्तमान में कोई विज्ञापन नहीं':'No open advertisement at present');});}
+postCounts();
+</script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candidate Login | Recruitment Portal | AIIMS Gorakhpur</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a2a5e;--navy-2:#13407f;--navy-l:#eaf0f8;--saffron:#f28c1b;--saffron-d:#c96a05;--green:#138808;--ok:#0e6b06;--err:#b3261e;
+  --ink:#1d2433;--muted:#4f5a6b;--line:#d5dce7;--bg:#f4f6f9;--fs:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fs)}
+body{font-family:'Noto Sans','Noto Sans Devanagari',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:var(--navy-2)}a:hover{color:var(--saffron-d)}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.sr-only{position:absolute;left:-9999px}
+.skip{position:absolute;left:-9999px;background:var(--saffron);color:#fff;padding:8px 14px;z-index:99}.skip:focus{left:8px;top:0}
+.hi{font-family:'Noto Sans Devanagari',sans-serif}
+/* gov strip / header / nav */
+.gov{background:#1c1c1c;color:#e5e5e5;font-size:.8rem}
+.gov .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:5px;padding-bottom:5px}
+.gov a,.gov button{color:#e5e5e5;text-decoration:none;background:none;border:0;font:inherit;cursor:pointer;padding:2px 8px}
+.gov .fs button{border:1px solid #666;padding:0 7px;margin-left:3px;border-radius:2px}
+.tri{height:4px;background:linear-gradient(90deg,#ff9933 0 33.3%,#fff 33.3% 66.6%,#138808 66.6%)}
+header{background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.logo{width:76px;height:76px;object-fit:contain;flex:none}
+.t-hi{color:var(--navy);font-weight:700;font-size:1.1rem;line-height:1.3}
+.t-en{color:var(--navy);font-weight:700;font-size:1.2rem;line-height:1.3}
+.t-sub{color:var(--muted);font-size:.8rem}
+.portal-name{margin-left:auto;text-align:right;padding-left:16px;border-left:3px solid var(--saffron)}
+.portal-name b{display:block;color:var(--navy)}.portal-name span{color:var(--muted);font-size:.85rem}
+nav{background:var(--navy)}
+nav .wrap{display:flex;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:11px 14px}
+nav a:hover,nav a.on{background:var(--navy-2);color:#fff;box-shadow:inset 0 -3px 0 var(--saffron)}
+nav .login{margin-left:auto;background:var(--saffron);color:#fff}
+.banner{background:var(--navy-l);border-bottom:1px solid var(--line)}
+.banner .wrap{padding-top:16px;padding-bottom:16px}
+.crumb{font-size:.8rem;color:var(--muted)}
+.banner h1{color:var(--navy);font-size:1.35rem}
+.banner p{color:var(--muted);font-size:.9rem}
+/* layout */
+main{padding:22px 0 40px}
+.grid{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:3px;margin-bottom:20px}
+.ph{background:var(--navy);color:#fff;padding:10px 16px;font-weight:700;font-size:1rem}
+.pb{padding:18px}
+/* stepper */
+.steps{display:flex;list-style:none;border-bottom:1px solid var(--line);background:#f8fafc;counter-reset:s}
+.steps li{flex:1;padding:12px 8px;text-align:center;font-size:.8rem;font-weight:600;color:var(--muted);position:relative;border-bottom:3px solid transparent}
+.steps li::before{counter-increment:s;content:counter(s);display:block;margin:0 auto 4px;width:26px;height:26px;line-height:26px;border-radius:50%;background:#dfe5ee;color:var(--muted);font-weight:700}
+.steps li.cur{color:var(--navy);border-bottom-color:var(--saffron)}
+.steps li.cur::before{background:var(--navy);color:#fff}
+.steps li.done{color:var(--ok)}
+.steps li.done::before{content:"✓";background:var(--ok);color:#fff}
+/* form */
+fieldset{border:0}
+legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
+.legend-note{font-size:.82rem;color:var(--muted);margin-bottom:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.row.three{grid-template-columns:1fr 1fr 1fr}
+.full{grid-column:1/-1}
+.f label,.f .lbl{display:block;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.req{color:var(--err)}
+.f input[type=text],.f input[type=email],.f input[type=tel],.f input[type=date],.f input[type=password],.f input[type=number],.f select{width:100%;border:1px solid #b9c3d3;border-radius:3px;padding:9px 10px;font:inherit;font-size:.92rem;background:#fff}
+.f input:focus,.f select:focus{border-color:var(--navy-2);outline:2px solid #13407f33}
+.f input[readonly]{background:#f2f4f7}
+.f.bad input,.f.bad select{border-color:var(--err);background:#fff8f7}
+.hint{font-size:.76rem;color:var(--muted);margin-top:3px}
+.msg{font-size:.78rem;margin-top:3px;min-height:0}
+.f.bad .msg{color:var(--err)}
+.f.good .msg{color:var(--ok)}
+.radios{display:flex;gap:16px;flex-wrap:wrap;padding-top:4px}
+.radios label{font-weight:400;display:flex;gap:6px;align-items:center;margin:0;font-size:.9rem}
+.inline{display:flex;gap:8px}
+.inline input{flex:1}
+.btn{display:inline-block;border:1px solid transparent;border-radius:3px;padding:9px 16px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn-p{background:var(--navy);color:#fff}.btn-p:hover:not(:disabled){background:var(--navy-2);color:#fff}
+.btn-s{background:#c96a05;color:#fff}.btn-s:hover:not(:disabled){background:#a85700}
+.btn-o{background:#fff;color:var(--navy);border-color:var(--navy)}.btn-o:hover:not(:disabled){background:var(--navy-l)}
+.btn-g{background:var(--ok);color:#fff}
+.verified{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:700;font-size:.85rem;padding:9px 4px}
+.otp-box{margin-top:8px;padding:10px;border:1px dashed #b9c3d3;border-radius:3px;background:#fafbfd;display:none}
+.otp-box.show{display:block}
+.timer{font-size:.78rem;color:var(--muted);margin-top:4px}
+.linkbtn{background:none;border:0;color:var(--navy-2);text-decoration:underline;font:inherit;font-size:.8rem;cursor:pointer;padding:0}
+.linkbtn:disabled{color:#999;text-decoration:none;cursor:default}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.85rem;font-weight:400!important;background:#fffaf2;border:1px solid #f3d9b8;border-radius:3px;padding:10px 12px}
+.consent input{margin-top:4px;flex:none;width:16px;height:16px}
+.sec{border-top:1px solid var(--line);margin-top:20px;padding-top:18px}
+.actions{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}
+.alert{border-radius:3px;padding:10px 12px;font-size:.85rem;margin-bottom:14px}
+.alert-e{background:#fdecea;border:1px solid #f3c2bd;color:#6d1a14}
+.alert-i{background:var(--navy-l);border:1px solid #c9d6ea;color:#123}
+.alert-w{background:#fff6e5;border:1px solid #f3d9a4;color:#5c3b00}
+/* password meter */
+.meter{height:6px;background:#e3e7ee;border-radius:3px;margin-top:6px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;transition:.2s}
+.rules{list-style:none;font-size:.78rem;margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:2px 10px}
+.rules li{color:var(--muted)}
+.rules li::before{content:"○ "}
+.rules li.ok{color:var(--ok)}.rules li.ok::before{content:"✓ "}
+.pw-wrap{position:relative}
+.pw-wrap button{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--navy-2);font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px}
+/* captcha */
+.cap{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cap canvas{border:1px solid var(--line);border-radius:3px;background:#f3f5f9}
+.cap button{background:#fff;border:1px solid var(--line);border-radius:3px;width:38px;height:38px;cursor:pointer;font-size:1.1rem}
+/* review */
+.rev{width:100%;border-collapse:collapse;font-size:.88rem}
+.rev th,.rev td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.rev th{background:var(--navy-l);color:var(--navy);width:42%;font-weight:600}
+.rev caption{text-align:left;font-weight:700;color:var(--navy);padding:12px 0 6px}
+.edit{float:right;font-size:.78rem;font-weight:600}
+.decl{font-size:.86rem;background:#fafbfd;border:1px solid var(--line);padding:12px;border-radius:3px;margin-top:16px}
+/* success */
+.success{text-align:center;padding:30px 18px}
+.tick{width:68px;height:68px;border-radius:50%;background:var(--ok);color:#fff;font-size:2.2rem;display:grid;place-items:center;margin:0 auto 14px}
+.regid{display:inline-block;font-family:monospace;font-size:1.25rem;font-weight:700;letter-spacing:1px;background:var(--navy-l);color:var(--navy);border:1px dashed var(--navy-2);padding:8px 18px;border-radius:3px;margin:10px 0}
+/* sidebar */
+.side ol,.side ul{padding-left:18px;font-size:.84rem}
+.side li{margin-bottom:7px}
+.demo{position:fixed;left:12px;bottom:12px;z-index:50;background:#1d2433;color:#fff;font-size:.75rem;padding:8px 12px;border-radius:4px;max-width:330px;box-shadow:0 4px 14px #0004;line-height:1.5}
+.demo b{color:#ffb35c}
+.demo button{background:none;border:0;color:#ffb35c;cursor:pointer;float:right;font-size:.9rem;margin-left:8px}
+/* footer */
+footer{background:#0b1e3d;color:#c4cede;font-size:.82rem;margin-top:10px}
+.policy{padding:12px 16px;text-align:center}
+.policy a{color:#c4cede;text-decoration:none;margin:0 7px;display:inline-block}
+.policy a:hover{color:#ffb35c}
+.bottom{background:#071429;padding:9px 16px;text-align:center;font-size:.68rem;color:#93a1ba;line-height:1.6}
+[hidden]{display:none!important}
+@media (max-width:980px){.grid{grid-template-columns:1fr}.portal-name{display:none}}
+@media (max-width:600px){.row,.row.three{grid-template-columns:1fr}.logo{width:56px;height:56px}.t-hi,.t-en{font-size:.92rem}.t-sub{font-size:.7rem}
+  .steps li{font-size:0;padding:10px 4px}.steps li::before{font-size:.8rem}.rules{grid-template-columns:1fr}.gov .l{display:none}nav a{padding:9px 10px;font-size:.84rem}nav .login{margin-left:0}}
+.grid{grid-template-columns:minmax(0,640px) 300px;justify-content:center}
+.tabs{display:flex;border-bottom:1px solid var(--line);background:#f8fafc}
+.tabs button{flex:1;background:none;border:0;border-bottom:3px solid transparent;padding:12px;font:inherit;font-size:.9rem;font-weight:600;color:var(--muted);cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--saffron);background:#fff}
+@media (max-width:980px){.grid{grid-template-columns:1fr}}
+.home-link{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit}.home-link:hover{color:inherit}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="gov"><div class="wrap">
+  <div class="l">🇮🇳 Government of India | <span class="hi">भारत सरकार</span></div>
+  <div class="r"><a href="#main">Skip to Main Content</a>
+    <span class="fs" role="group" aria-label="Text size"><button type="button" onclick="setFs(-1)" aria-label="Decrease text size">A-</button><button type="button" onclick="setFs(0)" aria-label="Normal text size">A</button><button type="button" onclick="setFs(1)" aria-label="Increase text size">A+</button></span>
+  </div>
+</div></div>
+<div class="tri"></div>
+<header><div class="wrap"><a href="index.html" class="home-link" aria-label="AIIMS Gorakhpur Recruitment Portal – Home">
+  <img class="logo" src="https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/01/Logo-300x300.png" alt="AIIMS Gorakhpur logo" onerror="this.style.visibility='hidden'">
+  <div>
+    <div class="t-hi hi" lang="hi">अखिल भारतीय आयुर्विज्ञान संस्थान, गोरखपुर</div>
+    <div class="t-en">ALL INDIA INSTITUTE OF MEDICAL SCIENCES, GORAKHPUR</div>
+    <div class="t-sub">An autonomous organization under the Ministry of Health &amp; Family Welfare, Govt. of India</div>
+  </div></a>
+  <div class="portal-name"><b>Recruitment Portal</b><span class="hi" lang="hi">भर्ती पोर्टल</span></div>
+</div></header>
+<nav aria-label="Main"><div class="wrap">
+  <a href="index.html">Home</a>
+  <a href="index.html#advt">Current Advertisements</a>
+  <a href="index.html#instructions">Instructions</a>
+  <a href="index.html#contact">Contact Us</a>
+  <a href="register.html">New Registration</a>
+  <a href="login.html" class="login on" aria-current="page">Candidate Login</a>
+</div></nav>
+<div class="banner"><div class="wrap">
+  <div class="crumb"><a href="index.html">Home</a> › Candidate Login</div>
+  <h1>Candidate Login / <span class="hi" lang="hi">अभ्यर्थी लॉगिन</span></h1>
+  <p>Log in to apply for posts, track your application, and download call letters and results.</p>
+</div></div>
+
+<main id="main" tabindex="-1"><div class="wrap grid">
+<div>
+  <!-- LOGIN -->
+  <div class="panel" id="loginPanel">
+    <div class="tabs" role="tablist" aria-label="Login method">
+      <button role="tab" id="tPw" aria-selected="true" aria-controls="pPw">Login with Password</button>
+      <button role="tab" id="tOtp" aria-selected="false" aria-controls="pOtp">Login with OTP</button>
+    </div>
+    <div class="pb">
+      <div class="alert alert-e" id="err" role="alert" hidden></div>
+
+      <form id="pPw" role="tabpanel" aria-labelledby="tPw" novalidate>
+        <div class="row">
+          <div class="f full"><label for="uid">Registration ID / Mobile Number / E-mail ID <span class="req">*</span><br><span class="hi" lang="hi" style="font-weight:400;font-size:.8rem">पंजीकरण आईडी / मोबाइल नंबर / ई-मेल आईडी</span></label>
+            <input type="text" id="uid" maxlength="100" autocomplete="username"><div class="msg"></div></div>
+          <div class="f full"><label for="pw">Password / <span class="hi" lang="hi">पासवर्ड</span> <span class="req">*</span></label>
+            <div class="pw-wrap"><input type="password" id="pw" maxlength="16" autocomplete="current-password"><button type="button" data-show="pw">Show</button></div>
+            <div class="msg"></div>
+            <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:.82rem">
+              <a href="#forgot" data-open="forgot">Forgot Password?</a><a href="#forgotid" data-open="forgotid">Forgot Registration ID?</a></div></div>
+          <div class="f full"><label for="capIn">Enter the characters shown / <span class="hi" lang="hi">चित्र में दिखाए गए अक्षर दर्ज करें</span> <span class="req">*</span></label>
+            <div class="cap"><canvas id="capC" width="160" height="42" role="img" aria-label="CAPTCHA image"></canvas><button type="button" id="capR" aria-label="Refresh CAPTCHA" title="Refresh CAPTCHA">↻</button><input type="text" id="capIn" maxlength="6" autocomplete="off" style="max-width:160px"></div>
+            <div class="hint">Not case-sensitive.</div><div class="msg"></div></div>
+        </div>
+        <button type="submit" class="btn btn-p" id="loginBtn" style="width:100%;margin-top:18px;padding:11px">Login / <span class="hi" lang="hi">लॉगिन</span></button>
+        <p class="hint" id="attempts" style="text-align:center;margin-top:8px"></p>
+      </form>
+
+      <form id="pOtp" role="tabpanel" aria-labelledby="tOtp" novalidate hidden>
+        <div class="row">
+          <div class="f full"><label for="omob">Registered Mobile Number / <span class="hi" lang="hi">पंजीकृत मोबाइल नंबर</span> <span class="req">*</span></label>
+            <div class="inline"><input type="tel" id="omob" maxlength="10" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit mobile number"><button type="button" class="btn btn-s" id="oSend">Send OTP</button></div>
+            <div class="msg"></div>
+            <div class="otp-box" id="oBox"><label for="oOtp" style="font-size:.82rem;font-weight:600">Enter 6-digit OTP sent to your mobile</label>
+              <input type="text" id="oOtp" maxlength="6" inputmode="numeric" autocomplete="one-time-code">
+              <div class="timer"><span id="oT"></span> <button type="button" class="linkbtn" id="oRe" disabled>Resend OTP</button></div></div></div>
+        </div>
+        <button type="submit" class="btn btn-p" id="oLogin" style="width:100%;margin-top:18px;padding:11px" disabled>Verify &amp; Login</button>
+      </form>
+
+      <p style="text-align:center;font-size:.88rem;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)">New candidate? <a href="register.html"><b>Register here</b></a> / <span class="hi" lang="hi">नए अभ्यर्थी? यहां पंजीकरण करें</span></p>
+    </div>
+  </div>
+
+  <!-- FORGOT PASSWORD -->
+  <div class="panel" id="forgot" hidden>
+    <div class="ph">Reset Password / <span class="hi" lang="hi">पासवर्ड रीसेट करें</span></div>
+    <div class="pb">
+      <div class="alert alert-e" id="fErr" role="alert" hidden></div>
+      <div id="f1">
+        <p class="legend-note">Enter your Registration ID (or registered mobile / e-mail) and date of birth. An OTP will be sent to your registered mobile number and e-mail ID.</p>
+        <div class="row">
+          <div class="f"><label for="fUid">Registration ID / Mobile / E-mail <span class="req">*</span></label><input type="text" id="fUid" maxlength="100" autocomplete="username"><div class="msg"></div></div>
+          <div class="f"><label for="fDob">Date of Birth <span class="req">*</span></label><input type="date" id="fDob"><div class="msg"></div></div>
+        </div>
+        <div class="actions"><button type="button" class="btn btn-o" data-close>« Back to Login</button><button type="button" class="btn btn-s" id="fSend">Send OTP</button></div>
+      </div>
+      <div id="f2" hidden>
+        <div class="alert alert-i" id="fSent"></div>
+        <div class="row">
+          <div class="f full"><label for="fOtp">OTP <span class="req">*</span></label><input type="text" id="fOtp" maxlength="6" inputmode="numeric" autocomplete="one-time-code" style="max-width:200px"><div class="timer"><span id="fT"></span> <button type="button" class="linkbtn" id="fRe" disabled>Resend OTP</button></div><div class="msg"></div></div>
+          <div class="f"><label for="nPw">New Password <span class="req">*</span></label><div class="pw-wrap"><input type="password" id="nPw" maxlength="16" autocomplete="new-password"><button type="button" data-show="nPw">Show</button></div>
+            <div class="hint">8–16 characters with uppercase, lowercase, number and special character (@ # $ % ! &amp; *). Must not be the same as your last 3 passwords.</div><div class="msg"></div></div>
+          <div class="f"><label for="nPw2">Confirm New Password <span class="req">*</span></label><div class="pw-wrap"><input type="password" id="nPw2" maxlength="16" autocomplete="new-password"><button type="button" data-show="nPw2">Show</button></div><div class="msg"></div></div>
+        </div>
+        <div class="actions"><button type="button" class="btn btn-o" data-close>« Back to Login</button><button type="button" class="btn btn-p" id="fReset">Reset Password</button></div>
+      </div>
+      <div id="f3" class="success" hidden tabindex="-1"><div class="tick">✓</div><h2 style="color:var(--navy);font-size:1.15rem">Password reset successfully</h2><p style="color:var(--muted);font-size:.88rem;margin:6px 0 16px">Please log in with your new password. A confirmation has been sent to your registered mobile and e-mail.</p><button type="button" class="btn btn-p" data-close>Go to Login</button></div>
+    </div>
+  </div>
+
+  <!-- FORGOT ID -->
+  <div class="panel" id="forgotid" hidden>
+    <div class="ph">Retrieve Registration ID / <span class="hi" lang="hi">पंजीकरण आईडी प्राप्त करें</span></div>
+    <div class="pb">
+      <div id="g1">
+        <p class="legend-note">Your Registration ID will be sent by SMS and e-mail to your registered mobile number and e-mail ID.</p>
+        <div class="row">
+          <div class="f"><label for="gMob">Registered Mobile Number or E-mail <span class="req">*</span></label><input type="text" id="gMob" maxlength="100"><div class="msg"></div></div>
+          <div class="f"><label for="gDob">Date of Birth <span class="req">*</span></label><input type="date" id="gDob"><div class="msg"></div></div>
+        </div>
+        <div class="actions"><button type="button" class="btn btn-o" data-close>« Back to Login</button><button type="button" class="btn btn-p" id="gSend">Send Registration ID</button></div>
+      </div>
+      <div id="g2" class="success" hidden tabindex="-1"><div class="tick">✓</div><p style="font-size:.9rem;margin-bottom:16px">If the details match our records, your Registration ID has been sent to your registered mobile number and e-mail ID.</p><button type="button" class="btn btn-p" data-close>Go to Login</button></div>
+    </div>
+  </div>
+
+  <!-- LOGGED IN (prototype) -->
+  <div class="panel" id="welcome" hidden tabindex="-1">
+    <div class="ph">Welcome / <span class="hi" lang="hi">स्वागत है</span></div>
+    <div class="pb success">
+      <div class="tick">✓</div>
+      <h2 style="color:var(--navy);font-size:1.2rem">Login successful</h2>
+      <p style="color:var(--muted);font-size:.88rem;margin:6px auto 4px;max-width:460px">The candidate dashboard will open here (apply for posts, track application, call letters, results).</p>
+      <p class="hint" id="lastLogin" style="margin-bottom:16px"></p>
+      <button type="button" class="btn btn-o" id="logout">Logout</button>
+    </div>
+  </div>
+</div>
+
+<aside class="side">
+  <div class="panel"><div class="ph">Login Guidelines</div><div class="pb">
+    <ul>
+      <li>Log in with your Registration ID, registered mobile number or e-mail ID.</li>
+      <li>After 5 wrong password attempts, the account is locked for 30 minutes.</li>
+      <li>For your security, the session ends after 15 minutes of inactivity.</li>
+      <li>Always click <b>Logout</b> and close the browser after use, especially on a shared computer.</li>
+      <li>AIIMS Gorakhpur never asks for your password or OTP by phone, SMS or e-mail.</li>
+    </ul>
+  </div></div>
+  <div class="panel"><div class="ph">New Candidate?</div><div class="pb">
+    <p style="font-size:.86rem;margin-bottom:10px">Complete a one-time registration to apply for any post.</p>
+    <a class="btn btn-s" href="register.html" style="display:block;text-align:center">New Registration</a>
+  </div></div>
+  <div class="panel"><div class="ph">Need Help?</div><div class="pb" style="font-size:.84rem">
+    Recruitment Helpdesk<br>Monday – Friday, 9:00 AM – 5:00 PM<br>(except Gazetted Holidays)
+  </div></div>
+</aside>
+</div></main>
+
+<footer>
+  <div class="policy"><a href="#">Website Policies</a>|<a href="#">Privacy Policy</a>|<a href="#">Terms &amp; Conditions</a>|<a href="#">Accessibility Statement</a>|<a href="#">Help</a>|<a href="#">Sitemap</a></div>
+  <div class="bottom">Content owned, maintained and updated by All India Institute of Medical Sciences, Gorakhpur.<br>© 2026 AIIMS Gorakhpur. All rights reserved. &nbsp;|&nbsp; Last Updated: 05.10.2026</div>
+</footer>
+
+<div class="demo" id="demo" role="note"><button type="button" onclick="this.parentNode.remove()" aria-label="Close demo note">✕</button>
+  <b>PROTOTYPE:</b> User ID <b>AGKP26123456</b> or <b>9123456789</b>, password <b>Demo@1234</b>. OTP <b>123456</b>. DOB for reset: <b>15.08.1990</b>.</div>
+<script>
+var DEMO=true,DEMO_OTP='123456',DEMO_USER={id:'AGKP26123456',mob:'9123456789',em:'candidate@example.com',pw:'Demo@1234',dob:'1990-08-15'};
+var MAX_TRIES=5,LOCK_MIN=30;
+function setFs(d){var c=parseFloat(getComputedStyle(document.documentElement).fontSize);document.documentElement.style.setProperty('--fs',(d===0?16:Math.min(20,Math.max(13,c+d)))+'px');}
+var $=function(id){return document.getElementById(id)};
+function setMsg(el,ok,text){var f=el.closest('.f');f.classList.toggle('bad',!ok);f.classList.toggle('good',ok&&!!text);var m=f.querySelector('.msg');if(m)m.textContent=text||'';el.setAttribute('aria-invalid',ok?'false':'true');return ok}
+function showErr(id,t){var e=$(id);e.className='alert alert-e';if(!t){e.hidden=true;return}e.innerHTML=t;e.hidden=false}
+function matchUser(v){v=v.trim().toLowerCase();return v===DEMO_USER.id.toLowerCase()||v===DEMO_USER.mob||v===DEMO_USER.em}
+
+/* tabs */
+var tabs=[$('tPw'),$('tOtp')];
+function selTab(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;$(x.getAttribute('aria-controls')).hidden=!on});showErr('err')}
+tabs.forEach(function(t,i){t.onclick=function(){selTab(t)};t.onkeydown=function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){var n=tabs[(i+1)%2];selTab(n);n.focus()}}});
+
+/* show password */
+document.querySelectorAll('[data-show]').forEach(function(b){b.onclick=function(){var i=$(b.dataset.show),s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Hide':'Show'}});
+
+/* captcha */
+var capTxt='';
+function drawCap(){var ch='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',c=$('capC'),x=c.getContext('2d');capTxt='';for(var i=0;i<6;i++)capTxt+=ch[Math.floor(Math.random()*ch.length)];
+  x.fillStyle='#eef1f6';x.fillRect(0,0,160,42);
+  for(i=0;i<5;i++){x.strokeStyle='rgba(19,64,127,'+(0.15+Math.random()*0.25)+')';x.beginPath();x.moveTo(Math.random()*160,Math.random()*42);x.lineTo(Math.random()*160,Math.random()*42);x.stroke()}
+  x.font='bold 24px monospace';x.textBaseline='middle';for(i=0;i<6;i++){x.save();x.translate(14+i*24,22);x.rotate((Math.random()-.5)*.5);x.fillStyle=['#0a2a5e','#7a3e00','#13407f','#3b3b3b'][i%4];x.fillText(capTxt[i],-8,0);x.restore()}
+  $('capIn').value=''}
+try{drawCap()}catch(e){}
+$('capR').onclick=drawCap;
+
+/* password login with lockout */
+var tries=0,lockUntil=0;
+$('pPw').onsubmit=function(e){e.preventDefault();showErr('err');
+  if(Date.now()<lockUntil){var m=Math.ceil((lockUntil-Date.now())/60000);showErr('err','Your account is locked due to too many failed attempts. Try again after '+m+' minutes, or use <a href="#forgot" data-open="forgot">Forgot Password</a>.');bindOpen();return}
+  var ok=true,u=$('uid').value.trim(),p=$('pw').value;
+  if(!u){setMsg($('uid'),false,'Enter your Registration ID, mobile number or e-mail ID.');ok=false}else setMsg($('uid'),true,'');
+  if(!p){setMsg($('pw'),false,'Enter your password.');ok=false}else setMsg($('pw'),true,'');
+  if($('capIn').value.trim().toUpperCase()!==capTxt){setMsg($('capIn'),false,'Characters do not match. Please try again.');ok=false}else setMsg($('capIn'),true,'');
+  if(!ok){drawCap();return}
+  if(matchUser(u)&&p===DEMO_USER.pw){tries=0;loggedIn();return}
+  tries++;drawCap();$('pw').value='';
+  if(tries>=MAX_TRIES){lockUntil=Date.now()+LOCK_MIN*60000;$('attempts').textContent='';showErr('err','Your account has been locked for '+LOCK_MIN+' minutes after '+MAX_TRIES+' failed attempts. An alert has been sent to your registered mobile and e-mail.');return}
+  showErr('err','Invalid login details. Please check your User ID and password.');
+  $('attempts').textContent=(MAX_TRIES-tries)+' attempt(s) left before your account is locked.';
+};
+
+/* OTP login */
+var timers={};
+function startTimer(k){var s=30;$(k+'Re').disabled=true;clearInterval(timers[k]);$(k+'T').textContent='Resend in '+s+'s';
+  timers[k]=setInterval(function(){s--;if(s<=0){clearInterval(timers[k]);$(k+'T').textContent='';$(k+'Re').disabled=false}else $(k+'T').textContent='Resend in '+s+'s'},1000)}
+$('omob').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'')});
+['oOtp','fOtp'].forEach(function(id){$(id).addEventListener('input',function(){this.value=this.value.replace(/\D/g,'')})});
+function oSend(){var v=$('omob').value;showErr('err');
+  if(!/^[6-9]\d{9}$/.test(v)){setMsg($('omob'),false,'Enter a valid 10-digit mobile number.');return}
+  if(DEMO&&v!==DEMO_USER.mob){setMsg($('omob'),false,'This mobile number is not registered. Please register first.');return}
+  setMsg($('omob'),true,'OTP sent to XXXXXX'+v.slice(-4)+'.');$('oBox').classList.add('show');$('oLogin').disabled=false;$('oOtp').value='';$('oOtp').focus();startTimer('o');$('oSend').textContent='Resend'}
+$('oSend').onclick=oSend;$('oRe').onclick=oSend;
+$('pOtp').onsubmit=function(e){e.preventDefault();var o=$('oOtp').value;
+  if(!/^\d{6}$/.test(o)){showErr('err','Enter the 6-digit OTP.');return}
+  if(DEMO&&o!==DEMO_OTP){showErr('err','Incorrect OTP. Please try again.');return}
+  clearInterval(timers.o);loggedIn()};
+
+/* panels */
+function openPanel(id){['loginPanel','forgot','forgotid','welcome'].forEach(function(p){$(p).hidden=p!==id});if(id==='forgot'){$('f1').hidden=false;$('f2').hidden=true;$('f3').hidden=true}if(id==='forgotid'){$('g1').hidden=false;$('g2').hidden=true}
+  var first=$(id).querySelector('input');if(first)first.focus();window.scrollTo({top:0,behavior:'smooth'})}
+function bindOpen(){document.querySelectorAll('[data-open]').forEach(function(a){a.onclick=function(e){e.preventDefault();openPanel(a.dataset.open)}})}
+bindOpen();
+document.querySelectorAll('[data-close]').forEach(function(b){b.onclick=function(){openPanel('loginPanel');drawCap()}});
+
+/* forgot password */
+function fmtDob(id){return $(id).value}
+function fSend(){var ok=true;
+  if(!$('fUid').value.trim()){setMsg($('fUid'),false,'This field is required.');ok=false}else setMsg($('fUid'),true,'');
+  if(!$('fDob').value){setMsg($('fDob'),false,'Enter your date of birth.');ok=false}else setMsg($('fDob'),true,'');
+  if(!ok)return;
+  if(DEMO&&!(matchUser($('fUid').value)&&$('fDob').value===DEMO_USER.dob)){showErr('fErr','The details do not match our records.');return}
+  showErr('fErr');$('f1').hidden=true;$('f2').hidden=false;$('fSent').textContent='OTP sent to your registered mobile XXXXXX'+DEMO_USER.mob.slice(-4)+' and e-mail '+DEMO_USER.em.replace(/^(.{2}).*(@.*)$/,'$1****$2')+'.';$('fOtp').focus();startTimer('f')}
+$('fSend').onclick=fSend;$('fRe').onclick=fSend;
+$('fReset').onclick=function(){var ok=true,p=$('nPw').value;
+  if(!/^\d{6}$/.test($('fOtp').value)||(DEMO&&$('fOtp').value!==DEMO_OTP)){setMsg($('fOtp'),false,'Enter the correct 6-digit OTP.');ok=false}else setMsg($('fOtp'),true,'');
+  if(!(p.length>=8&&p.length<=16&&/[A-Z]/.test(p)&&/[a-z]/.test(p)&&/\d/.test(p)&&/[@#$%!&*]/.test(p))){setMsg($('nPw'),false,'Password does not meet the rules.');ok=false}else setMsg($('nPw'),true,'');
+  if(!$('nPw2').value||$('nPw2').value!==p){setMsg($('nPw2'),false,'Passwords do not match.');ok=false}else setMsg($('nPw2'),true,'');
+  if(!ok)return;if(DEMO)DEMO_USER.pw=p;tries=0;lockUntil=0;$('attempts').textContent='';clearInterval(timers.f);$('f2').hidden=true;$('f3').hidden=false;$('f3').focus()};
+
+/* forgot id */
+$('gSend').onclick=function(){var ok=true;
+  if(!$('gMob').value.trim()){setMsg($('gMob'),false,'This field is required.');ok=false}else setMsg($('gMob'),true,'');
+  if(!$('gDob').value){setMsg($('gDob'),false,'Enter your date of birth.');ok=false}else setMsg($('gDob'),true,'');
+  if(!ok)return;$('g1').hidden=true;$('g2').hidden=false;$('g2').focus()};
+
+/* logged in */
+function loggedIn(){openPanel('welcome');$('lastLogin').textContent='Last login: '+new Date(Date.now()-86400000*3).toLocaleString('en-IN');$('welcome').focus();$('uid').value='';$('pw').value='';$('omob').value='';$('oBox').classList.remove('show');$('oLogin').disabled=true;$('oSend').textContent='Send OTP'}
+$('logout').onclick=function(){openPanel('loginPanel');drawCap();showErr('err','<span style="color:#0e6b06">You have been logged out successfully.</span>');$('err').className='alert alert-i'};
+if(location.hash==='#forgot')openPanel('forgot');
+if(!DEMO)$('demo').remove();
+</script>
+</body>
+</html>
