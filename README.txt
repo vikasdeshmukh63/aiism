@@ -9,11 +9,13 @@ index.html      Home page (advertisements, posts, How to Apply, services,
 candidate.html  Candidate Login & Registration on ONE page:
                 - "Continue with DigiLocker" button (logs in registered candidates,
                   pre-fills registration for new candidates)
-                - Login tab: password or OTP login, Forgot Password,
+                - Login tab: password login, or OTP login on the registered mobile
+                  number OR Aadhaar number (UIDAI OTP), Forgot Password,
                   Forgot Registration ID, 5-attempt lockout
                 - New Registration tab: 4 steps (personal details, mobile/e-mail/
                   Aadhaar OTP, password + CAPTCHA, review & declaration)
                 Deep links: candidate.html#register, candidate.html#forgot
+campus.webp     Campus sketch used as the background of candidate.html
 register.html,  Old addresses kept only as redirects to candidate.html
 login.html      (#register / login tab), so old links and bookmarks still work.
 
@@ -28,12 +30,15 @@ replace the logo URL with "logo.png" in all three files.
 Prototype test values (remove before go-live)
 ---------------------------------------------
 OTP (all screens):            123456
-Test Aadhaar (register):      2345 6789 0124
+Test Aadhaar (register and Aadhaar OTP login): 2345 6789 0124
 Already-registered mobile:    9876543210
 Login:                        AGKP26123456 or 9123456789 / Demo@1234
 Date of birth for reset:      15.08.1990
+In demo mode, New Registration opens with sample data already filled in
+(OTP and CAPTCHA are filled automatically too), so reviewers can click
+Save & Continue through all 4 steps. "Clear form" empties it.
 To switch the demo off, set  var DEMO=false  in candidate.html
-(this also removes the dark "PROTOTYPE" note).
+(this also removes the dark "PROTOTYPE" note and the sample data).
 
 Before go-live (backend team)
 -----------------------------
@@ -51,7 +56,7 @@ Before go-live (backend team)
 Campus photo on the login page (optional)
 -----------------------------------------
 The left panel of candidate.html shows a blueprint-style sketch of the AIIMS
-Gorakhpur campus (built into the page, no extra file needed).
+Gorakhpur campus (file: campus.webp, keep it next to candidate.html).
 To use a real AIIMS Gorakhpur campus photo instead, save it in this folder as
 campus.jpg and, in candidate.html, change  .side-l{--photo:none}  to
 .side-l{--photo:url('campus.jpg')}. The navy overlay keeps the text readable.
