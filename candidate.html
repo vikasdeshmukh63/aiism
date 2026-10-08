@@ -67,19 +67,8 @@ a{color:var(--navy-2)}a:hover{color:var(--saffron-d)}
 .side-r{background:#fff;padding:34px 24px 40px;display:flex;justify-content:center}
 .auth{width:100%;max-width:660px}
 .auth h2.t{font-size:1.5rem;color:var(--navy);text-align:center}
-.auth .t-sub{text-align:center;color:var(--muted);font-size:.88rem;margin-top:2px}
+.auth .t-sub{text-align:center;color:var(--muted);font-size:.88rem;margin-top:2px;margin-bottom:22px}
 
-/* DigiLocker */
-.dl-box{text-align:center;margin-top:20px}
-.btn-dl{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:440px;border:0;border-radius:6px;padding:12px 18px;background:linear-gradient(135deg,#b85c00,#d9730a);color:#fff;font:inherit;font-size:.98rem;font-weight:700;cursor:pointer;box-shadow:0 4px 12px #b85c0040;transition:transform .15s,box-shadow .15s}
-.btn-dl:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 16px #b85c0055;background:linear-gradient(135deg,#a35200,#c96a05)}
-.btn-dl:disabled{opacity:.75;cursor:wait}
-.btn-dl.done{background:var(--ok);box-shadow:none;cursor:default;opacity:1}
-.btn-dl svg{width:20px;height:20px;flex:none}
-.dl-note{font-size:.76rem;color:var(--muted);margin-top:8px}
-.or{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.8rem;margin:18px 0}
-.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
-.fetched{display:inline-block;font-size:.7rem;font-weight:700;color:var(--ok);background:#e3f2e1;border:1px solid #b9dfb4;border-radius:99px;padding:0 7px;margin-left:6px;vertical-align:middle}
 
 /* main tabs */
 .mtabs{display:flex;border:1px solid var(--line);border-radius:8px;padding:4px;background:#f4f6f9;gap:4px}
@@ -208,7 +197,6 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
   .auth h2.t{font-size:1.25rem}
   .brand img{width:48px;height:48px}
 }
-@media (prefers-reduced-motion:reduce){.btn-dl,.btn-dl:hover{transition:none;transform:none}}
 </style>
 </head>
 <body>
@@ -253,7 +241,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 
     <div class="help-box"><b>Recruitment Helpdesk</b><br>Monday – Friday, 9:00 AM – 5:00 PM (except Gazetted Holidays)</div>
     <div class="foot">
-      <a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Accessibility Statement</a><a href="#">Help</a><br>
+      <a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Accessibility Statement</a><a href="#">Help</a><a href="staff.html">Staff Login</a><br>
       Content owned, maintained and updated by AIIMS Gorakhpur. © 2026 All rights reserved.
     </div>
   </aside>
@@ -264,12 +252,6 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
       <h2 class="t">Candidate Login &amp; Registration</h2>
       <p class="t-sub"><span class="hi" lang="hi">अभ्यर्थी लॉगिन एवं पंजीकरण</span></p>
 
-      <!-- DigiLocker (one button for both) -->
-      <div class="dl-box">
-        <button type="button" class="btn-dl" id="dlBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M9.5 15.5l2 2 3.5-3.5"/></svg><span id="dlTxt">Continue with DigiLocker</span></button>
-        <p class="dl-note" id="dlNote">Registered candidates are logged in directly. New candidates are registered with name, date of birth, gender and Aadhaar fetched from DigiLocker.</p>
-      </div>
-      <div class="or"><span>or</span></div>
 
       <div class="mtabs" role="tablist" aria-label="Login or register">
         <button role="tab" id="tabLogin" aria-selected="true" aria-controls="panLogin">Login / <span class="hi" lang="hi">लॉगिन</span></button>
@@ -544,7 +526,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 </div>
 
 <div class="demo" id="demo" role="note"><button type="button" onclick="this.parentNode.remove()" aria-label="Close demo note">✕</button>
-  <b>PROTOTYPE:</b> OTP <b>123456</b>. Login <b>AGKP26123456</b> or <b>9123456789</b> / <b>Demo@1234</b>. Test Aadhaar (register &amp; Aadhaar login) <b>2345 6789 0124</b>. DOB for reset <b>15.08.1990</b>. DigiLocker fills sample data.</div>
+  <b>PROTOTYPE:</b> OTP <b>123456</b>. Login <b>AGKP26123456</b> or <b>9123456789</b> / <b>Demo@1234</b>. Test Aadhaar (register &amp; Aadhaar login) <b>2345 6789 0124</b>. DOB for reset <b>15.08.1990</b>.</div>
 
 <script>
 var DEMO=true, DEMO_OTP='123456', TAKEN_MOB='9876543210', TAKEN_EM='taken@example.com';
@@ -659,7 +641,7 @@ $('gSend').onclick=function(){var ok=true;
   if(!ok)return;$('g1').hidden=true;$('g2').hidden=false;$('g2').focus()};
 
 function loggedIn(how){showTab('login');openPanel('welcome');
-  $('welcomeTxt').textContent=(how==='dl'?'You have been logged in through DigiLocker. ':how==='aad'?'You have been logged in with Aadhaar OTP. ':'')+'The candidate dashboard will open here (apply for posts, track application, call letters, results).';
+  $('welcomeTxt').textContent=(how==='aad'?'You have been logged in with Aadhaar OTP. ':'')+'The candidate dashboard will open here (apply for posts, track application, call letters, results).';
   $('lastLogin').textContent='Last login: '+new Date(Date.now()-86400000*3).toLocaleString('en-IN');$('welcome').focus();
   $('uid').value='';$('lpw').value='';$('omob').value='';$('oBox').classList.remove('show');$('oLogin').disabled=true;$('oSend').textContent='Send OTP';
   $('laad').value='';$('laBox').classList.remove('show');$('laSend').textContent='Send OTP'}
@@ -733,10 +715,9 @@ function vStep3(){var ok=true,p=$('pw').value,r=pwRules(p);
   if(!capOk('cap')){setMsg($('capIn'),false,'Characters do not match. Please try again.');drawCap('cap');ok=false}else setMsg($('capIn'),true,'');
   return ok}
 
-var viaDL=false;
 function buildReview(){var a=$('age').value,pwd=radioVal('pwd');
   var t1=[['Full Name',$('name').value],["Father's Name",$('father').value],["Mother's Name",$('mother').value],['Date of Birth',new Date($('dob').value).toLocaleDateString('en-GB').replace(/\//g,'.')+' ('+a+')'],['Gender',radioVal('gender')],['Marital Status',$('marital').value],['Nationality',$('nation').value],['State of Domicile',$('state').value],['Category',$('cat').selectedOptions[0].text],['PwBD',pwd+(pwd==='Yes'?' – '+$('dtype').value+', '+$('dpct').value+'%':'')],['Employed in Govt. / PSU',radioVal('govt')]];
-  var t2=[['Mobile Number',$('mob').value+' ✓'],['E-mail ID',$('em').value+' ✓'],['Aadhaar',$('aad').value+(viaDL?' ✓ Verified via DigiLocker':' ✓ Authenticated')]];
+  var t2=[['Mobile Number',$('mob').value+' ✓'],['E-mail ID',$('em').value+' ✓'],['Aadhaar',$('aad').value+' ✓ Authenticated']];
   function tbl(cap,rows,step){return'<table class="rev"><caption>'+cap+' <a href="#" class="edit" data-go="'+step+'">Edit</a></caption>'+rows.map(function(r){return'<tr><th scope="row">'+r[0]+'</th><td>'+esc(r[1])+'</td></tr>'}).join('')+'</table>'}
   $('review').innerHTML=tbl('Personal Details',t1,1)+tbl('Contact &amp; Verification',t2,2);
   $('review').querySelectorAll('[data-go]').forEach(function(e){e.onclick=function(ev){ev.preventDefault();go(+e.dataset.go)}})}
@@ -750,36 +731,13 @@ function go(n){step=n;document.querySelectorAll('fieldset[data-step]').forEach(f
   $('back').hidden=n===1;$('next').textContent=n===4?'Submit Registration':'Save & Continue »';$('next').className='btn '+(n===4?'btn-g':'btn-p');
   showErr();if(n===4)buildReview();if(n===3&&DEMO&&demoFilled&&!$('capIn').value)$('capIn').value=CAP.cap;$('panReg').scrollIntoView({behavior:'smooth',block:'start'})}
 $('next').onclick=function(){
-  if(!V[step]()){if(step<4){var msgs=[];document.querySelectorAll('[data-step="'+step+'"] .f.bad').forEach(function(f){var l=f.querySelector('label,.lbl');msgs.push((l?l.textContent.split('/')[0].replace('*','').replace('✓ DigiLocker','').trim():'Field')+': '+f.querySelector('.msg').textContent)});showErr(msgs)}return}
+  if(!V[step]()){if(step<4){var msgs=[];document.querySelectorAll('[data-step="'+step+'"] .f.bad').forEach(function(f){var l=f.querySelector('label,.lbl');msgs.push((l?l.textContent.split('/')[0].replace('*','').trim():'Field')+': '+f.querySelector('.msg').textContent)});showErr(msgs)}return}
   if(step<4){go(step+1);return}
   var id='AGKP26'+String(Math.floor(100000+Math.random()*900000));
   $('regId').textContent=id;$('sMob').textContent='XXXXXX'+$('mob').value.slice(-4);$('sEm').textContent=$('em').value.replace(/^(.{2}).*(@.*)$/,'$1****$2');
   $('reg').hidden=true;$('steps').hidden=true;$('done').hidden=false;$('done').focus()};
 $('back').onclick=function(){if(step>1)go(step-1)};
 
-/* ================= DIGILOCKER (one button) =================
-   PROTOTYPE: simulates the DigiLocker sign-in and consent flow.
-   In production this button starts the DigiLocker OAuth 2.0 flow; after the candidate
-   signs in and consents, the server checks the verified Aadhaar against existing registrations:
-     - already registered  -> candidate is logged in directly
-     - new candidate       -> registration opens with verified details pre-filled */
-function tagFetched(id){var l=document.querySelector('label[for="'+id+'"]')||$(id);if(l&&!l.querySelector('.fetched')){var t=document.createElement('span');t.className='fetched';t.textContent='✓ DigiLocker';l.appendChild(t)}}
-$('dlBtn').onclick=function(){
-  var b=this;b.disabled=true;$('dlTxt').textContent='Connecting to DigiLocker…';
-  setTimeout(function(){
-    var d={name:'RAHUL KUMAR SHARMA',dob:'1990-08-15',gender:'Male',aad:'234567890124',registered:false};
-    if(d.registered){b.disabled=false;$('dlTxt').textContent='Continue with DigiLocker';loggedIn('dl');return}
-    showTab('register');go(1);
-    $('name').value=d.name;$('name').readOnly=true;tagFetched('name');
-    $('dob').value=d.dob;$('dob').readOnly=true;$('dob').dispatchEvent(new Event('change'));tagFetched('dob');
-    document.querySelectorAll('input[name=gender]').forEach(function(r){r.checked=r.value===d.gender;r.disabled=r.value!==d.gender});tagFetched('gL');
-    $('aad').value='XXXX XXXX '+d.aad.slice(-4);$('aadCon').checked=true;$('aadConBox').hidden=true;
-    verified.aad=true;$('aad').readOnly=true;var sb=$('aadSend');if(sb){var v=document.createElement('span');v.className='verified';v.textContent='✓ Verified';sb.replaceWith(v)}
-    setMsg($('aad'),true,'Aadhaar verified through DigiLocker.');
-    viaDL=true;b.classList.add('done');$('dlTxt').textContent='Details fetched from DigiLocker';
-    $('dlNote').textContent='Name, date of birth, gender and Aadhaar have been filled from DigiLocker. Please complete the remaining details below.';
-    $('panReg').scrollIntoView({behavior:'smooth',block:'start'});$('father').focus({preventScroll:true});
-  },1200)};
 
 
 /* ---- PROTOTYPE ONLY: sample data in New Registration so reviewers can click through all steps.
@@ -804,10 +762,9 @@ $('clearDemo').onclick=function(){
   if(!verified.aad){$('aadCon').checked=false;$('aadSend').disabled=true}
   $('pw').dispatchEvent(new Event('input'));$('pwdType').hidden=true;$('pwdPct').hidden=true;
   document.querySelectorAll('#panReg .f').forEach(function(f){f.classList.remove('bad','good');var m=f.querySelector('.msg');if(m&&!f.querySelector('input[readonly]'))m.textContent=''});
-  demoFilled=false;$('demoFillNote').hidden=true;go(1);$('name').readOnly?$('father').focus():$('name').focus()};
+  demoFilled=false;$('demoFillNote').hidden=true;go(1);$('name').focus()};
 
 /* ---- Start registration afresh (Step 1) every time the candidate comes back to the tab ---- */
-var DL_NOTE=$('dlNote').textContent;
 var SENDERS={mob:function(){sendOtp('mob',chkMob)},em:function(){sendOtp('em',chkEm)},aad:function(){sendOtp('aad',chkAad)}};
 function resetReg(){
   ['mob','em','aad'].forEach(function(k){
@@ -819,10 +776,6 @@ function resetReg(){
       var v=inp.parentNode.querySelector('.verified');if(v)v.replaceWith(sb);else inp.parentNode.appendChild(sb)}
     sb.textContent='Send OTP';sb.onclick=SENDERS[k];sb.disabled=(k==='aad')});
   $('aadCon').checked=false;$('aadConBox').hidden=false;
-  $('name').readOnly=false;$('dob').readOnly=false;
-  document.querySelectorAll('#panReg .fetched').forEach(function(e){e.remove()});
-  document.querySelectorAll('input[name=gender]').forEach(function(r){r.disabled=false});
-  viaDL=false;var b=$('dlBtn');b.classList.remove('done');b.disabled=false;$('dlTxt').textContent='Continue with DigiLocker';$('dlNote').textContent=DL_NOTE;
   $('decl').checked=false;$('dpdp').checked=false;$('review').innerHTML='';
   $('reg').hidden=false;$('steps').hidden=false;$('done').hidden=true;
   drawCap('cap');

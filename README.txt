@@ -7,14 +7,17 @@ index.html      Home page (advertisements, posts, How to Apply, services,
                 instructions, Hindi/English switch, help chatbot, compliance footer).
                 One "Login / Register" button opens candidate.html.
 candidate.html  Candidate Login & Registration on ONE page:
-                - "Continue with DigiLocker" button (logs in registered candidates,
-                  pre-fills registration for new candidates)
                 - Login tab: password login, or OTP login on the registered mobile
                   number OR Aadhaar number (UIDAI OTP), Forgot Password,
                   Forgot Registration ID, 5-attempt lockout
                 - New Registration tab: 4 steps (personal details, mobile/e-mail/
                   Aadhaar OTP, password + CAPTCHA, review & declaration)
                 Deep links: candidate.html#register, candidate.html#forgot
+staff.html      Staff & Committee Login (separate from candidates; no self-registration).
+                User ID + password + CAPTCHA, then OTP on the registered mobile.
+                Role is taken from the account: Super Admin, Recruitment Admin,
+                HOD, Director, Screening Officer, Interview Panel, Auditor.
+                Linked from "Staff Login" on the home page and the candidate page.
 campus.webp     Campus sketch used as the background of candidate.html
 register.html,  Old addresses kept only as redirects to candidate.html
 login.html      (#register / login tab), so old links and bookmarks still work.
@@ -33,17 +36,22 @@ OTP (all screens):            123456
 Test Aadhaar (register and Aadhaar OTP login): 2345 6789 0124
 Already-registered mobile:    9876543210
 Login:                        AGKP26123456 or 9123456789 / Demo@1234
+Staff login (staff.html), password Admin@1234, OTP 123456:
+  superadmin, recadmin, hod.cardio, director, screening01, panel01, auditor01
 Date of birth for reset:      15.08.1990
 In demo mode, New Registration opens with sample data already filled in
 (OTP and CAPTCHA are filled automatically too), so reviewers can click
 Save & Continue through all 4 steps. "Clear form" empties it.
-To switch the demo off, set  var DEMO=false  in candidate.html
+To switch the demo off, set  var DEMO=false  in candidate.html and staff.html
 (this also removes the dark "PROTOTYPE" note and the sample data).
 
 Before go-live (backend team)
 -----------------------------
 - Connect real SMS / e-mail OTP, UIDAI Aadhaar authentication, DigiLocker,
   PubMed and Google reCAPTCHA (replaces the built-in CAPTCHA).
+- Staff accounts must be created by the Super Admin on the server; remove the
+  dummy STAFF list from staff.html. Enforce role permissions on the server,
+  not only in the page.
 - Store passwords hashed on the server; enforce lockout and session timeout
   server-side.
 - Fill the placeholders shown in orange italics: helpdesk phone/e-mail,

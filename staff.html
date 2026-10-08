@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Staff Login | Recruitment Management System | AIIMS Gorakhpur</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0a2a5e;--navy-2:#13407f;--navy-l:#eaf0f8;--saffron:#f28c1b;--saffron-d:#c96a05;--green:#138808;--ok:#0e6b06;--err:#b3261e;
+  --ink:#1d2433;--muted:#4f5a6b;--line:#d5dce7;--bg:#f4f6f9;--fs:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:var(--fs)}
+body{font-family:'Noto Sans','Noto Sans Devanagari',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--navy-2)}a:hover{color:var(--saffron-d)}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+.sr-only{position:absolute;left:-9999px}
+.skip{position:absolute;left:-9999px;background:var(--saffron);color:#fff;padding:8px 14px;z-index:99}.skip:focus{left:8px;top:0}
+.hi{font-family:'Noto Sans Devanagari',sans-serif}
+[hidden]{display:none!important}
+
+/* top strip */
+.gov{background:#1c1c1c;color:#e5e5e5;font-size:.8rem}
+.gov .in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:5px 20px}
+.gov a,.gov button{color:#e5e5e5;text-decoration:none;background:none;border:0;font:inherit;cursor:pointer;padding:2px 8px}
+.gov a:hover{color:#ffb35c}
+.gov .fs button{border:1px solid #666;padding:0 7px;margin-left:3px;border-radius:2px}
+.tri{height:4px;background:linear-gradient(90deg,#ff9933 0 33.3%,#fff 33.3% 66.6%,#138808 66.6%)}
+
+/* split layout */
+.split{flex:1;display:grid;grid-template-columns:minmax(340px,40%) 1fr}
+/* To use a real campus photo: save it next to this file (e.g. campus.jpg) and set --photo:url('campus.jpg') below.
+   The navy overlay keeps the text readable on top of any photo. */
+.side-l{--photo:none}
+.side-l{min-height:100%;position:relative;overflow-x:hidden;background:linear-gradient(160deg,#0a2a5ef2 0%,#13407fe6 60%,#1b4f9ed9 100%),var(--photo) center/cover no-repeat,#0a2a5e;color:#fff;padding:30px 40px 24px;display:flex;flex-direction:column}
+.side-l::before,.side-l::after{content:"";position:absolute;border-radius:50%;border:50px solid #ffffff0b;pointer-events:none}
+.side-l::before{width:420px;height:420px;right:-170px;top:-120px}
+.side-l::after{width:320px;height:320px;left:-150px;bottom:-110px;border-color:#f28c1b14}
+.side-l>*{position:relative;z-index:1}
+.side-l>.campus{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:132%;aspect-ratio:1300/683;pointer-events:none;z-index:0;opacity:.5;background:url("campus.webp") center bottom/contain no-repeat;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 22%);mask-image:linear-gradient(to bottom,transparent 0%,#000 22%)}
+.side-l::after{z-index:0}
+.side-l .foot,.help-box{text-shadow:0 1px 2px #0a2a5e}
+
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
+.brand:hover{color:#fff}
+.brand img{width:62px;height:62px;object-fit:contain;background:#fff;border-radius:50%;padding:3px;flex:none}
+.brand .b-hi{font-weight:700;font-size:.95rem;line-height:1.3}
+.brand .b-en{font-weight:700;font-size:.95rem;line-height:1.3;letter-spacing:.2px}
+.brand .b-sub{font-size:.72rem;color:#c8d5ec}
+.back{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:.82rem;color:#ffd7a8;text-decoration:none;font-weight:600}
+.back:hover{color:#fff}
+.pitch{margin:36px 0 auto;padding:0 0 24px}
+.pitch .eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#ffb35c;margin-bottom:10px}
+.pitch h1{font-size:1.75rem;line-height:1.3;font-weight:400}
+.pitch h1 b{font-weight:700;color:#fff}
+.pitch .posts{font-size:.85rem;color:#c8d5ec;margin-top:8px}
+.why{margin-top:26px}
+.why h2{font-size:.95rem;margin-bottom:10px}
+.why ul{list-style:none}
+.why li{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:#dbe4f3;margin-bottom:10px}
+.why li svg{width:18px;height:18px;flex:none;margin-top:2px;color:#fff}
+.help-box{margin-top:auto;background:#0a2a5ecc;backdrop-filter:blur(2px);border:1px solid #ffffff24;border-radius:8px;padding:12px 14px;font-size:.8rem;color:#dbe4f3}
+.help-box b{color:#fff}
+.side-l .foot{margin-top:18px;font-size:.7rem;color:#aebbd3;line-height:1.7}
+.side-l .foot a{color:#c8d5ec;text-decoration:none;margin-right:10px}
+.side-l .foot a:hover{color:#ffb35c}
+
+.side-r{background:#fff;padding:34px 24px 40px;display:flex;justify-content:center}
+.auth{width:100%;max-width:660px}
+.auth h2.t{font-size:1.5rem;color:var(--navy);text-align:center}
+.auth .t-sub{text-align:center;color:var(--muted);font-size:.88rem;margin-top:2px;margin-bottom:22px}
+
+
+/* main tabs */
+.mtabs{display:flex;border:1px solid var(--line);border-radius:8px;padding:4px;background:#f4f6f9;gap:4px}
+.mtabs button{flex:1;border:0;background:none;border-radius:6px;padding:10px;font:inherit;font-size:.92rem;font-weight:700;color:var(--muted);cursor:pointer}
+.mtabs button[aria-selected="true"]{background:#fff;color:var(--navy);box-shadow:0 1px 4px #0a2a5e26}
+.tabpanel{margin-top:18px}
+
+/* login method segmented */
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:3px;margin-bottom:16px}
+.seg button{border:0;background:none;border-radius:99px;padding:5px 14px;font:inherit;font-size:.8rem;font-weight:600;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+
+.otp-via{display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center;font-size:.86rem;margin-bottom:14px}
+.otp-via>span{font-weight:600;color:var(--ink)}
+.otp-via label{display:flex;gap:6px;align-items:center;cursor:pointer}
+/* boxes */
+.box{border:1px solid var(--line);border-radius:6px;background:#fff}
+.box-h{background:var(--navy);color:#fff;padding:10px 16px;font-weight:700;font-size:.95rem;border-radius:6px 6px 0 0}
+.pb{padding:18px}
+
+/* stepper */
+.steps{display:flex;list-style:none;border-bottom:1px solid var(--line);background:#f8fafc;counter-reset:s;border-radius:6px 6px 0 0}
+.steps li{flex:1;padding:10px 6px;text-align:center;font-size:.76rem;font-weight:600;color:var(--muted);border-bottom:3px solid transparent}
+.steps li::before{counter-increment:s;content:counter(s);display:block;margin:0 auto 4px;width:24px;height:24px;line-height:24px;border-radius:50%;background:#dfe5ee;color:var(--muted);font-weight:700}
+.steps li.cur{color:var(--navy);border-bottom-color:var(--saffron)}
+.steps li.cur::before{background:var(--navy);color:#fff}
+.steps li.done{color:var(--ok)}
+.steps li.done::before{content:"✓";background:var(--ok);color:#fff}
+
+/* form */
+fieldset{border:0}
+legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
+.legend-note{font-size:.8rem;color:var(--muted);margin-bottom:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
+.full{grid-column:1/-1}
+.f label,.f .lbl{display:block;font-size:.84rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.req{color:var(--err)}
+.f input[type=text],.f input[type=email],.f input[type=tel],.f input[type=date],.f input[type=password],.f input[type=number],.f select{width:100%;border:1px solid #b9c3d3;border-radius:4px;padding:9px 10px;font:inherit;font-size:.92rem;background:#fff}
+.f input:focus,.f select:focus{border-color:var(--navy-2);outline:2px solid #13407f33}
+.f input[readonly]{background:#f2f4f7}
+.f.bad input,.f.bad select{border-color:var(--err);background:#fff8f7}
+.hint{font-size:.75rem;color:var(--muted);margin-top:3px}
+.msg{font-size:.78rem;margin-top:3px}
+.f.bad .msg{color:var(--err)}
+.f.good .msg{color:var(--ok)}
+.radios{display:flex;gap:16px;flex-wrap:wrap;padding-top:4px}
+.radios label{font-weight:400;display:flex;gap:6px;align-items:center;margin:0;font-size:.9rem}
+.inline{display:flex;gap:8px}
+.inline input{flex:1;min-width:0}
+.btn{display:inline-block;border:1px solid transparent;border-radius:4px;padding:9px 16px;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn-p{background:var(--navy);color:#fff}.btn-p:hover:not(:disabled){background:var(--navy-2);color:#fff}
+.btn-s{background:#c96a05;color:#fff}.btn-s:hover:not(:disabled){background:#a85700;color:#fff}
+.btn-o{background:#fff;color:var(--navy);border-color:var(--navy)}.btn-o:hover:not(:disabled){background:var(--navy-l)}
+.btn-g{background:var(--ok);color:#fff}
+.btn-block{width:100%;padding:11px;margin-top:18px}
+.verified{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:700;font-size:.85rem;padding:9px 4px;white-space:nowrap}
+.otp-box{margin-top:8px;padding:10px;border:1px dashed #b9c3d3;border-radius:4px;background:#fafbfd;display:none}
+.otp-box.show{display:block}
+.timer{font-size:.78rem;color:var(--muted);margin-top:4px}
+.linkbtn{background:none;border:0;color:var(--navy-2);text-decoration:underline;font:inherit;font-size:.8rem;cursor:pointer;padding:0}
+.linkbtn:disabled{color:#999;text-decoration:none;cursor:default}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.84rem;font-weight:400!important;background:#fffaf2;border:1px solid #f3d9b8;border-radius:4px;padding:10px 12px}
+.consent input{margin-top:4px;flex:none;width:16px;height:16px}
+.sec{border-top:1px solid var(--line);margin-top:20px;padding-top:18px}
+.actions{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}
+.alert{border-radius:4px;padding:10px 12px;font-size:.85rem;margin-bottom:14px}
+.alert-e{background:#fdecea;border:1px solid #f3c2bd;color:#6d1a14}
+.alert-i{background:var(--navy-l);border:1px solid #c9d6ea;color:#123}
+.alert-w{background:#fff6e5;border:1px solid #f3d9a4;color:#5c3b00}
+.meter{height:6px;background:#e3e7ee;border-radius:3px;margin-top:6px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;transition:.2s}
+.rules{list-style:none;font-size:.76rem;margin-top:6px;display:grid;grid-template-columns:1fr 1fr;gap:2px 10px}
+.rules li{color:var(--muted)}
+.rules li::before{content:"○ "}
+.rules li.ok{color:var(--ok)}.rules li.ok::before{content:"✓ "}
+.pw-wrap{position:relative}
+.pw-wrap button{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--navy-2);font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px}
+.cap{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cap canvas{border:1px solid var(--line);border-radius:4px;background:#f3f5f9}
+.cap button{background:#fff;border:1px solid var(--line);border-radius:4px;width:38px;height:38px;cursor:pointer;font-size:1.1rem}
+.cap input{max-width:160px}
+.rev{width:100%;border-collapse:collapse;font-size:.86rem}
+.rev th,.rev td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+.rev th{background:var(--navy-l);color:var(--navy);width:42%;font-weight:600}
+.rev caption{text-align:left;font-weight:700;color:var(--navy);padding:12px 0 6px}
+.edit{float:right;font-size:.78rem;font-weight:600}
+.decl{font-size:.86rem;background:#fafbfd;border:1px solid var(--line);padding:12px;border-radius:4px;margin-top:16px}
+.success{text-align:center;padding:26px 18px}
+.tick{width:64px;height:64px;border-radius:50%;background:var(--ok);color:#fff;font-size:2rem;display:grid;place-items:center;margin:0 auto 12px}
+.regid{display:inline-block;font-family:monospace;font-size:1.2rem;font-weight:700;letter-spacing:1px;background:var(--navy-l);color:var(--navy);border:1px dashed var(--navy-2);padding:8px 18px;border-radius:4px;margin:10px 0}
+.small-links{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:.82rem}
+.switch{text-align:center;font-size:.86rem;margin-top:16px}
+.secure{display:flex;gap:8px;align-items:flex-start;font-size:.75rem;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-top:20px}
+.secure svg{width:16px;height:16px;flex:none;color:var(--navy-2);margin-top:1px}
+
+.demo{position:fixed;right:12px;bottom:12px;z-index:50;background:#1d2433;color:#fff;font-size:.74rem;padding:8px 12px;border-radius:4px;max-width:340px;box-shadow:0 4px 14px #0004;line-height:1.5}
+.demo b{color:#ffb35c}
+.demo button{background:none;border:0;color:#ffb35c;cursor:pointer;float:right;font-size:.9rem;margin-left:8px}
+
+
+/* Desktop: whole page fits the screen; only the right (form) side scrolls */
+@media (min-width:901px){
+  html,body{height:100%}
+  body{overflow:hidden}
+  .split{min-height:0}
+  .side-l{height:100%;overflow-y:auto;scrollbar-width:none}
+  .side-l::-webkit-scrollbar{display:none}
+  .side-r{height:100%;overflow-y:auto;scroll-behavior:smooth;overscroll-behavior:contain}
+  .pitch{margin-top:28px}
+}
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .side-l{padding:20px 18px}
+  .pitch{padding:18px 0 4px}
+  .pitch h1{font-size:1.25rem}
+  .why,.help-box,.side-l .foot{display:none}
+  .side-l>.campus{width:100%;opacity:.28}
+}
+@media (max-width:600px){
+  .row{grid-template-columns:1fr}
+  .rules{grid-template-columns:1fr}
+  .steps li{font-size:0;padding:8px 4px}.steps li::before{font-size:.78rem}
+  .gov .l{display:none}
+  .side-r{padding:22px 16px 32px}
+  .auth h2.t{font-size:1.25rem}
+  .brand img{width:48px;height:48px}
+}
+
+/* ---- Staff page additions ---- */
+.side-l.staff{background:linear-gradient(160deg,#061a3df2 0%,#0b2a5ae6 60%,#123c80d9 100%),var(--photo) center/cover no-repeat,#061a3d}
+.roles-l li{display:block;padding-left:14px;position:relative;margin-bottom:8px}
+.roles-l li::before{content:"›";position:absolute;left:0;top:0;color:#ffb35c;font-weight:700}
+.roles-l li b{display:block;color:#fff;font-size:.86rem}
+.roles-l li span{display:block;font-size:.78rem;color:#c8d5ec}
+.warn{display:flex;gap:10px;align-items:flex-start;background:#fff6e5;border:1px solid #f3d9a4;border-left:4px solid #c96a05;border-radius:6px;padding:10px 12px;font-size:.8rem;color:#5c3b00;margin-bottom:18px}
+.warn svg{width:18px;height:18px;flex:none;margin-top:1px;color:#c96a05}
+.who{display:flex;gap:12px;align-items:center}
+.avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0a2a5e,#3f6fb5);color:#fff;font-weight:700;display:grid;place-items:center;flex:none}
+.who b{display:block;color:var(--navy);font-size:1rem}
+.who span{display:block;font-size:.82rem;color:var(--muted)}
+.access{list-style:none;font-size:.86rem}
+.access li{padding:7px 0 7px 22px;border-bottom:1px dashed var(--line);position:relative}
+.access li::before{content:"✓";position:absolute;left:2px;color:var(--ok);font-weight:700}
+.creds{border-collapse:collapse;margin:6px 0 4px;font-size:.72rem}
+.creds td{padding:1px 10px 1px 0;color:#dbe4f3}
+.demo .fill{color:#ffb35c;font-size:.74rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="gov"><div class="in">
+  <div class="l">🇮🇳 Government of India | <span class="hi">भारत सरकार</span></div>
+  <div class="r"><a href="#main">Skip to Main Content</a>
+    <span class="fs" role="group" aria-label="Text size"><button type="button" onclick="setFs(-1)" aria-label="Decrease text size">A-</button><button type="button" onclick="setFs(0)" aria-label="Normal text size">A</button><button type="button" onclick="setFs(1)" aria-label="Increase text size">A+</button></span>
+  </div>
+</div></div>
+<div class="tri"></div>
+
+<div class="split">
+  <!-- LEFT: branding -->
+  <aside class="side-l staff" aria-label="About the Staff Portal">
+    <div class="campus" role="img" aria-label="Sketch of the AIIMS Gorakhpur campus"></div>
+    <a href="index.html" class="brand" aria-label="AIIMS Gorakhpur Recruitment Portal – Home">
+      <img src="https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/01/Logo-300x300.png" alt="AIIMS Gorakhpur logo" onerror="this.style.visibility='hidden'">
+      <div>
+        <div class="b-hi hi" lang="hi">अखिल भारतीय आयुर्विज्ञान संस्थान, गोरखपुर</div>
+        <div class="b-en">ALL INDIA INSTITUTE OF MEDICAL SCIENCES, GORAKHPUR</div>
+        <div class="b-sub">An autonomous organization under the Ministry of Health &amp; Family Welfare, Govt. of India</div>
+      </div>
+    </a>
+    <a href="index.html" class="back">← Back to Home</a>
+
+    <div class="pitch">
+      <span class="eyebrow">Recruitment Management System · <span class="hi" lang="hi">कर्मचारी पोर्टल</span></span>
+      <h1>Staff &amp; Committee<br><b>Login</b></h1>
+      <p class="posts">For authorised AIIMS Gorakhpur officials only</p>
+
+      <div class="why">
+        <h2>Who can log in</h2>
+        <ul class="roles-l">
+          <li><b>Super Admin</b><span>System settings, user accounts and roles</span></li>
+          <li><b>Recruitment Admin</b><span>Recruitments, eligibility rules and roster</span></li>
+          <li><b>HOD / Director</b><span>Approval of recruitments and results</span></li>
+          <li><b>Screening Officer</b><span>Flagged applications and document verification</span></li>
+          <li><b>Interview Panel</b><span>Evaluation of candidates in assigned slots</span></li>
+          <li><b>Auditor</b><span>Audit logs, compliance and RTI reports</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="help-box"><b>Account or access issue?</b><br>Staff accounts are created and reset only by the System Administrator (IT Cell). Contact the IT Cell with your Employee ID.</div>
+    <div class="foot">
+      <a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Accessibility Statement</a><a href="#">Help</a><br>
+      Content owned, maintained and updated by AIIMS Gorakhpur. © 2026 All rights reserved.
+    </div>
+  </aside>
+
+  <!-- RIGHT: staff login -->
+  <main class="side-r" id="main" tabindex="-1">
+    <div class="auth">
+      <h2 class="t">Staff Login</h2>
+      <p class="t-sub"><span class="hi" lang="hi">कर्मचारी एवं समिति लॉगिन</span></p>
+
+      <div class="warn" role="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.5 2.9v5.6c0 4.6-3.2 8.6-7.5 9.9-4.3-1.3-7.5-5.3-7.5-9.9V5.7z"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span><b>Restricted access.</b> This system is for authorised officials only. All activity is logged and monitored. Unauthorised access is an offence under the Information Technology Act, 2000.</span></div>
+
+      <!-- Step 1: credentials -->
+      <div class="box" id="s1">
+        <div class="box-h">Step 1 of 2 · Sign in</div>
+        <form class="pb" id="fLogin" novalidate>
+          <div class="alert alert-e" id="err" role="alert" hidden></div>
+          <div class="row">
+            <div class="f full"><label for="uid">User ID / Employee ID <span class="req">*</span></label>
+              <input type="text" id="uid" maxlength="40" autocomplete="username" spellcheck="false"><div class="msg"></div></div>
+            <div class="f full"><label for="pw">Password <span class="req">*</span></label>
+              <div class="pw-wrap"><input type="password" id="pw" maxlength="32" autocomplete="current-password"><button type="button" data-show="pw">Show</button></div>
+              <div class="msg"></div>
+              <div class="small-links"><a href="#" id="forgotLink">Forgot Password?</a></div></div>
+            <div class="f full"><label for="capIn">Enter the characters shown <span class="req">*</span></label>
+              <div class="cap"><canvas id="capC" width="160" height="42" role="img" aria-label="CAPTCHA image"></canvas><button type="button" id="capR" aria-label="Refresh CAPTCHA" title="Refresh CAPTCHA">↻</button><input type="text" id="capIn" maxlength="6" autocomplete="off"></div>
+              <div class="hint">Not case-sensitive.</div><div class="msg"></div></div>
+          </div>
+          <button type="submit" class="btn btn-p btn-block">Continue »</button>
+          <p class="hint" id="attempts" style="text-align:center;margin-top:8px"></p>
+          <div class="alert alert-i" id="forgotMsg" hidden style="margin-top:14px;margin-bottom:0">Staff passwords are reset only by the <b>System Administrator (IT Cell)</b> after identity verification. Please contact the IT Cell with your Employee ID.</div>
+        </form>
+      </div>
+
+      <!-- Step 2: OTP (two-factor) -->
+      <div class="box" id="s2" hidden>
+        <div class="box-h">Step 2 of 2 · Verify OTP</div>
+        <form class="pb" id="fOtp" novalidate>
+          <div class="alert alert-i" id="otpInfo"></div>
+          <div class="alert alert-e" id="err2" role="alert" hidden></div>
+          <div class="f"><label for="otp">6-digit OTP <span class="req">*</span></label>
+            <input type="text" id="otp" maxlength="6" inputmode="numeric" autocomplete="one-time-code" style="max-width:220px">
+            <div class="timer"><span id="oT"></span> <button type="button" class="linkbtn" id="oRe" disabled>Resend OTP</button></div><div class="msg"></div></div>
+          <div class="actions"><button type="button" class="btn btn-o" id="backBtn">« Back</button><button type="submit" class="btn btn-p">Verify &amp; Login</button></div>
+        </form>
+      </div>
+
+      <!-- Logged in (prototype) -->
+      <div class="box" id="s3" hidden tabindex="-1">
+        <div class="box-h">Welcome / <span class="hi" lang="hi">स्वागत है</span></div>
+        <div class="pb">
+          <div class="who">
+            <div class="avatar" id="avatar"></div>
+            <div><b id="wName"></b><span id="wRole"></span><span class="hint" id="wLast"></span></div>
+          </div>
+          <p style="font-size:.84rem;color:var(--muted);margin:14px 0 8px">The <b id="wRole2"></b> dashboard will open here. Access for this role:</p>
+          <ul class="access" id="wAccess"></ul>
+          <div class="actions"><span class="hint">Session ends after 15 minutes of inactivity.</span><button type="button" class="btn btn-o" id="logout">Logout</button></div>
+        </div>
+      </div>
+
+      <p class="switch">Are you a candidate? <a href="candidate.html"><b>Go to Candidate Login</b></a></p>
+    </div>
+  </main>
+</div>
+
+<div class="demo" id="demo" role="note"><button type="button" onclick="this.parentNode.remove()" aria-label="Close demo note">✕</button>
+  <b>PROTOTYPE – dummy staff accounts</b> (password <b>Admin@1234</b>, OTP <b>123456</b>):
+  <table class="creds">
+    <tr><td><b>superadmin</b></td><td>Super Admin</td></tr>
+    <tr><td><b>recadmin</b></td><td>Recruitment Admin</td></tr>
+    <tr><td><b>hod.cardio</b></td><td>HOD (Cardiology)</td></tr>
+    <tr><td><b>director</b></td><td>Director</td></tr>
+    <tr><td><b>screening01</b></td><td>Screening Officer</td></tr>
+    <tr><td><b>panel01</b></td><td>Interview Panel</td></tr>
+    <tr><td><b>auditor01</b></td><td>Auditor</td></tr>
+  </table>
+  <button type="button" class="linkbtn fill" id="demoFill">Fill Super Admin</button>
+</div>
+
+<script>
+var DEMO=true, DEMO_OTP='123456', DEMO_PW='Admin@1234', MAX_TRIES=5, LOCK_MIN=30;
+/* PROTOTYPE ONLY: dummy staff accounts. In production, accounts live on the server (created by Super Admin),
+   passwords are stored hashed, OTP is sent by SMS gateway, and every login/attempt is written to the audit log. */
+var STAFF={
+  'superadmin': {name:'Dr. A. K. Verma',     role:'Super Admin',        mob:'9000000001',access:['User accounts, roles and permissions','System configuration and master data','All recruitments, reports and audit logs']},
+  'recadmin':   {name:'Shri R. S. Mishra',   role:'Recruitment Admin',  mob:'9000000002',access:['Create recruitments and vacancies','Eligibility rules and 200-point roster','Advertisements, corrigenda and publishing','Shortlisting, interview scheduling and results']},
+  'hod.cardio': {name:'Dr. P. Srivastava',   role:'HOD (Cardiology)',   mob:'9000000003',access:['Approve or return recruitments of the department (with remarks)','View applications and merit lists of the department']},
+  'director':   {name:'Prof. (Dr.) S. Gupta',role:'Director',           mob:'9000000004',access:['Final approval of recruitments','Approval of selection lists and results','All reports (read-only)']},
+  'screening01':{name:'Smt. N. Yadav',       role:'Screening Officer',  mob:'9000000005',access:['Review applications flagged by automated screening','Document verification (Verified / Rejected / Conditional)']},
+  'panel01':    {name:'Dr. M. Tiwari',       role:'Interview Panel',    mob:'9000000006',access:['View candidates in assigned interview slots','Enter interview marks (locked after submission)']},
+  'auditor01':  {name:'Shri K. Pandey',      role:'Auditor',            mob:'9000000007',access:['Audit logs of all actions and overrides','Roster register and compliance reports','RTI justification reports (read-only)']}
+};
+function setFs(d){var c=parseFloat(getComputedStyle(document.documentElement).fontSize);document.documentElement.style.setProperty('--fs',(d===0?16:Math.min(20,Math.max(13,c+d)))+'px');}
+var $=function(id){return document.getElementById(id)};
+function setMsg(el,ok,text){var f=el.closest('.f');f.classList.toggle('bad',!ok);f.classList.toggle('good',ok&&!!text);var m=f.querySelector('.msg');if(m)m.textContent=text||'';el.setAttribute('aria-invalid',ok?'false':'true');return ok}
+function showErr(id,t){var e=$(id);e.className='alert alert-e';if(!t){e.hidden=true;return}e.textContent=t;e.hidden=false}
+document.querySelectorAll('[data-show]').forEach(function(b){b.onclick=function(){var i=$(b.dataset.show),s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Hide':'Show'}});
+
+/* captcha */
+var CAP='';
+function drawCap(){var ch='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',c=$('capC'),t='';for(var i=0;i<6;i++)t+=ch[Math.floor(Math.random()*ch.length)];CAP=t;
+  try{var x=c.getContext('2d');x.fillStyle='#eef1f6';x.fillRect(0,0,160,42);
+    for(i=0;i<5;i++){x.strokeStyle='rgba(19,64,127,'+(0.15+Math.random()*0.25)+')';x.beginPath();x.moveTo(Math.random()*160,Math.random()*42);x.lineTo(Math.random()*160,Math.random()*42);x.stroke()}
+    x.font='bold 24px monospace';x.textBaseline='middle';for(i=0;i<6;i++){x.save();x.translate(14+i*24,22);x.rotate((Math.random()-.5)*.5);x.fillStyle=['#0a2a5e','#7a3e00','#13407f','#3b3b3b'][i%4];x.fillText(t[i],-8,0);x.restore()}}catch(e){}
+  $('capIn').value=''}
+drawCap();$('capR').onclick=drawCap;
+
+/* step 1: user ID + password + captcha */
+var tries=0,lockUntil=0,user=null,timer;
+$('forgotLink').onclick=function(e){e.preventDefault();$('forgotMsg').hidden=false};
+$('fLogin').onsubmit=function(e){e.preventDefault();showErr('err');
+  if(Date.now()<lockUntil){showErr('err','This account is locked after too many failed attempts. Try again after '+Math.ceil((lockUntil-Date.now())/60000)+' minutes or contact the IT Cell.');return}
+  var ok=true,u=$('uid').value.trim().toLowerCase(),p=$('pw').value;
+  if(!u){setMsg($('uid'),false,'Enter your User ID / Employee ID.');ok=false}else setMsg($('uid'),true,'');
+  if(!p){setMsg($('pw'),false,'Enter your password.');ok=false}else setMsg($('pw'),true,'');
+  if($('capIn').value.trim().toUpperCase()!==CAP){setMsg($('capIn'),false,'Characters do not match. Please try again.');ok=false}else setMsg($('capIn'),true,'');
+  if(!ok){drawCap();return}
+  if(STAFF[u]&&p===DEMO_PW){tries=0;user=u;toOtp();return}
+  tries++;drawCap();$('pw').value='';
+  if(tries>=MAX_TRIES){lockUntil=Date.now()+LOCK_MIN*60000;$('attempts').textContent='';showErr('err','Account locked for '+LOCK_MIN+' minutes after '+MAX_TRIES+' failed attempts. The System Administrator has been alerted.');return}
+  showErr('err','Invalid User ID or password.');$('attempts').textContent=(MAX_TRIES-tries)+' attempt(s) left before the account is locked.'};
+
+/* step 2: OTP on registered mobile */
+function startTimer(){var s=30;$('oRe').disabled=true;clearInterval(timer);$('oT').textContent='Resend in '+s+'s';
+  timer=setInterval(function(){s--;if(s<=0){clearInterval(timer);$('oT').textContent='';$('oRe').disabled=false}else $('oT').textContent='Resend in '+s+'s'},1000)}
+function toOtp(){var a=STAFF[user];$('s1').hidden=true;$('s2').hidden=false;showErr('err2');
+  $('otpInfo').textContent='An OTP has been sent to the mobile number registered with your staff account (XXXXXX'+a.mob.slice(-4)+').';
+  $('otp').value='';$('otp').focus();startTimer()}
+$('otp').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'')});
+$('oRe').onclick=function(){$('otpInfo').textContent='A new OTP has been sent to XXXXXX'+STAFF[user].mob.slice(-4)+'.';startTimer()};
+$('backBtn').onclick=function(){clearInterval(timer);$('s2').hidden=true;$('s1').hidden=false;$('pw').value='';drawCap()};
+$('fOtp').onsubmit=function(e){e.preventDefault();var o=$('otp').value;
+  if(!/^\d{6}$/.test(o)){setMsg($('otp'),false,'Enter the 6-digit OTP.');return}
+  if(DEMO&&o!==DEMO_OTP){setMsg($('otp'),false,'Incorrect OTP. Please try again.');return}
+  clearInterval(timer);loggedIn()};
+
+/* logged in */
+function loggedIn(){var a=STAFF[user];$('s2').hidden=true;$('s3').hidden=false;
+  $('avatar').textContent=a.name.replace(/^(Dr\.|Shri|Smt\.|Prof\.)\s*(\(Dr\.\)\s*)?/,'').split(' ').map(function(w){return w[0]}).join('').slice(0,2);
+  $('wName').textContent=a.name;$('wRole').textContent=a.role+' · '+user;$('wRole2').textContent=a.role;
+  $('wLast').textContent='Last login: '+new Date(Date.now()-86400000).toLocaleString('en-IN');
+  $('wAccess').innerHTML=a.access.map(function(x){return'<li>'+x+'</li>'}).join('');$('s3').focus()}
+$('logout').onclick=function(){user=null;$('s3').hidden=true;$('s1').hidden=false;$('uid').value='';$('pw').value='';drawCap();$('forgotMsg').hidden=true;
+  var e=$('err');e.className='alert alert-i';e.textContent='You have been logged out successfully.';e.hidden=false};
+
+if(DEMO){$('demoFill').onclick=function(){$('s3').hidden=true;$('s2').hidden=true;$('s1').hidden=false;$('uid').value='superadmin';$('pw').value=DEMO_PW;$('capIn').value=CAP}}
+else $('demo').remove();
+</script>
+</body>
+</html>
