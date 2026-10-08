@@ -123,8 +123,12 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .btn-p{background:var(--navy);color:#fff}.btn-p:hover:not(:disabled){background:var(--navy-2);color:#fff}
 .btn-s{background:#c96a05;color:#fff}.btn-s:hover:not(:disabled){background:#a85700;color:#fff}
 .btn-o{background:#fff;color:var(--navy);border-color:var(--navy)}.btn-o:hover:not(:disabled){background:var(--navy-l)}
+.btn-logout{background:#b3261e;color:#fff;border-color:#b3261e}.btn-logout:hover:not(:disabled){background:#8f1d18;color:#fff;border-color:#8f1d18}
 .btn-g{background:var(--ok);color:#fff}
 .btn-block{width:100%;padding:11px;margin-top:18px}
+.sample-fill{border:1px solid var(--navy-2);border-radius:3px;background:#fff;color:var(--navy);padding:7px 11px;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
+.sample-fill:hover{background:var(--navy-l)}
+.sample-fill-row{display:flex;justify-content:flex-end;margin:0 0 12px}
 .verified{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:700;font-size:.85rem;padding:9px 4px;white-space:nowrap}
 .otp-box{margin-top:8px;padding:10px;border:1px dashed #b9c3d3;border-radius:4px;background:#fafbfd;display:none}
 .otp-box.show{display:block}
@@ -160,14 +164,39 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .success{text-align:center;padding:26px 18px}
 .tick{width:64px;height:64px;border-radius:50%;background:var(--ok);color:#fff;font-size:2rem;display:grid;place-items:center;margin:0 auto 12px}
 .regid{display:inline-block;font-family:monospace;font-size:1.2rem;font-weight:700;letter-spacing:1px;background:var(--navy-l);color:var(--navy);border:1px dashed var(--navy-2);padding:8px 18px;border-radius:4px;margin:10px 0}
+.profile-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.profile-head h3{color:var(--navy);font-size:1.25rem}
+.profile-head p{color:var(--muted);font-size:.84rem;margin-top:3px}
+.auth.profile-mode{max-width:900px}
+.profile-status.is-error{color:var(--err)}
+.profile-id{font-size:.78rem;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:4px;padding:6px 10px}
+.profile-progress{padding:14px 16px;background:var(--navy-l);border:1px solid #c9d6ea;border-radius:6px;margin-bottom:18px}
+.profile-progress-top{display:flex;justify-content:space-between;gap:12px;font-size:.83rem;font-weight:600;color:var(--navy)}
+.profile-progress-track{height:8px;background:#d5dce7;border-radius:8px;overflow:hidden;margin-top:8px}
+.profile-progress-track i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+.profile-tabs{display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid var(--line);margin-bottom:16px}
+.profile-tabs button{flex:none;background:none;border:0;border-bottom:3px solid transparent;padding:10px 12px;color:var(--muted);font:inherit;font-size:.84rem;font-weight:600;cursor:pointer}
+.profile-tabs button[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--saffron)}
+.profile-panel h4{color:var(--navy);font-size:1rem;margin-bottom:4px}
+.profile-panel>.legend-note{margin-bottom:14px}
+.profile-panel .row{gap:12px 16px}
+.profile-summary{min-height:105px;width:100%;resize:vertical;border:1px solid #b9c3d3;border-radius:4px;padding:9px 10px;font:inherit;font-size:.9rem}
+.profile-summary:focus,.profile-panel input:focus,.profile-panel select:focus{border-color:var(--navy-2);outline:2px solid #13407f33}
+.profile-panel input[type=text],.profile-panel input[type=email],.profile-panel input[type=tel],.profile-panel input[type=number],.profile-panel input[type=file],.profile-panel select{width:100%;border:1px solid #b9c3d3;border-radius:4px;padding:9px 10px;font:inherit;font-size:.9rem;background:#fff}
+.profile-panel input[type=file]{padding:7px}
+.profile-label{display:block;font-size:.84rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.profile-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:18px}
+.profile-status{font-size:.8rem;color:var(--ok);min-height:1.2em}
+.profile-panel .profile-info{font-size:.78rem;color:var(--muted);padding:10px 12px;background:#f8fafc;border:1px solid var(--line);border-radius:4px;margin-top:12px}
+.profile-logout{margin-left:auto}
 .small-links{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-top:6px;font-size:.82rem}
 .switch{text-align:center;font-size:.86rem;margin-top:16px}
 .secure{display:flex;gap:8px;align-items:flex-start;font-size:.75rem;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-top:20px}
 .secure svg{width:16px;height:16px;flex:none;color:var(--navy-2);margin-top:1px}
 
-.demo{position:fixed;right:12px;bottom:12px;z-index:50;background:#1d2433;color:#fff;font-size:.74rem;padding:8px 12px;border-radius:4px;max-width:340px;box-shadow:0 4px 14px #0004;line-height:1.5}
+.demo{position:fixed;right:12px;bottom:12px;z-index:50;background:#1d2433;color:#fff;font-size:.74rem;padding:8px 12px;border-radius:4px;max-width:340px;box-shadow:0 4px 14px #0004;line-height:1.5;pointer-events:none}
 .demo b{color:#ffb35c}
-.demo button{background:none;border:0;color:#ffb35c;cursor:pointer;float:right;font-size:.9rem;margin-left:8px}
+.demo button{background:none;border:0;color:#ffb35c;cursor:pointer;float:right;font-size:.9rem;margin-left:8px;pointer-events:auto}
 
 
 /* Desktop: whole page fits the screen; only the right (form) side scrolls */
@@ -249,11 +278,11 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
   <!-- RIGHT: login / register -->
   <main class="side-r" id="main" tabindex="-1">
     <div class="auth">
-      <h2 class="t">Candidate Login &amp; Registration</h2>
-      <p class="t-sub"><span class="hi" lang="hi">अभ्यर्थी लॉगिन एवं पंजीकरण</span></p>
+      <h2 class="t" id="authTitle">Candidate Login &amp; Registration</h2>
+      <p class="t-sub" id="authSubtitle"><span class="hi" lang="hi">अभ्यर्थी लॉगिन एवं पंजीकरण</span></p>
 
 
-      <div class="mtabs" role="tablist" aria-label="Login or register">
+      <div class="mtabs" id="authTabs" role="tablist" aria-label="Login or register">
         <button role="tab" id="tabLogin" aria-selected="true" aria-controls="panLogin">Login / <span class="hi" lang="hi">लॉगिन</span></button>
         <button role="tab" id="tabReg" aria-selected="false" aria-controls="panReg" tabindex="-1">New Registration / <span class="hi" lang="hi">नया पंजीकरण</span></button>
       </div>
@@ -268,6 +297,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
           <div class="alert alert-e" id="lerr" role="alert" hidden></div>
 
           <form id="pPw" novalidate>
+            <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillCandidateLogin">Fill demo login</button></div>
             <div class="row">
               <div class="f full"><label for="uid">Registration ID / Mobile Number / E-mail ID <span class="req">*</span></label>
                 <input type="text" id="uid" maxlength="100" autocomplete="username"><div class="msg"></div></div>
@@ -284,6 +314,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
           </form>
 
           <form id="pOtp" novalidate hidden>
+            <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillCandidateOtp">Fill &amp; send demo mobile OTP</button></div>
             <div class="otp-via" role="radiogroup" aria-label="Get OTP on">
               <span>Get OTP on:</span>
               <label><input type="radio" name="via" value="mob" checked> Registered Mobile Number</label>
@@ -319,6 +350,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
             <div class="alert alert-e" id="fErr" role="alert" hidden></div>
             <div id="f1">
               <p class="legend-note">Enter your Registration ID (or registered mobile / e-mail) and date of birth. An OTP will be sent to your registered mobile number and e-mail ID.</p>
+              <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillForgotPassword">Fill demo account</button></div>
               <div class="row">
                 <div class="f"><label for="fUid">Registration ID / Mobile / E-mail <span class="req">*</span></label><input type="text" id="fUid" maxlength="100" autocomplete="username"><div class="msg"></div></div>
                 <div class="f"><label for="fDob">Date of Birth <span class="req">*</span></label><input type="date" id="fDob"><div class="msg"></div></div>
@@ -327,6 +359,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
             </div>
             <div id="f2" hidden>
               <div class="alert alert-i" id="fSent"></div>
+              <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillPasswordReset">Fill demo reset values</button></div>
               <div class="row">
                 <div class="f full"><label for="fOtp">OTP <span class="req">*</span></label><input type="text" id="fOtp" maxlength="6" inputmode="numeric" autocomplete="one-time-code" style="max-width:200px"><div class="timer"><span id="fT"></span> <button type="button" class="linkbtn" id="fRe" disabled>Resend OTP</button></div><div class="msg"></div></div>
                 <div class="f"><label for="nPw">New Password <span class="req">*</span></label><div class="pw-wrap"><input type="password" id="nPw" maxlength="16" autocomplete="new-password"><button type="button" data-show="nPw">Show</button></div>
@@ -345,6 +378,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
           <div class="pb">
             <div id="g1">
               <p class="legend-note">Your Registration ID will be sent by SMS and e-mail to your registered mobile number and e-mail ID.</p>
+              <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillForgotId">Fill demo account</button></div>
               <div class="row">
                 <div class="f"><label for="gMob">Registered Mobile Number or E-mail <span class="req">*</span></label><input type="text" id="gMob" maxlength="100"><div class="msg"></div></div>
                 <div class="f"><label for="gDob">Date of Birth <span class="req">*</span></label><input type="date" id="gDob"><div class="msg"></div></div>
@@ -355,15 +389,103 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
           </div>
         </div>
 
-        <!-- Logged in (prototype) -->
+        <!-- Candidate profile shown after successful login -->
         <div class="box" id="welcome" hidden tabindex="-1">
-          <div class="box-h">Welcome / <span class="hi" lang="hi">स्वागत है</span></div>
-          <div class="success">
-            <div class="tick">✓</div>
-            <h3 style="color:var(--navy)">Login successful</h3>
-            <p style="color:var(--muted);font-size:.86rem;margin:6px auto 4px;max-width:440px" id="welcomeTxt">The candidate dashboard will open here (apply for posts, track application, call letters, results).</p>
-            <p class="hint" id="lastLogin" style="margin-bottom:16px"></p>
-            <button type="button" class="btn btn-o" id="logout">Logout</button>
+          <div class="box-h">Candidate Profile / <span class="hi" lang="hi">अभ्यर्थी प्रोफ़ाइल</span></div>
+          <div class="pb">
+            <div class="profile-head">
+              <div>
+                <h3>Your Profile</h3>
+                <p id="profileWelcome">Welcome. Complete your profile to apply for advertised posts.</p>
+              </div>
+              <div class="profile-id">Registration ID: <b>AGKP26123456</b></div>
+              <button type="button" class="btn btn-logout profile-logout" id="logout">Logout</button>
+            </div>
+
+            <div class="profile-progress" aria-live="polite">
+              <div class="profile-progress-top"><span>Profile completion</span><span id="profilePercent">50%</span></div>
+              <div class="profile-progress-track" role="progressbar" aria-label="Profile completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><i id="profileProgressBar"></i></div>
+              <p class="hint" id="profileProgressText">3 of 6 required profile details completed.</p>
+            </div>
+
+            <div class="profile-tabs" role="tablist" aria-label="Profile sections">
+              <button type="button" role="tab" id="profileTabGeneral" aria-controls="profileGeneral" aria-selected="true">General</button>
+              <button type="button" role="tab" id="profileTabEducation" aria-controls="profileEducation" aria-selected="false" tabindex="-1">Education</button>
+              <button type="button" role="tab" id="profileTabExperience" aria-controls="profileExperience" aria-selected="false" tabindex="-1">Experience</button>
+              <button type="button" role="tab" id="profileTabDocuments" aria-controls="profileDocuments" aria-selected="false" tabindex="-1">Documents</button>
+              <button type="button" role="tab" id="profileTabOther" aria-controls="profileOther" aria-selected="false" tabindex="-1">Other</button>
+            </div>
+
+            <section class="profile-panel" id="profileGeneral" role="tabpanel" aria-labelledby="profileTabGeneral">
+              <div class="sample-fill-row"><button type="button" class="sample-fill" data-profile-fill="general">Fill empty fields with sample</button></div>
+              <h4>Personal details</h4>
+              <p class="legend-note">Keep your contact information current so AIIMS Gorakhpur can reach you about your application.</p>
+              <div class="row">
+                <div class="f"><label for="profileName">Full name <span class="req">*</span></label><input type="text" id="profileName" class="profile-required" value="Rahul Kumar Sharma" autocomplete="name"></div>
+                <div class="f"><label for="profileMobile">Registered mobile number <span class="req">*</span></label><input type="tel" id="profileMobile" class="profile-required" value="9123456789" autocomplete="tel"></div>
+                <div class="f full"><label for="profileEmail">E-mail address <span class="req">*</span></label><input type="email" id="profileEmail" class="profile-required" value="candidate@example.com" autocomplete="email"></div>
+                <div class="f full"><label for="profileAddress">Correspondence address</label><input type="text" id="profileAddress" placeholder="House / street, district, state and PIN code" value="Gorakhpur, Uttar Pradesh"></div>
+                <div class="f full"><label for="profileSummary">Professional summary</label><textarea id="profileSummary" class="profile-summary" maxlength="500" placeholder="Briefly describe your qualifications, experience and areas of interest."></textarea><p class="hint"><span id="profileSummaryCount">0</span> / 500 characters</p></div>
+                <div class="f full"><label for="profileExpertise">Core skills and areas of expertise</label><input type="text" id="profileExpertise" placeholder="For example: Clinical research, public health, laboratory services"></div>
+                <div class="f full"><label for="profileAchievements">Key achievements</label><textarea id="profileAchievements" class="profile-summary" maxlength="500" placeholder="Add relevant awards, publications or professional achievements."></textarea></div>
+              </div>
+            </section>
+
+            <section class="profile-panel" id="profileEducation" role="tabpanel" aria-labelledby="profileTabEducation" hidden>
+              <div class="sample-fill-row"><button type="button" class="sample-fill" data-profile-fill="education">Fill empty fields with sample</button></div>
+              <h4>Educational qualifications</h4>
+              <p class="legend-note">Add your highest qualification first. Ensure details match your supporting certificates.</p>
+              <div class="row">
+                <div class="f"><label for="profileQualification">Highest qualification <span class="req">*</span></label><input type="text" id="profileQualification" class="profile-required" placeholder="e.g. MBBS, MD, M.Sc., Ph.D."></div>
+                <div class="f"><label for="profileSpecialization">Specialization</label><input type="text" id="profileSpecialization" placeholder="Department or subject"></div>
+                <div class="f full"><label for="profileInstitute">University / institute <span class="req">*</span></label><input type="text" id="profileInstitute" class="profile-required" placeholder="Name of awarding university or institute"></div>
+                <div class="f"><label for="profilePassingYear">Year of passing <span class="req">*</span></label><input type="number" id="profilePassingYear" class="profile-required" min="1950" max="2026" placeholder="YYYY"></div>
+                <div class="f"><label for="profileGrade">Marks / grade</label><input type="text" id="profileGrade" placeholder="Percentage, CGPA or grade"></div>
+              </div>
+              <p class="profile-info">Additional qualifications can be included in the professional summary. Upload supporting certificates in the Documents section.</p>
+            </section>
+
+            <section class="profile-panel" id="profileExperience" role="tabpanel" aria-labelledby="profileTabExperience" hidden>
+              <div class="sample-fill-row"><button type="button" class="sample-fill" data-profile-fill="experience">Fill empty fields with sample</button></div>
+              <h4>Work experience</h4>
+              <p class="legend-note">Provide relevant employment details, especially experience related to the post you intend to apply for.</p>
+              <div class="row">
+                <div class="f"><label for="profileEmployer">Current / most recent employer</label><input type="text" id="profileEmployer" placeholder="Organization or hospital"></div>
+                <div class="f"><label for="profileDesignation">Designation</label><input type="text" id="profileDesignation" placeholder="Current or most recent role"></div>
+                <div class="f"><label for="profileExperienceYears">Relevant experience (years)</label><input type="number" id="profileExperienceYears" min="0" max="60" placeholder="Years"></div>
+                <div class="f"><label for="profileWorkArea">Department / specialty</label><input type="text" id="profileWorkArea" placeholder="Department or area of work"></div>
+                <div class="f full"><label for="profileWorkSummary">Responsibilities and relevant experience</label><textarea id="profileWorkSummary" class="profile-summary" maxlength="1000" placeholder="Summarize your responsibilities and relevant work experience."></textarea></div>
+              </div>
+            </section>
+
+            <section class="profile-panel" id="profileDocuments" role="tabpanel" aria-labelledby="profileTabDocuments" hidden>
+              <div class="sample-fill-row"><button type="button" class="sample-fill" data-profile-fill="documents">Fill document type sample</button></div>
+              <h4>Documents</h4>
+              <p class="legend-note">Select documents to attach to your profile. Keep original certificates available for verification.</p>
+              <div class="row">
+                <div class="f full"><label for="profileResume">Resume / curriculum vitae</label><input type="file" id="profileResume" accept=".pdf,.doc,.docx"></div>
+                <div class="f"><label for="profilePhoto">Recent photograph</label><input type="file" id="profilePhoto" accept="image/*"></div>
+                <div class="f"><label for="profileIdProof">Identity proof</label><select id="profileIdProof"><option value="">Select document type</option><option>Aadhaar card</option><option>Passport</option><option>Voter ID</option><option>Driving licence</option></select></div>
+                <div class="f full"><label for="profileCertificates">Educational / experience certificates (optional)</label><input type="file" id="profileCertificates" accept=".pdf,.jpg,.jpeg,.png" multiple></div>
+              </div>
+              <p class="profile-info">This prototype does not upload or store files. Selected file names are shown by your browser only.</p>
+            </section>
+
+            <section class="profile-panel" id="profileOther" role="tabpanel" aria-labelledby="profileTabOther" hidden>
+              <div class="sample-fill-row"><button type="button" class="sample-fill" data-profile-fill="other">Fill empty fields with sample</button></div>
+              <h4>Additional information</h4>
+              <p class="legend-note">Add information that may be relevant to your recruitment application.</p>
+              <div class="row">
+                <div class="f"><label for="profileCategory">Reservation category</label><select id="profileCategory"><option value="">Select category</option><option>Unreserved (UR)</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select></div>
+                <div class="f"><label for="profileLanguages">Languages known</label><input type="text" id="profileLanguages" placeholder="e.g. Hindi, English"></div>
+                <div class="f full"><label for="profilePublications">Publications, research or other relevant information</label><textarea id="profilePublications" class="profile-summary" maxlength="1000" placeholder="Add publications, research interests or other relevant information."></textarea></div>
+              </div>
+            </section>
+
+            <div class="profile-actions">
+              <p class="profile-status" id="profileStatus" role="status" aria-live="polite"></p>
+              <button type="button" class="btn btn-p" id="saveProfile">Save section</button>
+            </div>
           </div>
         </div>
       </section>
@@ -376,6 +498,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
           </ol>
           <form id="reg" novalidate>
           <div class="pb">
+            <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillRegistration">Fill sample registration</button></div>
             <div class="alert alert-i" id="demoFillNote" hidden>Sample data has been filled in for this demo. Click <b>Save &amp; Continue</b> to go through each step. <button type="button" class="linkbtn" id="clearDemo">Clear form</button></div>
             <div class="alert alert-e" id="err" role="alert" hidden></div>
 
@@ -519,7 +642,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
         <p class="switch">Already registered? <a href="#login" data-tab="login"><b>Login here</b></a></p>
       </section>
 
-      <div class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.5 2.9v5.6c0 4.6-3.2 8.6-7.5 9.9-4.3-1.3-7.5-5.3-7.5-9.9V5.7z"/></svg>
+      <div class="secure" id="secureNote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.5 2.9v5.6c0 4.6-3.2 8.6-7.5 9.9-4.3-1.3-7.5-5.3-7.5-9.9V5.7z"/></svg>
         <span>AIIMS Gorakhpur never asks for your password or OTP by phone, SMS or e-mail. Always log out after use, especially on a shared computer. After 5 wrong password attempts, the account is locked for 30 minutes.</span></div>
     </div>
   </main>
@@ -557,6 +680,10 @@ function drawCap(k){var ch='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',c=$(k+'C'),t='';fo
 function capOk(k){return $(k+'In').value.trim().toUpperCase()===CAP[k]}
 drawCap('cap');drawCap('lcap');
 $('capR').onclick=function(){drawCap('cap')};$('lcapR').onclick=function(){drawCap('lcap')};
+$('fillCandidateLogin').onclick=function(){
+  if(!DEMO)return;
+  $('uid').value=DEMO_USER.id;$('lpw').value=DEMO_USER.pw;$('lcapIn').value=CAP.lcap;
+};
 
 /* ---------- main tabs ---------- */
 var TABS={login:[$('tabLogin'),$('panLogin')],register:[$('tabReg'),$('panReg')]};
@@ -596,6 +723,12 @@ function oSend(){var v=$('omob').value;lErr();
   if(DEMO&&v!==DEMO_USER.mob){setMsg($('omob'),false,'This mobile number is not registered. Please register first.');return}
   setMsg($('omob'),true,'OTP sent to XXXXXX'+v.slice(-4)+'.');$('oBox').classList.add('show');$('oLogin').disabled=false;$('oOtp').value='';$('oOtp').focus();startTimer('o');$('oSend').textContent='Resend'}
 $('oSend').onclick=oSend;$('oRe').onclick=oSend;
+$('fillCandidateOtp').onclick=function(){
+  if(!DEMO)return;
+  document.querySelector('input[name=via][value=mob]').checked=true;
+  document.querySelector('input[name=via][value=mob]').dispatchEvent(new Event('change'));
+  $('omob').value=DEMO_USER.mob;oSend();$('oOtp').value=DEMO_OTP;
+};
 /* OTP login via Aadhaar */
 var via='mob';
 document.querySelectorAll('input[name=via]').forEach(function(r){r.onchange=function(){via=this.value;
@@ -630,6 +763,9 @@ function fSend(){var ok=true;
   if(DEMO&&!(matchUser($('fUid').value)&&$('fDob').value===DEMO_USER.dob)){fErr('The details do not match our records.');return}
   fErr();$('f1').hidden=true;$('f2').hidden=false;$('fSent').textContent='OTP sent to your registered mobile XXXXXX'+DEMO_USER.mob.slice(-4)+' and e-mail '+DEMO_USER.em.replace(/^(.{2}).*(@.*)$/,'$1****$2')+'.';$('fOtp').focus();startTimer('f')}
 $('fSend').onclick=fSend;$('fRe').onclick=fSend;
+$('fillForgotPassword').onclick=function(){if(DEMO){$('fUid').value=DEMO_USER.id;$('fDob').value=DEMO_USER.dob}};
+$('fillPasswordReset').onclick=function(){if(DEMO){$('fOtp').value=DEMO_OTP;$('nPw').value='Reset@2026';$('nPw2').value='Reset@2026'}};
+$('fillForgotId').onclick=function(){if(DEMO){$('gMob').value=DEMO_USER.mob;$('gDob').value=DEMO_USER.dob}};
 $('fReset').onclick=function(){var ok=true,p=$('nPw').value;
   if(!/^\d{6}$/.test($('fOtp').value)||(DEMO&&$('fOtp').value!==DEMO_OTP)){setMsg($('fOtp'),false,'Enter the correct 6-digit OTP.');ok=false}else setMsg($('fOtp'),true,'');
   if(!(p.length>=8&&p.length<=16&&/[A-Z]/.test(p)&&/[a-z]/.test(p)&&/\d/.test(p)&&/[@#$%!&*]/.test(p))){setMsg($('nPw'),false,'Password does not meet the rules.');ok=false}else setMsg($('nPw'),true,'');
@@ -640,12 +776,116 @@ $('gSend').onclick=function(){var ok=true;
   if(!$('gDob').value){setMsg($('gDob'),false,'Enter your date of birth.');ok=false}else setMsg($('gDob'),true,'');
   if(!ok)return;$('g1').hidden=true;$('g2').hidden=false;$('g2').focus()};
 
+var PROFILE_TABS={
+  general:[$('profileTabGeneral'),$('profileGeneral')],
+  education:[$('profileTabEducation'),$('profileEducation')],
+  experience:[$('profileTabExperience'),$('profileExperience')],
+  documents:[$('profileTabDocuments'),$('profileDocuments')],
+  other:[$('profileTabOther'),$('profileOther')]
+};
+var activeProfileSection='general';
+function showProfileSection(section,focus){
+  activeProfileSection=section;
+  Object.keys(PROFILE_TABS).forEach(function(key){
+    var active=key===section,tab=PROFILE_TABS[key][0];
+    tab.setAttribute('aria-selected',active?'true':'false');
+    tab.tabIndex=active?0:-1;
+    PROFILE_TABS[key][1].hidden=!active;
+  });
+  $('profileStatus').textContent='';
+  $('profileStatus').classList.remove('is-error');
+  if(focus)PROFILE_TABS[section][0].focus();
+}
+Object.keys(PROFILE_TABS).forEach(function(section){
+  var tab=PROFILE_TABS[section][0];
+  tab.onclick=function(){showProfileSection(section)};
+  tab.onkeydown=function(e){
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+      e.preventDefault();
+      var keys=Object.keys(PROFILE_TABS),index=keys.indexOf(section);
+      var offset=e.key==='ArrowRight'?1:-1;
+      showProfileSection(keys[(index+offset+keys.length)%keys.length],true);
+    }
+  };
+});
+function updateProfileProgress(){
+  var required=document.querySelectorAll('.profile-required'),complete=0;
+  required.forEach(function(input){if(input.value.trim())complete++});
+  var percent=required.length?Math.round(complete/required.length*100):100;
+  $('profilePercent').textContent=percent+'%';
+  $('profileProgressBar').style.width=percent+'%';
+  var progress=document.querySelector('.profile-progress-track');
+  progress.setAttribute('aria-valuenow',percent);
+  $('profileProgressText').textContent=complete+' of '+required.length+' required profile details completed.';
+}
+document.querySelectorAll('.profile-required').forEach(function(input){
+  input.addEventListener('input',function(){
+    if(this.value.trim()){
+      this.closest('.f').classList.remove('bad');
+      this.setAttribute('aria-invalid','false');
+    }
+    updateProfileProgress();
+  });
+});
+document.querySelectorAll('.profile-panel input[type=email]').forEach(function(input){
+  input.addEventListener('input',function(){
+    if(this.validity.valid){this.closest('.f').classList.remove('bad');this.setAttribute('aria-invalid','false')}
+  });
+});
+$('profileSummary').addEventListener('input',function(){$('profileSummaryCount').textContent=this.value.length});
+$('profilePassingYear').max=String(new Date().getFullYear());
+function saveProfileSection(){
+  var panel=PROFILE_TABS[activeProfileSection][1],missing=[];
+  panel.querySelectorAll('.profile-required').forEach(function(input){
+    var valid=!!input.value.trim()&&input.checkValidity();
+    input.closest('.f').classList.toggle('bad',!valid);
+    input.setAttribute('aria-invalid',valid?'false':'true');
+    if(!valid)missing.push(input);
+  });
+  if(missing.length){
+    $('profileStatus').textContent='Complete the required fields in this section before saving.';
+    $('profileStatus').classList.add('is-error');
+    missing[0].focus();
+    return;
+  }
+  $('profileStatus').textContent=activeProfileSection.charAt(0).toUpperCase()+activeProfileSection.slice(1)+' section saved for this session.';
+  $('profileStatus').classList.remove('is-error');
+}
+$('saveProfile').onclick=saveProfileSection;
+var PROFILE_SAMPLE={
+  general:{profileAddress:'Gorakhpur, Uttar Pradesh',profileSummary:'Medical graduate interested in patient-centred care and clinical research.',profileExpertise:'Clinical care, research, teamwork',profileAchievements:'Completed clinical rotations and community health projects.'},
+  education:{profileQualification:'MBBS',profileSpecialization:'General Medicine',profileInstitute:'Example Medical College, Uttar Pradesh',profilePassingYear:'2018',profileGrade:'First division'},
+  experience:{profileEmployer:'Example District Hospital',profileDesignation:'Medical Officer',profileExperienceYears:'3',profileWorkArea:'General Medicine',profileWorkSummary:'Supported outpatient and inpatient care, clinical documentation, and community health activities.'},
+  documents:{profileIdProof:'Passport'},
+  other:{profileCategory:'Unreserved (UR)',profileLanguages:'Hindi, English',profilePublications:'Sample entry: clinical audit project (replace with accurate details).'}
+};
+document.querySelectorAll('[data-profile-fill]').forEach(function(button){
+  button.onclick=function(){
+    var sample=PROFILE_SAMPLE[button.dataset.profileFill];
+    Object.keys(sample).forEach(function(id){setVal(id,sample[id])});
+    updateProfileProgress();$('profileSummaryCount').textContent=$('profileSummary').value.length;
+    $('profileStatus').textContent='Sample values filled into empty fields only. Review and replace with your accurate details.';
+    $('profileStatus').classList.remove('is-error');
+  };
+});
+updateProfileProgress();
+
 function loggedIn(how){showTab('login');openPanel('welcome');
-  $('welcomeTxt').textContent=(how==='aad'?'You have been logged in with Aadhaar OTP. ':'')+'The candidate dashboard will open here (apply for posts, track application, call letters, results).';
-  $('lastLogin').textContent='Last login: '+new Date(Date.now()-86400000*3).toLocaleString('en-IN');$('welcome').focus();
+  $('authTabs').hidden=true;$('secureNote').hidden=true;$('demo').hidden=true;
+  document.querySelector('.auth').classList.add('profile-mode');
+  $('authTitle').textContent='Your Profile';
+  $('authSubtitle').textContent='Complete your candidate profile to apply for advertised posts at AIIMS Gorakhpur.';
+  $('profileWelcome').textContent=(how==='aad'?'Signed in using Aadhaar OTP. ':'')+'Welcome, '+$('profileName').value+'. Review your details and complete all required sections before applying.';
+  $('welcome').focus();showProfileSection('general');updateProfileProgress();
   $('uid').value='';$('lpw').value='';$('omob').value='';$('oBox').classList.remove('show');$('oLogin').disabled=true;$('oSend').textContent='Send OTP';
   $('laad').value='';$('laBox').classList.remove('show');$('laSend').textContent='Send OTP'}
-$('logout').onclick=function(){openPanel('lMain');drawCap('lcap');lErr('You have been logged out successfully.',true)};
+$('logout').onclick=function(){
+  openPanel('lMain');showTab('login');$('authTabs').hidden=false;$('secureNote').hidden=false;$('demo').hidden=false;
+  document.querySelector('.auth').classList.remove('profile-mode');
+  $('authTitle').textContent='Candidate Login & Registration';
+  $('authSubtitle').innerHTML='<span class="hi" lang="hi">अभ्यर्थी लॉगिन एवं पंजीकरण</span>';
+  drawCap('lcap');lErr('You have been logged out successfully.',true)
+};
 
 /* ================= REGISTRATION ================= */
 ['Andaman & Nicobar Islands','Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra & Nagar Haveli and Daman & Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu & Kashmir','Jharkhand','Karnataka','Kerala','Ladakh','Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','West Bengal','Not Applicable (Non-Indian)'].forEach(function(s){var o=document.createElement('option');o.textContent=s;$('state').appendChild(o)});
@@ -745,7 +985,7 @@ $('back').onclick=function(){if(step>1)go(step-1)};
 var demoFilled=false;
 function setVal(id,v){var e=$(id);if(e&&!e.value&&!e.readOnly){e.value=v;e.dispatchEvent(new Event('input'));e.dispatchEvent(new Event('change'))}}
 function demoFill(){
-  if(!DEMO||demoFilled)return;demoFilled=true;
+  if(!DEMO)return;demoFilled=true;
   setVal('name','RAHUL KUMAR SHARMA');setVal('father','SURESH KUMAR SHARMA');setVal('mother','ANITA SHARMA');setVal('dob','1990-08-15');
   var g=document.querySelector('input[name=gender][value=Male]');if(!radioVal('gender'))g.checked=true;
   $('marital').value=$('marital').value||'Married';$('nation').value=$('nation').value||'Indian';$('state').value=$('state').value||'Uttar Pradesh';$('cat').value=$('cat').value||'UR';
@@ -755,6 +995,7 @@ function demoFill(){
   if(!verified.aad){setVal('aad','234567890124');$('aadCon').checked=true;$('aadSend').disabled=false}
   setVal('pw','Secure@2026');setVal('pw2','Secure@2026');
   $('demoFillNote').hidden=false}
+$('fillRegistration').onclick=function(){demoFill()};
 $('clearDemo').onclick=function(){
   ['name','father','mother','dob','age','mob','em','aad','pw','pw2','capIn','dpct'].forEach(function(id){var e=$(id);if(e&&!e.readOnly)e.value=''});
   ['marital','nation','state','cat','dtype'].forEach(function(id){$(id).value=''});
@@ -789,7 +1030,7 @@ function resetReg(){
   else if(h==='forgot'){showTab('login');openPanel('forgot')}
   else if(h==='forgotid'){showTab('login');openPanel('forgotid')}
   else showTab('login')})();
-if(!DEMO)$('demo').remove();
+if(!DEMO){$('demo').remove();document.querySelectorAll('.sample-fill').forEach(function(button){button.hidden=true})}
 </script>
 </body>
 </html>

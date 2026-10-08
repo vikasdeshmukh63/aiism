@@ -21,11 +21,22 @@ a{color:var(--navy-2)}a:hover{color:var(--saffron-d)}
 
 /* top strip */
 .gov{background:#1c1c1c;color:#e5e5e5;font-size:.8rem}
-.gov .in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:5px 20px}
+.gov .in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:5px 16px}
 .gov a,.gov button{color:#e5e5e5;text-decoration:none;background:none;border:0;font:inherit;cursor:pointer;padding:2px 8px}
 .gov a:hover{color:#ffb35c}
 .gov .fs button{border:1px solid #666;padding:0 7px;margin-left:3px;border-radius:2px}
 .tri{height:4px;background:linear-gradient(90deg,#ff9933 0 33.3%,#fff 33.3% 66.6%,#138808 66.6%)}
+.institution-header{display:none;position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 8px #0a2a5e0b}
+.institution-header .in{max-width:1200px;min-height:112px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:16px}
+.institution-home{display:inline-flex;align-items:center;flex:none;border-radius:50%;text-decoration:none}
+.institution-header img,.brand-mark{width:84px;height:84px;flex:none;object-fit:contain}
+.brand-mark{display:grid;place-content:center;text-align:center;border:2px solid var(--navy);border-radius:50%;color:var(--navy);font-weight:800;font-size:.9rem;line-height:1.05}
+.brand-mark small{font-size:.48rem;letter-spacing:.7px}
+.institution-name-hi{color:var(--navy);font-family:'Noto Sans Devanagari',sans-serif;font-size:1.15rem;font-weight:700;line-height:1.3}
+.institution-name-en{color:var(--navy);font-size:1.3rem;font-weight:700;letter-spacing:.2px;line-height:1.3}
+.institution-ministry{color:var(--muted);font-size:.82rem;margin-top:2px}
+.portal-label{margin-left:auto;border-left:3px solid var(--saffron);padding:6px 0 6px 16px;color:var(--navy);font-size:.76rem;font-weight:700;text-align:right}
+.portal-label span{display:block;color:var(--muted);font-weight:400}
 
 /* split layout */
 .split{flex:1;display:grid;grid-template-columns:minmax(340px,40%) 1fr}
@@ -109,6 +120,8 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .req{color:var(--err)}
 .f input[type=text],.f input[type=email],.f input[type=tel],.f input[type=date],.f input[type=password],.f input[type=number],.f select{width:100%;border:1px solid #b9c3d3;border-radius:4px;padding:9px 10px;font:inherit;font-size:.92rem;background:#fff}
 .f input:focus,.f select:focus{border-color:var(--navy-2);outline:2px solid #13407f33}
+.f textarea{width:100%;border:1px solid #b9c3d3;border-radius:4px;padding:9px 10px;font:inherit;font-size:.9rem;background:#fff;resize:vertical;min-height:90px}
+.f textarea:focus{border-color:var(--navy-2);outline:2px solid #13407f33}
 .f input[readonly]{background:#f2f4f7}
 .f.bad input,.f.bad select{border-color:var(--err);background:#fff8f7}
 .hint{font-size:.75rem;color:var(--muted);margin-top:3px}
@@ -124,8 +137,12 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .btn-p{background:var(--navy);color:#fff}.btn-p:hover:not(:disabled){background:var(--navy-2);color:#fff}
 .btn-s{background:#c96a05;color:#fff}.btn-s:hover:not(:disabled){background:#a85700;color:#fff}
 .btn-o{background:#fff;color:var(--navy);border-color:var(--navy)}.btn-o:hover:not(:disabled){background:var(--navy-l)}
+.btn-logout{background:#b3261e;color:#fff;border-color:#b3261e}.btn-logout:hover:not(:disabled){background:#8f1d18;color:#fff;border-color:#8f1d18}
 .btn-g{background:var(--ok);color:#fff}
 .btn-block{width:100%;padding:11px;margin-top:18px}
+.sample-fill{border:1px solid var(--navy-2);border-radius:3px;background:#fff;color:var(--navy);padding:7px 11px;font:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
+.sample-fill:hover{background:var(--navy-l)}
+.sample-fill-row{display:flex;justify-content:flex-end;margin:0 0 12px}
 .verified{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:700;font-size:.85rem;padding:9px 4px;white-space:nowrap}
 .otp-box{margin-top:8px;padding:10px;border:1px dashed #b9c3d3;border-radius:4px;background:#fafbfd;display:none}
 .otp-box.show{display:block}
@@ -166,9 +183,9 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .secure{display:flex;gap:8px;align-items:flex-start;font-size:.75rem;color:var(--muted);background:#f8fafc;border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-top:20px}
 .secure svg{width:16px;height:16px;flex:none;color:var(--navy-2);margin-top:1px}
 
-.demo{position:fixed;right:12px;bottom:12px;z-index:50;background:#1d2433;color:#fff;font-size:.74rem;padding:8px 12px;border-radius:4px;max-width:340px;box-shadow:0 4px 14px #0004;line-height:1.5}
+.demo{position:fixed;right:12px;bottom:12px;z-index:50;background:#1d2433;color:#fff;font-size:.74rem;padding:8px 12px;border-radius:4px;max-width:340px;box-shadow:0 4px 14px #0004;line-height:1.5;pointer-events:none}
 .demo b{color:#ffb35c}
-.demo button{background:none;border:0;color:#ffb35c;cursor:pointer;float:right;font-size:.9rem;margin-left:8px}
+.demo button{background:none;border:0;color:#ffb35c;cursor:pointer;float:right;font-size:.9rem;margin-left:8px;pointer-events:auto}
 
 
 /* Desktop: whole page fits the screen; only the right (form) side scrolls */
@@ -182,14 +199,22 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
   .pitch{margin-top:28px}
 }
 @media (max-width:900px){
-  .split{grid-template-columns:1fr}
+  .split{grid-template-columns:minmax(0,1fr)}
+  .side-r{min-width:0}
   .side-l{padding:20px 18px}
+  .side-l.staff .back{margin-top:0}
   .pitch{padding:18px 0 4px}
   .pitch h1{font-size:1.25rem}
   .why,.help-box,.side-l .foot{display:none}
   .side-l>.campus{width:100%;opacity:.28}
 }
 @media (max-width:600px){
+  .institution-header .in{min-height:76px;padding:9px 14px;gap:10px}
+  .institution-header img,.brand-mark{width:52px;height:52px}
+  .institution-name-hi{font-size:.75rem}
+  .institution-name-en{font-size:.72rem}
+  .institution-ministry{font-size:.62rem;line-height:1.3}
+  .portal-label{display:none}
   .row{grid-template-columns:1fr}
   .rules{grid-template-columns:1fr}
   .steps li{font-size:0;padding:8px 4px}.steps li::before{font-size:.78rem}
@@ -217,6 +242,150 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .creds{border-collapse:collapse;margin:6px 0 4px;font-size:.72rem}
 .creds td{padding:1px 10px 1px 0;color:#dbe4f3}
 .demo .fill{color:#ffb35c;font-size:.74rem}
+.recruitment-tool{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.recruitment-tool h3{color:var(--navy);font-size:1.05rem}
+.recruitment-tool>p{font-size:.8rem;color:var(--muted);margin:4px 0 14px}
+.recruitment-result{padding:12px 14px;margin:14px 0;background:#e3f2e1;border:1px solid #b9dfb4;border-radius:4px;color:#0e6b06}
+.recruitment-result b{display:block;font-family:monospace;font-size:1.1rem;letter-spacing:.4px}
+.recruitment-result span{display:block;margin-top:4px;font-size:.8rem}
+.recruitment-status{min-height:1.3em;font-size:.82rem;margin-top:10px}
+.recruitment-status.error{color:var(--err)}
+.recruitments{margin-top:18px}
+.recruitments h4{font-size:.92rem;color:var(--navy);margin-bottom:8px}
+.recruitment-table-wrap{overflow-x:auto}
+.recruitment-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.recruitment-table th,.recruitment-table td{border:1px solid var(--line);padding:7px 8px;text-align:left;vertical-align:top}
+.recruitment-table th{background:var(--navy-l);color:var(--navy);white-space:nowrap}
+.recruitment-table code{font-weight:700;color:var(--navy);white-space:nowrap}
+.draft-badge{display:inline-block;padding:1px 7px;background:#fff6e5;border:1px solid #f3d9a4;border-radius:10px;color:#5c3b00;font-size:.73rem;font-weight:700}
+.staff-dashboard .split{grid-template-columns:1fr}
+.staff-dashboard{height:auto;min-height:100vh;overflow:auto}
+.staff-dashboard .institution-header{display:block}
+.staff-dashboard .side-l{display:none}
+.staff-dashboard .side-r{height:auto;min-height:0;overflow:visible;justify-content:center;padding:20px 16px 42px;background:var(--bg)}
+.staff-dashboard .auth{max-width:1320px}
+.staff-dashboard .auth h2.t{text-align:left}
+.staff-dashboard .auth .t-sub{text-align:left}
+.staff-dashboard .auth h2.t,.staff-dashboard .auth .t-sub{display:none}
+.staff-dashboard .warn,.staff-dashboard .switch{display:none}
+.dashboard-header{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.dashboard-header h3{color:var(--navy);font-size:1.45rem}
+.dashboard-header p{color:var(--muted);font-size:.84rem}
+.dash-user{display:flex;align-items:center;gap:10px}
+.dash-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:18px 0}
+.dash-stat{background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px}
+.dash-stat span{display:block;color:var(--muted);font-size:.78rem}
+.dash-stat b{display:block;color:var(--navy);font-size:1.35rem;margin-top:4px}
+.dash-view h3{color:var(--navy);font-size:1.08rem;margin-bottom:5px}
+.dash-view>.legend-note{margin-bottom:14px}
+.quick-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 22px}
+.quick-action{min-height:92px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px;cursor:pointer;font:inherit}
+.quick-action:hover{border-color:var(--navy-2);background:#f8fafc}
+.quick-action b{display:block;color:var(--navy);font-size:.92rem}
+.quick-action span{display:block;color:var(--muted);font-size:.78rem;margin-top:4px}
+.workflow-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 20px;list-style:none}
+.workflow-list li{border-bottom:1px solid var(--line);padding:9px 0;font-size:.82rem;color:var(--muted)}
+.workflow-list b{color:var(--ink)}
+.recruitment-tool{margin-top:0;padding-top:0;border-top:0}
+.recruitment-form-panel{margin:14px 0 20px;padding:16px;background:#f8fafc;border:1px solid var(--line);border-radius:6px}
+.recruitment-form-panel h4{color:var(--navy);margin-bottom:12px}
+.recruitment-records{margin-top:20px}
+.row-actions{display:flex;gap:6px;flex-wrap:wrap}
+.row-actions button{padding:5px 8px;font-size:.76rem}
+.role-queue{display:grid;gap:12px}
+.queue-card{border:1px solid var(--line);border-radius:6px;padding:14px;background:#fff}
+.queue-card h4{font-size:.92rem;color:var(--navy)}
+.queue-card p{font-size:.8rem;color:var(--muted);margin:5px 0}
+.queue-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.queue-actions input{flex:1;min-width:170px;border:1px solid #b9c3d3;border-radius:4px;padding:8px;font:inherit}
+.audit-list{max-height:280px;overflow:auto}
+.audit-list li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:.78rem;color:var(--muted)}
+.audit-list b{color:var(--ink)}
+.module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.module-card{border:1px solid var(--line);border-radius:6px;padding:14px;background:#fff}
+.module-card h4{color:var(--navy);font-size:.9rem}
+.module-card p{color:var(--muted);font-size:.78rem;margin-top:5px}
+.module-card .module-state{display:inline-block;margin-top:8px;font-size:.72rem;font-weight:700;color:#5c3b00;background:#fff6e5;border:1px solid #f3d9a4;border-radius:10px;padding:2px 8px}
+.empty-state{background:#f8fafc;border:1px dashed var(--line);padding:16px;border-radius:4px;color:var(--muted);font-size:.82rem}
+.dash-notice{padding:10px 12px;border-radius:4px;background:#fff6e5;border:1px solid #f3d9a4;color:#5c3b00;font-size:.78rem;margin-top:14px}
+.status-badge{display:inline-block;padding:2px 8px;background:var(--navy-l);border:1px solid #c9d6ea;border-radius:10px;color:var(--navy);font-size:.73rem;font-weight:700}
+.staff-dashboard .auth{max-width:1200px}
+.staff-dashboard .s3-body{padding:0}
+.staff-dashboard #s3{border:0;background:transparent}
+.staff-dashboard .dashboard-header{padding:14px 18px;margin:0;border:1px solid var(--line);border-bottom:0;background:#fff}
+.dashboard-shell{display:grid;grid-template-columns:224px minmax(0,1fr);min-height:calc(100vh - 260px);border:1px solid var(--line);background:#fff}
+.dashboard-sidebar{background:var(--navy);padding:18px 12px;display:flex;flex-direction:column;gap:14px}
+.sidebar-kicker{padding:0 12px;color:#c8d5ec;font-size:.67rem;font-weight:700;letter-spacing:1px}
+.dash-sidebar{display:grid;gap:4px}
+.dash-sidebar button{display:flex;align-items:center;gap:11px;width:100%;border:0;border-radius:3px;background:transparent;padding:10px 12px;text-align:left;color:#e8eef8;font:inherit;font-size:.83rem;font-weight:600;cursor:pointer}
+.dash-sidebar button:hover{background:#ffffff16;color:#fff}
+.dash-sidebar button[aria-current="page"]{background:var(--navy-2);color:#fff;box-shadow:inset 3px 0 var(--saffron)}
+.sidebar-icon{width:20px;flex:none;text-align:center;font-size:1rem}
+.sidebar-post{width:100%;text-align:left;background:#c96a05;border-radius:3px}
+.sidebar-post:hover{background:#a85700}
+.sidebar-note{margin-top:auto;padding:12px;border:1px solid #ffffff2b;border-radius:3px;background:#ffffff0c;color:#dbe4f3;font-size:.72rem}
+.sidebar-note b{display:block;color:#fff;font-size:.75rem;margin-bottom:3px}
+.dashboard-main{min-width:0;padding:0 0 24px;background:var(--bg)}
+.dashboard-banner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:18px 22px;background:var(--navy-l);border-bottom:1px solid var(--line);margin-bottom:16px}
+.dashboard-banner .crumb{font-size:.72rem;color:var(--muted);margin-bottom:4px}
+.dashboard-banner h2{color:var(--navy);font-size:1.3rem;line-height:1.3}
+.dashboard-banner p{color:var(--muted);font-size:.82rem;margin-top:3px}
+.dashboard-content{padding:0 18px}
+.dashboard-banner .btn{white-space:nowrap}
+.dashboard-main .dash-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 18px;gap:11px}
+.dash-stat{position:relative;min-height:91px;padding:13px 15px;border-radius:3px;box-shadow:none}
+.dash-stat::before{position:absolute;content:"";left:0;top:12px;bottom:12px;width:3px;border-radius:0 3px 3px 0;background:var(--saffron)}
+.dash-stat b{font-size:1.55rem}
+.dash-stat small{display:block;margin-top:2px;color:#758092;font-size:.68rem}
+.overview-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:4px 0 15px}
+.overview-heading{background:var(--navy);padding:11px 14px;border-radius:3px;align-items:center}
+.overview-heading h3{color:#fff;font-size:1.02rem}
+.overview-heading p{color:#dbe4f3;font-size:.75rem;margin-top:3px}
+.dash-view>h3{color:#fff;background:var(--navy);font-size:.95rem;padding:10px 14px;margin-bottom:10px;border-radius:3px}
+.dash-view .dashboard-header{background:var(--navy);border:0;border-radius:3px;color:#fff}
+.dash-view .dashboard-header h3{color:#fff}
+.dash-view .dashboard-header p{color:#dbe4f3}
+.mock-badge{display:inline-flex;align-items:center;gap:6px;border:1px solid #efd59f;border-radius:20px;background:#fff7e8;padding:4px 9px;color:#754900;font-size:.68rem;font-weight:700;white-space:nowrap}
+.mock-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--saffron)}
+.mock-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.mock-stat{padding:11px 13px;background:#fff;border:1px solid var(--line);border-radius:3px}
+.mock-stat span{display:block;color:var(--muted);font-size:.71rem}
+.mock-stat b{display:block;margin-top:2px;color:var(--navy);font-size:1.2rem}
+.mock-stat small{display:block;color:#818b99;font-size:.65rem}
+.chart-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(270px,1fr);gap:12px}
+.chart-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:3px;padding:15px;box-shadow:none}
+.chart-card h4{color:var(--navy);font-size:.87rem}
+.chart-card>p{color:var(--muted);font-size:.7rem;margin-top:2px}
+.bar-chart{display:block;width:100%;height:auto;margin-top:8px}
+.chart-legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.67rem}
+.chart-legend span{display:flex;align-items:center;gap:5px}
+.legend-dot{width:8px;height:8px;border-radius:50%;background:var(--navy-2)}
+.legend-dot.alt{background:var(--saffron)}
+.legend-dot.green{background:var(--green)}
+.legend-dot.gray{background:#718096}
+.pie-layout{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:12px}
+.pie-chart{width:150px;height:150px;flex:none}
+.pie-legend{display:grid;gap:9px;list-style:none;font-size:.72rem;color:var(--muted)}
+.pie-legend li{display:grid;grid-template-columns:9px minmax(90px,1fr) auto;gap:7px;align-items:center}
+.pie-legend b{color:var(--ink)}
+.pie-key{width:9px;height:9px;border-radius:50%;background:var(--navy-2)}
+.pie-key.alt{background:var(--saffron)}
+.pie-key.green{background:var(--green)}
+.pie-key.gray{background:#718096}
+.chart-caption{margin-top:10px;color:#818b99;font-size:.65rem}
+.stage-list{display:grid;gap:12px;margin-top:15px}
+.stage-row{display:grid;grid-template-columns:92px minmax(0,1fr) 34px;gap:8px;align-items:center;color:var(--muted);font-size:.7rem}
+.stage-track{height:9px;overflow:hidden;border-radius:8px;background:#edf0f5}
+.stage-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--navy-2),#5981bc)}
+.stage-row:nth-child(2) .stage-fill{background:linear-gradient(90deg,#ce760d,#f5b34e)}
+.stage-row:nth-child(3) .stage-fill{background:linear-gradient(90deg,#138808,#56a74e)}
+.stage-row:nth-child(4) .stage-fill{background:linear-gradient(90deg,#65758e,#a8b3c1)}
+.stage-row b{text-align:right;color:var(--ink)}
+.dash-view{min-width:0}
+@media(max-width:760px){.dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quick-actions,.module-grid,.workflow-list{grid-template-columns:1fr}}
+@media(max-width:1000px){.dashboard-shell{grid-template-columns:195px minmax(0,1fr)}.dashboard-main .dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mock-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.chart-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.staff-dashboard .dashboard-header{padding:16px}.dashboard-shell{grid-template-columns:minmax(0,1fr)}.dashboard-sidebar{border-right:0;border-bottom:1px solid var(--line);padding:12px}.sidebar-kicker,.sidebar-note{display:none}.dash-sidebar{display:flex;overflow-x:auto;padding:2px 0 5px}.dash-sidebar button{width:auto;white-space:nowrap;flex:none}.dash-sidebar button[aria-current="page"]{box-shadow:inset 0 -3px var(--saffron)}.sidebar-post{width:auto}.dashboard-content{padding:0 12px}.dashboard-banner{padding:16px}.dashboard-main{padding:0 0 22px}}
+@media(max-width:600px){.staff-dashboard .side-r{padding:12px 10px 24px}.institution-header .in{min-height:76px;padding:9px 14px;gap:10px}.institution-header img,.brand-mark{width:52px;height:52px}.institution-name-hi{font-size:.75rem}.institution-name-en{font-size:.72rem}.institution-ministry{font-size:.62rem;line-height:1.3}.portal-label{display:none}.staff-dashboard .dashboard-header{align-items:flex-start;flex-direction:column}.staff-dashboard .dash-user{width:100%;flex-wrap:wrap}.overview-heading{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -228,6 +397,20 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
   </div>
 </div></div>
 <div class="tri"></div>
+<header class="institution-header" aria-label="AIIMS Gorakhpur">
+  <div class="in">
+    <a class="institution-home" href="index.html" aria-label="AIIMS Gorakhpur Recruitment Portal – Home">
+      <img src="https://aiimsgorakhpur.edu.in/wp-content/uploads/2026/01/Logo-300x300.png" alt="AIIMS Gorakhpur logo" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <span class="brand-mark" aria-hidden="true" hidden>AIIMS<small>GORAKHPUR</small></span>
+    </a>
+    <div class="institution-copy">
+      <div class="institution-name-hi" lang="hi">अखिल भारतीय आयुर्विज्ञान संस्थान, गोरखपुर</div>
+      <div class="institution-name-en">ALL INDIA INSTITUTE OF MEDICAL SCIENCES, GORAKHPUR</div>
+      <div class="institution-ministry">An autonomous organization under the Ministry of Health &amp; Family Welfare, Government of India</div>
+    </div>
+    <div class="portal-label">STAFF &amp; COMMITTEE PORTAL<span>Recruitment Management System</span></div>
+  </div>
+</header>
 
 <div class="split">
   <!-- LEFT: branding -->
@@ -238,7 +421,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
       <div>
         <div class="b-hi hi" lang="hi">अखिल भारतीय आयुर्विज्ञान संस्थान, गोरखपुर</div>
         <div class="b-en">ALL INDIA INSTITUTE OF MEDICAL SCIENCES, GORAKHPUR</div>
-        <div class="b-sub">An autonomous organization under the Ministry of Health &amp; Family Welfare, Govt. of India</div>
+        <div class="b-sub">An autonomous organization under the Ministry of Health &amp; Family Welfare, Government of India</div>
       </div>
     </a>
     <a href="index.html" class="back">← Back to Home</a>
@@ -271,8 +454,8 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
   <!-- RIGHT: staff login -->
   <main class="side-r" id="main" tabindex="-1">
     <div class="auth">
-      <h2 class="t">Staff Login</h2>
-      <p class="t-sub"><span class="hi" lang="hi">कर्मचारी एवं समिति लॉगिन</span></p>
+      <h2 class="t" id="authTitle">Staff Login</h2>
+      <p class="t-sub" id="authSubtitle"><span class="hi" lang="hi">कर्मचारी एवं समिति लॉगिन</span></p>
 
       <div class="warn" role="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.5 2.9v5.6c0 4.6-3.2 8.6-7.5 9.9-4.3-1.3-7.5-5.3-7.5-9.9V5.7z"/><path d="M12 8v4M12 16h.01"/></svg>
         <span><b>Restricted access.</b> This system is for authorised officials only. All activity is logged and monitored. Unauthorised access is an offence under the Information Technology Act, 2000.</span></div>
@@ -281,6 +464,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
       <div class="box" id="s1">
         <div class="box-h">Step 1 of 2 · Sign in</div>
         <form class="pb" id="fLogin" novalidate>
+          <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillStaffLogin">Fill demo login</button></div>
           <div class="alert alert-e" id="err" role="alert" hidden></div>
           <div class="row">
             <div class="f full"><label for="uid">User ID / Employee ID <span class="req">*</span></label>
@@ -304,6 +488,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
         <div class="box-h">Step 2 of 2 · Verify OTP</div>
         <form class="pb" id="fOtp" novalidate>
           <div class="alert alert-i" id="otpInfo"></div>
+          <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillStaffOtp">Fill demo OTP</button></div>
           <div class="alert alert-e" id="err2" role="alert" hidden></div>
           <div class="f"><label for="otp">6-digit OTP <span class="req">*</span></label>
             <input type="text" id="otp" maxlength="6" inputmode="numeric" autocomplete="one-time-code" style="max-width:220px">
@@ -312,17 +497,214 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
         </form>
       </div>
 
-      <!-- Logged in (prototype) -->
+      <!-- Role-based staff dashboard -->
       <div class="box" id="s3" hidden tabindex="-1">
-        <div class="box-h">Welcome / <span class="hi" lang="hi">स्वागत है</span></div>
-        <div class="pb">
-          <div class="who">
-            <div class="avatar" id="avatar"></div>
-            <div><b id="wName"></b><span id="wRole"></span><span class="hint" id="wLast"></span></div>
+        <div class="s3-body">
+          <div class="dashboard-header">
+            <div><h3 id="dashboardGreeting">Staff dashboard</h3><p id="dashboardDescription"></p></div>
+            <div class="dash-user"><div class="avatar" id="avatar"></div><div class="who"><div><b id="wName"></b><span id="wRole"></span><span class="hint" id="wLast"></span></div></div><button type="button" class="btn btn-logout" id="logout">Logout</button></div>
           </div>
-          <p style="font-size:.84rem;color:var(--muted);margin:14px 0 8px">The <b id="wRole2"></b> dashboard will open here. Access for this role:</p>
-          <ul class="access" id="wAccess"></ul>
-          <div class="actions"><span class="hint">Session ends after 15 minutes of inactivity.</span><button type="button" class="btn btn-o" id="logout">Logout</button></div>
+          <div class="dashboard-shell">
+            <aside class="dashboard-sidebar" aria-label="Staff dashboard navigation">
+              <div class="sidebar-kicker">WORKSPACE</div>
+              <nav class="dash-sidebar" aria-label="Dashboard sections">
+                <button type="button" aria-current="page" data-dash-view="overview"><span class="sidebar-icon" aria-hidden="true">▦</span>Overview</button>
+                <button type="button" data-dash-view="recruitments" hidden><span class="sidebar-icon" aria-hidden="true">▤</span>Recruitments</button>
+                <button type="button" data-dash-view="approvals" hidden><span class="sidebar-icon" aria-hidden="true">✓</span>Approvals</button>
+                <button type="button" data-dash-view="operations" hidden><span class="sidebar-icon" aria-hidden="true">◷</span>Recruitment operations</button>
+                <button type="button" data-dash-view="reports" hidden><span class="sidebar-icon" aria-hidden="true">▥</span>Reports &amp; audit</button>
+              </nav>
+              <button type="button" class="btn btn-p sidebar-post" data-recruitment-action hidden>＋ Post a recruitment</button>
+              <div class="sidebar-note"><b>Recruitment Management System</b>AIIMS Gorakhpur · Staff workspace<br><span class="hi" lang="hi">कर्मचारी पोर्टल</span></div>
+            </aside>
+            <div class="dashboard-main">
+              <section class="dashboard-banner" aria-label="Page heading">
+                <div>
+                  <div class="crumb">Home &rsaquo; Staff portal &rsaquo; <span id="dashboardBreadcrumb">Overview</span></div>
+                  <h2 id="dashboardPageTitle">Recruitment dashboard</h2>
+                  <p id="dashboardPageDescription">Monitor recruitment activity and access the tools assigned to your role.</p>
+                </div>
+                <button type="button" class="btn btn-p" data-recruitment-action hidden>＋ Post a recruitment</button>
+              </section>
+              <div class="dashboard-content">
+          <div class="dash-grid" aria-label="Recruitment metrics">
+            <div class="dash-stat"><span>Total recruitments</span><b id="statTotal">0</b><small>All statuses</small></div>
+            <div class="dash-stat"><span>Draft recruitments</span><b id="statDrafts">0</b><small>Not yet submitted</small></div>
+            <div class="dash-stat"><span>Awaiting your action</span><b id="statPending">0</b><small>Role-based approval queue</small></div>
+            <div class="dash-stat"><span>Published recruitments</span><b id="statPublished">0</b><small>Currently accepting applications</small></div>
+            <div class="dash-stat"><span>Total vacancies</span><b id="statVacancies">0</b><small>Across all recruitments</small></div>
+            <div class="dash-stat"><span>Applications received</span><b id="statApplications">0</b><small>Recorded in this prototype</small></div>
+          </div>
+          <section class="dash-view" id="viewOverview" aria-label="Recruitment overview">
+            <div class="overview-heading">
+              <div><h3>Recruitment overview</h3><p>Monitor activity across the recruitment lifecycle.</p></div>
+              <span class="mock-badge">Illustrative sample analytics</span>
+            </div>
+            <div class="mock-stats" aria-label="Illustrative recruitment activity numbers">
+              <div class="mock-stat"><span>Applications received</span><b>286</b><small>Sample figure · not live</small></div>
+              <div class="mock-stat"><span>Screening completed</span><b>214</b><small>Sample figure · not live</small></div>
+              <div class="mock-stat"><span>Interviews scheduled</span><b>42</b><small>Sample figure · not live</small></div>
+              <div class="mock-stat"><span>Offers issued</span><b>18</b><small>Sample figure · not live</small></div>
+            </div>
+            <div class="chart-grid">
+              <article class="chart-card">
+                <h4>Monthly application activity</h4><p>Applications and screenings · illustrative sample</p>
+                <svg class="bar-chart" viewBox="0 0 600 220" role="img" aria-labelledby="barTitle barDesc">
+                  <title id="barTitle">Illustrative monthly applications and screenings</title>
+                  <desc id="barDesc">Grouped bar graph for May through October. Applications: 32, 40, 50, 65, 78 and 82. Screenings: 22, 29, 38, 46, 57 and 61.</desc>
+                  <g stroke="#e7ebf1" stroke-width="1"><path d="M48 22H580M48 62H580M48 102H580M48 142H580M48 182H580"/></g>
+                  <g fill="#718096" font-size="11" text-anchor="end"><text x="40" y="26">100</text><text x="40" y="66">75</text><text x="40" y="106">50</text><text x="40" y="146">25</text><text x="40" y="186">0</text></g>
+                  <g fill="#13407f">
+                    <rect x="70" y="131" width="20" height="51" rx="2"/><rect x="155" y="118" width="20" height="64" rx="2"/>
+                    <rect x="240" y="102" width="20" height="80" rx="2"/><rect x="325" y="78" width="20" height="104" rx="2"/>
+                    <rect x="410" y="57" width="20" height="125" rx="2"/><rect x="495" y="50" width="20" height="132" rx="2"/>
+                  </g>
+                  <g fill="#f28c1b">
+                    <rect x="93" y="147" width="20" height="35" rx="2"/><rect x="178" y="136" width="20" height="46" rx="2"/>
+                    <rect x="263" y="121" width="20" height="61" rx="2"/><rect x="348" y="108" width="20" height="74" rx="2"/>
+                    <rect x="433" y="91" width="20" height="91" rx="2"/><rect x="518" y="84" width="20" height="98" rx="2"/>
+                  </g>
+                  <g fill="#718096" font-size="11" text-anchor="middle"><text x="91" y="203">May</text><text x="176" y="203">Jun</text><text x="261" y="203">Jul</text><text x="346" y="203">Aug</text><text x="431" y="203">Sep</text><text x="516" y="203">Oct</text></g>
+                </svg>
+                <div class="chart-legend"><span><i class="legend-dot"></i>Applications</span><span><i class="legend-dot alt"></i>Screenings</span></div>
+              </article>
+              <article class="chart-card">
+                <h4>Sample workflow progress</h4><p>Illustrative counts by processing stage</p>
+                <div class="stage-list" role="img" aria-label="Illustrative workflow counts: applications 286, screened 214, shortlisted 76, offers issued 18">
+                  <div class="stage-row"><span>Applications</span><div class="stage-track"><div class="stage-fill" style="width:100%"></div></div><b>286</b></div>
+                  <div class="stage-row"><span>Screened</span><div class="stage-track"><div class="stage-fill" style="width:75%"></div></div><b>214</b></div>
+                  <div class="stage-row"><span>Shortlisted</span><div class="stage-track"><div class="stage-fill" style="width:27%"></div></div><b>76</b></div>
+                  <div class="stage-row"><span>Offers issued</span><div class="stage-track"><div class="stage-fill" style="width:7%"></div></div><b>18</b></div>
+                </div>
+              </article>
+              <article class="chart-card">
+                <h4>Application status distribution</h4><p>Illustrative sample · 286 applications</p>
+                <div class="pie-layout">
+                  <svg class="pie-chart" viewBox="0 0 120 120" role="img" aria-labelledby="pieTitle pieDesc">
+                    <title id="pieTitle">Illustrative application status distribution</title>
+                    <desc id="pieDesc">Of 286 sample applications, 120 are under review, 98 completed screening, 50 are at interview, and 18 have offers issued.</desc>
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="#edf0f5" stroke-width="18"/>
+                    <g transform="rotate(-90 60 60)" fill="none" stroke-width="18">
+                      <circle cx="60" cy="60" r="45" stroke="#13407f" stroke-dasharray="118.75 282.74" stroke-dashoffset="0"/>
+                      <circle cx="60" cy="60" r="45" stroke="#f28c1b" stroke-dasharray="96.13 282.74" stroke-dashoffset="-118.75"/>
+                      <circle cx="60" cy="60" r="45" stroke="#138808" stroke-dasharray="48.07 282.74" stroke-dashoffset="-214.88"/>
+                      <circle cx="60" cy="60" r="45" stroke="#718096" stroke-dasharray="19.79 282.74" stroke-dashoffset="-262.95"/>
+                    </g>
+                    <text x="60" y="57" text-anchor="middle" fill="#0a2a5e" font-size="18" font-weight="700">286</text>
+                    <text x="60" y="72" text-anchor="middle" fill="#4f5a6b" font-size="8">applications</text>
+                  </svg>
+                  <ul class="pie-legend" aria-label="Illustrative application status values">
+                    <li><i class="pie-key"></i><span>Under review</span><b>120</b></li>
+                    <li><i class="pie-key alt"></i><span>Screened</span><b>98</b></li>
+                    <li><i class="pie-key green"></i><span>Interview</span><b>50</b></li>
+                    <li><i class="pie-key gray"></i><span>Offers issued</span><b>18</b></li>
+                  </ul>
+                </div>
+                <p class="chart-caption">All figures are mock data for demonstration and do not represent live recruitment records.</p>
+              </article>
+            </div>
+            <div class="dash-notice">Prototype mode: workflow records are stored in this browser. Approvals, identity checks, notifications, secure uploads and concurrency-safe IDs require a production backend.</div>
+          </section>
+          <section class="dash-view" id="viewRecruitments" aria-label="Recruitments" hidden>
+            <div class="dashboard-header">
+              <div><h3>Recruitment workspace</h3><p>Create drafts and track eligibility, roster, approval and publication status.</p></div>
+              <button type="button" class="btn btn-p" id="newRecruitment" data-recruitment-action>＋ Post a recruitment</button>
+            </div>
+            <section class="recruitment-tool" id="recruitmentTool" hidden aria-labelledby="recruitmentTitle">
+              <div class="recruitment-form-panel" id="recruitmentFormPanel" hidden>
+                <h4 id="recruitmentTitle">New recruitment draft</h4>
+                <p class="legend-note">The Unique Recruitment ID is assigned when the valid draft is saved: AIIMS-GKP-YYYY-XXX.</p>
+                <form id="recruitmentForm" novalidate>
+                  <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillRecruitment">Fill sample recruitment</button></div>
+                  <div class="row">
+                    <div class="f"><label for="recruitmentPostType">Post type <span class="req">*</span></label>
+                      <select id="recruitmentPostType" required><option value="">Select post type</option><option>Faculty</option><option>Senior Resident</option><option>Junior Resident</option><option>Nursing</option></select><div class="msg"></div></div>
+                    <div class="f"><label for="recruitmentDepartment">Department <span class="req">*</span></label>
+                      <input type="text" id="recruitmentDepartment" maxlength="100" required placeholder="e.g. Cardiology"><div class="msg"></div></div>
+                    <div class="f"><label for="recruitmentVacancies">Number of vacancies <span class="req">*</span></label>
+                      <input type="number" id="recruitmentVacancies" min="1" step="1" required placeholder="Enter number"><div class="msg"></div></div>
+                    <div class="f"><label for="recruitmentType">Recruitment type <span class="req">*</span></label>
+                      <select id="recruitmentType" required><option value="">Select recruitment type</option><option>Regular</option><option>Contractual</option><option>Deputation</option><option>Project-based</option></select><div class="msg"></div></div>
+                  </div>
+                  <div class="actions"><button type="button" class="btn btn-o" id="cancelRecruitment">Cancel</button><button type="submit" class="btn btn-p">Save draft &amp; generate ID</button></div>
+                  <p class="recruitment-status" id="recruitmentMessage" role="status" aria-live="polite"></p>
+                </form>
+                <div class="recruitment-result" id="recruitmentResult" hidden aria-live="polite"></div>
+              </div>
+              <div class="recruitment-form-panel" id="eligibilityPanel" hidden>
+                <div class="dashboard-header"><div><h4>Vacancy &amp; eligibility configuration</h4><p id="eligibilityRecordId"></p></div><button type="button" class="btn btn-o" id="closeEligibility">Close</button></div>
+                <form id="eligibilityForm" novalidate>
+                  <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillEligibility">Fill sample eligibility</button></div>
+                  <div class="row">
+                    <div class="f full"><label for="eligQualifications">Mandatory qualifications <span class="req">*</span></label><textarea id="eligQualifications" required maxlength="2000" class="profile-summary" placeholder="List required degrees / qualifications and acceptable equivalents"></textarea><div class="msg"></div></div>
+                    <div class="f"><label for="eligMinAge">Minimum age (years) <span class="req">*</span></label><input type="number" id="eligMinAge" min="18" max="99" required></div>
+                    <div class="f"><label for="eligMaxAge">Maximum age (years) <span class="req">*</span></label><input type="number" id="eligMaxAge" min="18" max="99" required></div>
+                    <div class="f"><label for="eligExperience">Required experience (years)</label><input type="number" id="eligExperience" min="0" max="60" value="0"></div>
+                    <div class="f"><label for="eligExperienceType">Experience type</label><input type="text" id="eligExperienceType" maxlength="200" placeholder="Relevant specialty / institution / role"></div>
+                    <div class="f"><label for="eligPublications">Minimum publications (faculty, if applicable)</label><input type="number" id="eligPublications" min="0" max="999" value="0"></div>
+                    <div class="f"><label for="eligRegistration">Professional registration <span class="req">*</span></label><select id="eligRegistration" required><option value="">Select requirement</option><option value="NMC">NMC</option><option value="State Council">State Council</option><option value="Not required">Not required</option></select></div>
+                    <div class="f full"><label for="eligRelaxations">Age relaxations / additional eligibility notes</label><textarea id="eligRelaxations" maxlength="2000" class="profile-summary" placeholder="Specify applicable Government of India rules and any additional conditions"></textarea></div>
+                  </div>
+                  <div class="actions"><button type="button" class="btn btn-o" id="cancelEligibility">Cancel</button><button type="submit" class="btn btn-p">Save eligibility rules</button></div>
+                  <p class="recruitment-status" id="eligibilityStatus" role="status" aria-live="polite"></p>
+                </form>
+              </div>
+              <div class="recruitment-form-panel" id="rosterPanel" hidden>
+                <div class="dashboard-header"><div><h4>Official roster mapping</h4><p id="rosterRecordId"></p></div><button type="button" class="btn btn-o" id="closeRoster">Close</button></div>
+                <p class="legend-note">Paste the institute-approved 200-point roster in order, with one entry per line: <code>UR</code>, <code>OBC</code>, <code>SC</code>, <code>ST</code>, or <code>EWS</code>. To mark horizontal PwBD reservation, append <code>,PwBD</code> to the assigned vertical category (for example <code>UR,PwBD</code>). This prototype validates the mapping format; use the approved roster source and rules.</p>
+                <form id="rosterForm" novalidate>
+                  <div class="sample-fill-row"><button type="button" class="sample-fill" id="fillRoster">Fill format-test roster</button></div>
+                  <p class="alert alert-w" id="rosterSampleNote" hidden>Format-test data only — this is not an institute-approved roster. Replace every entry with the approved roster before any real recruitment.</p>
+                  <div class="f"><label for="rosterMapping">200 roster points <span class="req">*</span></label><textarea id="rosterMapping" required class="profile-summary" placeholder="UR&#10;OBC&#10;SC&#10;ST&#10;EWS"></textarea><div class="hint" id="rosterCount">0 / 200 points</div><div class="msg"></div></div>
+                  <div class="actions"><button type="button" class="btn btn-o" id="cancelRoster">Cancel</button><button type="submit" class="btn btn-p">Validate &amp; save roster</button></div>
+                </form>
+              </div>
+              <div class="recruitments recruitment-records" id="recruitmentsList" hidden>
+                <h4>Recruitment records</h4>
+                <div class="recruitment-table-wrap">
+                  <table class="recruitment-table">
+                    <thead><tr><th>Unique Recruitment ID</th><th>Post type</th><th>Department</th><th>Vacancies</th><th>Recruitment type</th><th>Eligibility</th><th>Roster</th><th>Status</th><th>Next action</th></tr></thead>
+                    <tbody id="recruitmentRows"></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="empty-state" id="recruitmentsEmpty">No recruitment records yet. Use <b>Post a recruitment</b> to create a draft.</div>
+            </section>
+            <div class="dash-notice">Recruitment IDs and workflow records are stored locally in this prototype. Use a server-side sequence and database uniqueness constraint before production.</div>
+          </section>
+          <section class="dash-view" id="viewApprovals" aria-label="Approvals" hidden>
+            <h3>Approval queue</h3>
+            <p class="legend-note">Sequential workflow: HOD → Recruitment Admin → Director. No stage skipping; rejection requires remarks and returns the record to the previous stage.</p>
+            <div id="approvalQueue" class="role-queue"></div>
+            <p id="approvalEmpty" class="empty-state" hidden>No recruitments are currently waiting for your approval.</p>
+            <p id="approvalMessage" class="recruitment-status" role="status" aria-live="polite"></p>
+          </section>
+          <section class="dash-view" id="viewOperations" aria-label="Recruitment operations" hidden>
+            <h3>Recruitment operations</h3>
+            <p class="legend-note">Operational queues become available as approved recruitments are published and applications move through each stage.</p>
+            <div class="module-grid">
+              <article class="module-card"><h4>Applications &amp; eligibility screening</h4><p>Post-specific application sections, duplicate-account prevention, document type/size/presence checks, age/qualification/experience validation and Application ID on submission.</p><span class="module-state">Interview-based · no written exam</span></article>
+              <article class="module-card"><h4>Shortlisting &amp; PIS</h4><p>Configure qualification, experience, publication and academic-performance weightage; calculate pre-interview scores, rank candidates and lock the shortlist with audited overrides.</p><span class="module-state">Scoring configuration required</span></article>
+              <article class="module-card"><h4>Interview management</h4><p>Assign chairpersons and panel members, schedule interview slots, prevent panel conflicts and duplicate candidate slots, and prepare email/SMS interview notifications.</p><span class="module-state">Panel setup required</span></article>
+              <article class="module-card"><h4>Document verification</h4><p>Review candidate documents and screening flags; record Verified, Rejected or Conditional decisions against the original evidence.</p><span class="module-state">Verification queue</span></article>
+              <article class="module-card"><h4>Merit &amp; reservation-based selection</h4><p>Combine pre-interview and interview scores, apply documented tie-breakers, validate category slots and prepare category-wise waitlists before approval and final lock.</p><span class="module-state">Roster validation required</span></article>
+              <article class="module-card"><h4>Results &amp; offers</h4><p>Prepare merit-list PDFs and candidate scorecards, issue offer letters and track offer acceptance and joining.</p><span class="module-state">Final approval required</span></article>
+            </div>
+            <div class="dash-notice">These operations are shown as the EOI workflow and are not represented as live services in this front-end prototype. Candidate data, integrations and notifications must be connected to the secured backend.</div>
+          </section>
+          <section class="dash-view" id="viewReports" aria-label="Reports and audit" hidden>
+            <div class="dashboard-header"><div><h3>Reports &amp; audit</h3><p>Trace recruitment changes, decisions and workflow status.</p></div><button type="button" class="btn btn-o" id="exportAudit">Export audit log</button></div>
+            <h4 style="color:var(--navy);font-size:.92rem;margin:14px 0 8px">Recent audit events</h4>
+            <ul class="audit-list" id="auditList"></ul>
+            <p id="auditEmpty" class="empty-state" hidden>No audit events recorded in this browser.</p>
+            <div class="module-grid" style="margin-top:18px">
+              <article class="module-card"><h4>Merit list &amp; panel evaluation</h4><p>EOI reports include recruitment merit lists, interview-panel evaluation and document-verification status.</p></article>
+              <article class="module-card"><h4>Roster &amp; RTI compliance</h4><p>Maintain traceable post-wise category mapping and generate decision justifications and compliance reports.</p></article>
+            </div>
+          </section>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -358,9 +740,15 @@ var STAFF={
   'panel01':    {name:'Dr. M. Tiwari',       role:'Interview Panel',    mob:'9000000006',access:['View candidates in assigned interview slots','Enter interview marks (locked after submission)']},
   'auditor01':  {name:'Shri K. Pandey',      role:'Auditor',            mob:'9000000007',access:['Audit logs of all actions and overrides','Roster register and compliance reports','RTI justification reports (read-only)']}
 };
+var RECRUITMENTS_KEY='aiimsGkpRecruitments.v1';
+var AUDIT_KEY='aiimsGkpRecruitmentAudit.v1';
 function setFs(d){var c=parseFloat(getComputedStyle(document.documentElement).fontSize);document.documentElement.style.setProperty('--fs',(d===0?16:Math.min(20,Math.max(13,c+d)))+'px');}
 var $=function(id){return document.getElementById(id)};
 function setMsg(el,ok,text){var f=el.closest('.f');f.classList.toggle('bad',!ok);f.classList.toggle('good',ok&&!!text);var m=f.querySelector('.msg');if(m)m.textContent=text||'';el.setAttribute('aria-invalid',ok?'false':'true');return ok}
+function fillIfEmpty(id,value){
+  var input=$(id);
+  if(input&&!input.value){input.value=value;input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true}))}
+}
 function showErr(id,t){var e=$(id);e.className='alert alert-e';if(!t){e.hidden=true;return}e.textContent=t;e.hidden=false}
 document.querySelectorAll('[data-show]').forEach(function(b){b.onclick=function(){var i=$(b.dataset.show),s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Hide':'Show'}});
 
@@ -402,17 +790,398 @@ $('fOtp').onsubmit=function(e){e.preventDefault();var o=$('otp').value;
   if(DEMO&&o!==DEMO_OTP){setMsg($('otp'),false,'Incorrect OTP. Please try again.');return}
   clearInterval(timer);loggedIn()};
 
-/* logged in */
-function loggedIn(){var a=STAFF[user];$('s2').hidden=true;$('s3').hidden=false;
-  $('avatar').textContent=a.name.replace(/^(Dr\.|Shri|Smt\.|Prof\.)\s*(\(Dr\.\)\s*)?/,'').split(' ').map(function(w){return w[0]}).join('').slice(0,2);
-  $('wName').textContent=a.name;$('wRole').textContent=a.role+' · '+user;$('wRole2').textContent=a.role;
-  $('wLast').textContent='Last login: '+new Date(Date.now()-86400000).toLocaleString('en-IN');
-  $('wAccess').innerHTML=a.access.map(function(x){return'<li>'+x+'</li>'}).join('');$('s3').focus()}
-$('logout').onclick=function(){user=null;$('s3').hidden=true;$('s1').hidden=false;$('uid').value='';$('pw').value='';drawCap();$('forgotMsg').hidden=true;
-  var e=$('err');e.className='alert alert-i';e.textContent='You have been logged out successfully.';e.hidden=false};
+var currentDashView='overview',currentRecruitmentId='';
+var ADMIN_ROLES=['superadmin','recadmin'];
+var APPROVAL_ROLE={HOD:'hod.cardio','Recruitment Admin':'recadmin',Director:'director'};
+function isAdmin(){return ADMIN_ROLES.indexOf(user)!==-1}
+function readRecruitments(){
+  var raw=localStorage.getItem(RECRUITMENTS_KEY);
+  if(raw===null)return[];
+  var records=JSON.parse(raw);
+  if(!Array.isArray(records)||records.some(function(record){
+    return !record||typeof record.id!=='string'||!/^AIIMS-GKP-\d{4}-\d{3}$/.test(record.id)||
+      typeof record.postType!=='string'||typeof record.department!=='string'||
+      !Number.isInteger(record.vacancies)||typeof record.recruitmentType!=='string'||
+      !['Draft','Pending HOD Approval','Pending Admin Approval','Pending Director Approval','Approved','Published','Closed','Completed'].includes(record.status)||
+      !record.eligibilityRules||!['Not configured','Configured'].includes(record.eligibilityRules.status)||
+      !Array.isArray(record.eligibilityRules.rules)||!record.roster||
+      !['Not configured','Configured'].includes(record.roster.status)||!Array.isArray(record.roster.points);
+  }))throw new Error('Stored recruitment records are invalid.');
+  return records;
+}
+function saveRecruitments(records){localStorage.setItem(RECRUITMENTS_KEY,JSON.stringify(records))}
+function readAudit(){var raw=localStorage.getItem(AUDIT_KEY);if(raw===null)return[];var rows=JSON.parse(raw);if(!Array.isArray(rows))throw new Error('Stored audit log is invalid.');return rows}
+function audit(record,event,remarks){
+  var events=readAudit();
+  events.push({id:record?record.id:'-',event:event,actor:user,actorName:STAFF[user].name,at:new Date().toISOString(),remarks:remarks||''});
+  localStorage.setItem(AUDIT_KEY,JSON.stringify(events));
+}
+function setMessage(id,text,isError){$(id).textContent=text;$(id).classList.toggle('error',!!isError)}
+function setDashView(view){
+  var section=$('view'+view.charAt(0).toUpperCase()+view.slice(1));
+  var item=document.querySelector('.dash-sidebar [data-dash-view="'+view+'"]');
+  if(!section||(item&&item.hidden))return;
+  currentDashView=view;
+  var pages={
+    overview:['Overview','Recruitment dashboard','Monitor recruitment activity and access the tools assigned to your role.'],
+    recruitments:['Recruitments','Recruitment workspace','Create recruitment drafts, configure eligibility and roster details, and publish approved advertisements.'],
+    approvals:['Approvals','Recruitment approvals','Review each recruitment at the approval stage assigned to your role.'],
+    operations:['Recruitment operations','Recruitment operations','Review the operational stages defined for recruitment processing.'],
+    reports:['Reports & audit','Recruitment reports & audit','Review recorded recruitment actions and export the browser-local audit log.']
+  };
+  var page=pages[view];
+  $('dashboardBreadcrumb').textContent=page[0];
+  $('dashboardPageTitle').textContent=page[1];
+  $('dashboardPageDescription').textContent=page[2];
+  document.querySelectorAll('.dash-sidebar [data-dash-view]').forEach(function(button){
+    var active=button.dataset.dashView===view;
+    if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+  });
+  document.querySelectorAll('.dash-view').forEach(function(panel){panel.hidden=panel!==section});
+  if(view==='recruitments')renderRecruitments();
+  if(view==='approvals')renderApprovals();
+  if(view==='reports')renderAudit();
+  updateDashboardStats();
+}
+document.querySelectorAll('.dash-sidebar [data-dash-view]').forEach(function(button){
+  button.onclick=function(){setDashView(button.dataset.dashView)};
+  button.onkeydown=function(e){
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+      e.preventDefault();var items=Array.prototype.slice.call(document.querySelectorAll('.dash-sidebar [data-dash-view]')).filter(function(item){return !item.hidden});
+      var index=items.indexOf(button),move=e.key==='ArrowDown'?1:-1;
+      items[(index+move+items.length)%items.length].focus();
+    }
+  };
+});
+document.querySelectorAll('[data-open-view]').forEach(function(button){
+  button.onclick=function(){setDashView(button.dataset.openView)};
+});
+function toggleRecruitmentForm(show){
+  if(!isAdmin())return;
+  $('recruitmentFormPanel').hidden=!show;
+  $('recruitmentForm').reset();
+  $('recruitmentResult').hidden=true;
+  setMessage('recruitmentMessage','',false);
+  if(show)$('recruitmentPostType').focus();
+}
+document.querySelectorAll('[data-recruitment-action]').forEach(function(button){
+  button.onclick=function(){
+    if(!isAdmin())return;
+    setDashView('recruitments');toggleRecruitmentForm(true);
+  };
+});
+$('cancelRecruitment').onclick=function(){toggleRecruitmentForm(false)};
+$('newRecruitment').onclick=function(){toggleRecruitmentForm(true)};
+$('fillRecruitment').onclick=function(){
+  fillIfEmpty('recruitmentPostType','Faculty');fillIfEmpty('recruitmentDepartment','Cardiology');
+  fillIfEmpty('recruitmentVacancies','3');fillIfEmpty('recruitmentType','Regular');
+};
+function updateDashboardStats(){
+  try{
+    var records=readRecruitments(),pending=records.filter(function(record){
+      return (record.status==='Pending HOD Approval'&&user==='hod.cardio')||
+        (record.status==='Pending Admin Approval'&&user==='recadmin')||
+        (record.status==='Pending Director Approval'&&user==='director');
+    }).length;
+    $('statTotal').textContent=records.length;
+    $('statDrafts').textContent=records.filter(function(record){return record.status==='Draft'}).length;
+    $('statPending').textContent=pending;
+    $('statPublished').textContent=records.filter(function(record){return record.status==='Published'}).length;
+    $('statVacancies').textContent=records.reduce(function(total,record){return total+record.vacancies},0);
+    $('statApplications').textContent=records.reduce(function(total,record){return total+(record.applicationCount||0)},0);
+  }catch(error){['statTotal','statDrafts','statPending','statPublished','statVacancies','statApplications'].forEach(function(id){$(id).textContent='—'})}
+}
+function statusForAction(record){
+  if(isAdmin()&&(record.status==='Draft'||record.status==='Pending HOD Approval'&&record.returnedTo==='Admin'))return'Configure eligibility / roster';
+  if(isAdmin()&&record.status==='Approved')return'Publish advertisement';
+  if(isAdmin()&&record.status==='Published')return'Close recruitment';
+  return'';
+}
+function actionButton(label,action,id){
+  var button=document.createElement('button');button.type='button';button.className='btn btn-o';button.textContent=label;button.dataset.recordAction=action;button.dataset.id=id;return button;
+}
+function renderRecruitments(records){
+  try{
+    records=records||readRecruitments();
+    var rows=$('recruitmentRows');rows.textContent='';
+    records.slice().reverse().forEach(function(record){
+      var row=document.createElement('tr');
+      [record.id,record.postType,record.department,String(record.vacancies),record.recruitmentType,
+        record.eligibilityRules.status,record.roster.status].forEach(function(value,index){
+        var cell=document.createElement('td');
+        if(index===0){var code=document.createElement('code');code.textContent=value;cell.appendChild(code)}
+        else cell.textContent=value;
+        row.appendChild(cell);
+      });
+      var statusCell=document.createElement('td'),badge=document.createElement('span');
+      badge.className='status-badge';badge.textContent=record.status;statusCell.appendChild(badge);row.appendChild(statusCell);
+      var actionCell=document.createElement('td'),actions=document.createElement('div');actions.className='row-actions';
+      if(isAdmin()&&(record.status==='Draft'||record.status==='Pending HOD Approval'&&record.returnedTo==='Admin')){
+        actions.appendChild(actionButton('Configure rules & roster','configure',record.id));
+        if(record.eligibilityRules.status==='Configured'&&record.roster.status==='Configured')actions.appendChild(actionButton('Submit for HOD approval','submit',record.id));
+      }
+      if(isAdmin()&&record.status==='Approved')actions.appendChild(actionButton('Publish','publish',record.id));
+      if(isAdmin()&&record.status==='Published')actions.appendChild(actionButton('Close','close',record.id));
+      if(record.status==='Published'&&record.applicationUrl){
+        var link=document.createElement('a');link.className='btn btn-o';link.href=record.applicationUrl;link.textContent='Application portal';actions.appendChild(link);
+      }
+      actionCell.appendChild(actions);row.appendChild(actionCell);rows.appendChild(row);
+    });
+    $('recruitmentsList').hidden=records.length===0;
+    $('recruitmentsEmpty').hidden=records.length!==0;
+    updateDashboardStats();
+  }catch(error){
+    $('recruitmentsList').hidden=true;$('recruitmentsEmpty').hidden=false;
+    $('recruitmentsEmpty').textContent='Recruitment records could not be loaded. Check browser storage before continuing.';
+  }
+}
+function actorCanReview(record){
+  if(record.status==='Pending HOD Approval')return user==='hod.cardio';
+  if(record.status==='Pending Admin Approval')return user==='recadmin';
+  if(record.status==='Pending Director Approval')return user==='director';
+  return false;
+}
+function renderApprovals(){
+  var queue=$('approvalQueue');queue.textContent='';
+  try{
+    var pending=readRecruitments().filter(actorCanReview);
+    pending.forEach(function(record){
+      var card=document.createElement('article');card.className='queue-card';
+      var heading=document.createElement('h4');heading.textContent=record.id+' · '+record.postType+' · '+record.department;card.appendChild(heading);
+      var details=document.createElement('p');details.textContent=record.vacancies+' vacancy/vacancies · '+record.recruitmentType+' · '+record.status;card.appendChild(details);
+      var config=document.createElement('p');config.textContent='Eligibility: '+record.eligibilityRules.status+' · Roster: '+record.roster.status;card.appendChild(config);
+      var controls=document.createElement('div');controls.className='queue-actions';
+      var remarks=document.createElement('input');remarks.type='text';remarks.maxLength=500;remarks.placeholder='Remarks (required for rejection)';remarks.setAttribute('aria-label','Decision remarks for '+record.id);controls.appendChild(remarks);
+      ['Approve','Return with remarks'].forEach(function(label,index){
+        var button=document.createElement('button');button.type='button';button.className='btn '+(index?'btn-o':'btn-p');button.textContent=label;
+        button.dataset.approvalDecision=index?'reject':'approve';button.dataset.id=record.id;button.dataset.remarksTarget=record.id;controls.appendChild(button);
+      });
+      card.appendChild(controls);queue.appendChild(card);
+    });
+    $('approvalEmpty').hidden=pending.length!==0;
+  }catch(error){$('approvalEmpty').hidden=false;$('approvalEmpty').textContent='Approval queue could not be loaded. Check browser storage before continuing.'}
+  updateDashboardStats();
+}
+function renderAudit(){
+  var list=$('auditList');list.textContent='';
+  try{
+    var events=readAudit().slice().reverse();
+    events.forEach(function(event){
+      var item=document.createElement('li'),label=document.createElement('b');
+      label.textContent=event.event+' · '+event.id+' · ';item.appendChild(label);
+      item.appendChild(document.createTextNode(event.actorName+' ('+event.actor+') · '+new Date(event.at).toLocaleString('en-IN')+(event.remarks?' · '+event.remarks:'')));
+      list.appendChild(item);
+    });
+    $('auditEmpty').hidden=events.length!==0;
+  }catch(error){$('auditEmpty').hidden=false;$('auditEmpty').textContent='Audit records could not be loaded from browser storage.'}
+}
+function showWorkflowError(text){setMessage('approvalMessage',text,true)}
+function applyApprovalDecision(id,decision,remarks){
+  if(!remarks&&decision==='reject'){showWorkflowError('Enter remarks before returning a recruitment.');return}
+  var records=readRecruitments(),record=records.find(function(item){return item.id===id});
+  if(!record||!actorCanReview(record)){showWorkflowError('This recruitment is not awaiting your approval.');return}
+  var previous=record.status,stage=previous==='Pending HOD Approval'?'HOD':previous==='Pending Admin Approval'?'Recruitment Admin':'Director';
+  record.approvalHistory=record.approvalHistory||[];
+  record.approvalHistory.push({stage:stage,decision:decision,actor:user,remarks:remarks,at:new Date().toISOString()});
+  if(decision==='approve'){
+    record.status=previous==='Pending HOD Approval'?'Pending Admin Approval':previous==='Pending Admin Approval'?'Pending Director Approval':'Approved';
+    record.returnedTo='';
+  }else{
+    record.status=previous==='Pending HOD Approval'?'Draft':previous==='Pending Admin Approval'?'Pending HOD Approval':'Pending Admin Approval';
+    record.returnedTo=previous==='Pending Director Approval'?'Admin':previous==='Pending Admin Approval'?'HOD':'Admin';
+  }
+  saveRecruitments(records);audit(record,decision==='approve'?stage+' approved recruitment':stage+' returned recruitment',remarks);
+  setMessage('approvalMessage',decision==='approve'?'Approval recorded. The recruitment has moved to the next workflow stage.':'Recruitment returned to the previous stage with your remarks.',false);
+  renderApprovals();renderRecruitments();updateDashboardStats();
+}
+$('approvalQueue').onclick=function(e){
+  var button=e.target.closest('[data-approval-decision]');if(!button)return;
+  var card=button.closest('.queue-card'),remarks=card.querySelector('input').value.trim();
+  applyApprovalDecision(button.dataset.id,button.dataset.approvalDecision,remarks);
+};
+function openEligibility(id){
+  var record=readRecruitments().find(function(item){return item.id===id});
+  if(!record||!isAdmin()||!['Draft','Pending HOD Approval'].includes(record.status))return;
+  currentRecruitmentId=id;
+  var values=record.eligibilityRules.rules||[];
+  function rule(name,fallback){var item=values.find(function(entry){return entry.name===name});return item?item.value:fallback}
+  $('eligibilityRecordId').textContent=id+' · '+record.postType+' · '+record.department;
+  $('eligQualifications').value=rule('qualifications','');
+  $('eligMinAge').value=rule('minAge','18');$('eligMaxAge').value=rule('maxAge','');
+  $('eligExperience').value=rule('experienceYears','0');$('eligExperienceType').value=rule('experienceType','');
+  $('eligPublications').value=rule('publications','0');$('eligRegistration').value=rule('registration','');
+  $('eligRelaxations').value=rule('relaxations','');
+  $('rosterRecordId').textContent=id+' · '+record.postType+' · '+record.department;
+  $('rosterMapping').value=record.roster.points.map(function(point){return point.category+(point.pwbd?',PwBD':'')}).join('\n');
+  updateRosterCount();
+  $('recruitmentFormPanel').hidden=true;$('eligibilityPanel').hidden=false;$('rosterPanel').hidden=false;
+  $('eligibilityPanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('fillEligibility').onclick=function(){
+  fillIfEmpty('eligQualifications','MBBS with MD/DNB in the relevant specialty, from a recognized institution.');
+  fillIfEmpty('eligMinAge','18');fillIfEmpty('eligMaxAge','45');fillIfEmpty('eligExperience','3');
+  fillIfEmpty('eligExperienceType','Relevant clinical experience in the concerned specialty.');
+  fillIfEmpty('eligPublications','0');fillIfEmpty('eligRegistration','NMC');
+  fillIfEmpty('eligRelaxations','Age relaxation as per applicable Government of India rules; verify against the approved advertisement.');
+  setFormStatus('Sample values filled into empty fields only. Verify eligibility against the approved advertisement.',false);
+};
+function closeWorkflowPanels(){
+  $('eligibilityPanel').hidden=true;$('rosterPanel').hidden=true;
+  currentRecruitmentId='';renderRecruitments();
+}
+$('closeEligibility').onclick=closeWorkflowPanels;$('cancelEligibility').onclick=closeWorkflowPanels;
+$('closeRoster').onclick=closeWorkflowPanels;$('cancelRoster').onclick=closeWorkflowPanels;
+$('recruitmentRows').onclick=function(e){
+  var button=e.target.closest('[data-record-action]');if(!button)return;
+  var id=button.dataset.id,records=readRecruitments(),record=records.find(function(item){return item.id===id});
+  if(!record||!isAdmin())return;
+  if(button.dataset.recordAction==='configure'){openEligibility(id);return}
+  if(button.dataset.recordAction==='submit'){
+    if(record.eligibilityRules.status!=='Configured'||record.roster.status!=='Configured'){showWorkflowError('Save eligibility rules and the approved 200-point roster before submitting for approval.');return}
+    if(record.status!=='Draft'&&!(record.status==='Pending HOD Approval'&&record.returnedTo==='Admin')){showWorkflowError('This recruitment cannot be submitted at this stage.');return}
+    record.status='Pending HOD Approval';record.returnedTo='';record.submittedAt=new Date().toISOString();
+    saveRecruitments(records);audit(record,'Submitted for HOD approval','');renderRecruitments(records);setDashView('approvals');return;
+  }
+  if(button.dataset.recordAction==='publish'){
+    if(record.status!=='Approved'){showWorkflowError('Only a Director-approved recruitment can be published.');return}
+    record.status='Published';record.publishedAt=new Date().toISOString();
+    record.applicationUrl='candidate.html';
+    saveRecruitments(records);audit(record,'Published recruitment and opened application portal','');
+    $('recruitmentResult').innerHTML='Recruitment published. Application portal link:<b class="generated-id"></b>';
+    $('recruitmentResult').querySelector('.generated-id').textContent=record.applicationUrl;
+    $('recruitmentResult').hidden=false;renderRecruitments(records);updateDashboardStats();return;
+  }
+  if(button.dataset.recordAction==='close'){
+    if(record.status!=='Published')return;
+    record.status='Closed';record.closedAt=new Date().toISOString();
+    saveRecruitments(records);audit(record,'Closed recruitment','');renderRecruitments(records);updateDashboardStats();
+  }
+};
+function setFormStatus(text,isError){
+  var status=$('eligibilityStatus');if(status){status.textContent=text;status.classList.toggle('error',!!isError)}
+}
+$('eligibilityForm').onsubmit=function(e){
+  e.preventDefault();
+  var records=readRecruitments(),record=records.find(function(item){return item.id===currentRecruitmentId});
+  if(!record||!isAdmin()||!['Draft','Pending HOD Approval'].includes(record.status)){setFormStatus('This draft is no longer editable.',true);return}
+  var required=[$('eligQualifications'),$('eligMinAge'),$('eligMaxAge'),$('eligRegistration')];
+  var invalid=required.filter(function(input){var ok=input.checkValidity();input.closest('.f').classList.toggle('bad',!ok);input.setAttribute('aria-invalid',ok?'false':'true');return !ok});
+  if(+$('eligMinAge').value>+$('eligMaxAge').value){invalid.push($('eligMaxAge'));$('eligMaxAge').closest('.f').classList.add('bad')}
+  if(invalid.length){setFormStatus('Enter valid qualifications, age limits and registration requirements.',true);invalid[0].focus();return}
+  record.eligibilityRules={status:'Configured',rules:[
+    {name:'qualifications',value:$('eligQualifications').value.trim()},
+    {name:'minAge',value:Number($('eligMinAge').value)},{name:'maxAge',value:Number($('eligMaxAge').value)},
+    {name:'experienceYears',value:Number($('eligExperience').value||0)},
+    {name:'experienceType',value:$('eligExperienceType').value.trim()},
+    {name:'publications',value:Number($('eligPublications').value||0)},
+    {name:'registration',value:$('eligRegistration').value},
+    {name:'relaxations',value:$('eligRelaxations').value.trim()}
+  ],configuredBy:user,configuredAt:new Date().toISOString()};
+  saveRecruitments(records);audit(record,'Configured vacancy and eligibility rules','');
+  setFormStatus('Eligibility rules saved.',false);renderRecruitments(records);
+};
+function updateRosterCount(){
+  var lines=$('rosterMapping').value.split(/\r?\n/).map(function(line){return line.trim()}).filter(Boolean);
+  $('rosterCount').textContent=lines.length+' / 200 points';
+}
+$('rosterMapping').addEventListener('input',updateRosterCount);
+$('fillRoster').onclick=function(){
+  if($('rosterMapping').value)return;
+  var categories=['UR','OBC','SC','ST','EWS'];
+  $('rosterMapping').value=Array.from({length:200},function(_,index){return categories[index%categories.length]}).join('\n');
+  $('rosterMapping').dispatchEvent(new Event('input',{bubbles:true}));
+  $('rosterSampleNote').hidden=false;
+};
+$('rosterForm').onsubmit=function(e){
+  e.preventDefault();
+  var records=readRecruitments(),record=records.find(function(item){return item.id===currentRecruitmentId});
+  if(!record||!isAdmin()||!['Draft','Pending HOD Approval'].includes(record.status)){showWorkflowError('This draft is no longer editable.');return}
+  var lines=$('rosterMapping').value.split(/\r?\n/).map(function(line){return line.trim().toUpperCase()}).filter(Boolean);
+  var invalid=lines.findIndex(function(line){return !/^(UR|OBC|SC|ST|EWS)(,PWBD)?$/.test(line)});
+  if(lines.length!==200||invalid!==-1){
+    var reason=lines.length!==200?'Enter exactly 200 non-empty roster points.':'Invalid category on roster point '+(invalid+1)+'. Use UR, OBC, SC, ST or EWS, optionally followed by ,PwBD.';
+    $('rosterMapping').closest('.f').classList.add('bad');
+    $('rosterMapping').closest('.f').querySelector('.msg').textContent=reason;
+    $('rosterMapping').setAttribute('aria-invalid','true');return;
+  }
+  $('rosterMapping').closest('.f').classList.remove('bad');$('rosterMapping').setAttribute('aria-invalid','false');
+  $('rosterMapping').closest('.f').querySelector('.msg').textContent='';
+  record.roster={status:'Configured',points:lines.map(function(line,index){var parts=line.split(',');return{point:index+1,category:parts[0],pwbd:parts[1]==='PWBD'}}),configuredBy:user,configuredAt:new Date().toISOString()};
+  saveRecruitments(records);audit(record,'Configured official 200-point roster','');renderRecruitments(records);showWorkflowError('');
+  $('rosterMapping').closest('.f').querySelector('.hint').textContent='200 / 200 points validated and saved.';
+};
+$('recruitmentForm').onsubmit=function(e){
+  e.preventDefault();setMessage('recruitmentMessage','',false);
+  var postType=$('recruitmentPostType'),department=$('recruitmentDepartment'),vacancies=$('recruitmentVacancies'),type=$('recruitmentType');
+  var fields=[postType,department,vacancies,type],invalid=fields.filter(function(input){
+    var valid=input.checkValidity()&&!(input===department&&!input.value.trim());
+    input.setAttribute('aria-invalid',valid?'false':'true');input.closest('.f').classList.toggle('bad',!valid);return !valid;
+  });
+  if(invalid.length){setMessage('recruitmentMessage','Complete all required fields with valid values before creating the recruitment.',true);invalid[0].focus();return}
+  try{
+    var records=readRecruitments(),year=String(new Date().getFullYear()),sequence=records.reduce(function(max,record){
+      var match=record.id.match(/^AIIMS-GKP-(\d{4})-(\d{3})$/);return match&&match[1]===year?Math.max(max,Number(match[2])):max;
+    },0);
+    if(sequence>=999)throw new Error('The annual Recruitment ID sequence is full.');
+    var id='AIIMS-GKP-'+year+'-'+String(sequence+1).padStart(3,'0');
+    var record={id:id,year:year,postType:postType.value,department:department.value.trim(),vacancies:Number(vacancies.value),
+      recruitmentType:type.value,status:'Draft',eligibilityRules:{status:'Not configured',rules:[]},
+      roster:{status:'Not configured',points:[]},approvalHistory:[],createdAt:new Date().toISOString(),createdBy:user};
+    records.push(record);saveRecruitments(records);audit(record,'Created draft recruitment','');
+    $('recruitmentResult').innerHTML='Recruitment draft created. Unique Recruitment ID:<b class="generated-id"></b><span>Configure eligibility and the official 200-point roster to submit for approval.</span>';
+    $('recruitmentResult').querySelector('.generated-id').textContent=id;$('recruitmentResult').hidden=false;
+    setMessage('recruitmentMessage','Draft saved successfully.',false);this.reset();
+    fields.forEach(function(input){input.setAttribute('aria-invalid','false');input.closest('.f').classList.remove('bad')});
+    renderRecruitments(records);
+  }catch(error){
+    setMessage('recruitmentMessage',error.message==='The annual Recruitment ID sequence is full.'
+      ?'The three-digit Recruitment ID sequence for this year has reached 999. Contact the system administrator.'
+      :'The recruitment could not be saved in browser storage. No ID was issued; check storage availability and try again.',true);
+  }
+};
+function loggedIn(){
+  var account=STAFF[user],canCreate=isAdmin(),canApprove=['hod.cardio','recadmin','director'].indexOf(user)!==-1;
+  $('s2').hidden=true;$('s3').hidden=false;document.body.classList.add('staff-dashboard');
+  $('authTitle').textContent='AIIMS Gorakhpur Recruitment Management System';
+  $('authSubtitle').textContent='Secure staff dashboard';
+  $('dashboardGreeting').textContent='Welcome to your dashboard';
+  $('dashboardDescription').textContent='Recruitment lifecycle workspace · '+account.role;
+  $('avatar').textContent=account.name.replace(/^(Dr\.|Shri|Smt\.|Prof\.)\s*(\(Dr\.\)\s*)?/,'').split(' ').map(function(word){return word[0]}).join('').slice(0,2);
+  $('wName').textContent=account.name;$('wRole').textContent=account.role+' · '+user;
+  $('wLast').textContent='Signed in '+new Date().toLocaleString('en-IN');
+  document.querySelector('.dash-sidebar [data-dash-view="recruitments"]').hidden=!canCreate;
+  document.querySelector('.dash-sidebar [data-dash-view="approvals"]').hidden=!canApprove;
+  document.querySelector('.dash-sidebar [data-dash-view="operations"]').hidden=['screening01','panel01','recadmin','superadmin'].indexOf(user)===-1;
+  document.querySelector('.dash-sidebar [data-dash-view="reports"]').hidden=['auditor01','recadmin','superadmin','director'].indexOf(user)===-1;
+  document.querySelector('.sidebar-post').hidden=!canCreate;
+  $('recruitmentTool').hidden=!canCreate;
+  document.querySelectorAll('[data-recruitment-action]').forEach(function(button){button.hidden=!canCreate});
+  document.querySelectorAll('[data-open-view="approvals"]').forEach(function(button){button.hidden=!canApprove});
+  document.querySelectorAll('[data-open-view="operations"]').forEach(function(button){button.hidden=['screening01','panel01','recadmin','superadmin'].indexOf(user)===-1});
+  setDashView('overview');updateDashboardStats();$('s3').focus({preventScroll:true});
+}
+$('logout').onclick=function(){
+  user=null;$('s3').hidden=true;$('s1').hidden=false;document.body.classList.remove('staff-dashboard');
+  $('authTitle').textContent='Staff Login';$('authSubtitle').innerHTML='<span class="hi" lang="hi">कर्मचारी एवं समिति लॉगिन</span>';
+  $('uid').value='';$('pw').value='';drawCap();$('forgotMsg').hidden=true;setDashView('overview');
+  var error=$('err');error.className='alert alert-i';error.textContent='You have been logged out successfully.';error.hidden=false;
+};
+$('exportAudit').onclick=function(){
+  try{
+    var rows=readAudit(),csv=[['Date','Recruitment ID','Action','Staff user','Remarks'].join(',')].concat(rows.map(function(row){
+      return[row.at,row.id,row.event,row.actor,row.remarks].map(function(value){return'"'+String(value||'').replace(/"/g,'""')+'"'}).join(',');
+    })).join('\r\n');
+    var link=document.createElement('a');link.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));link.download='aiims-gkp-recruitment-audit.csv';link.click();URL.revokeObjectURL(link.href);
+  }catch(error){$('auditEmpty').hidden=false;$('auditEmpty').textContent='Audit log could not be exported from browser storage.'}
+};
 
-if(DEMO){$('demoFill').onclick=function(){$('s3').hidden=true;$('s2').hidden=true;$('s1').hidden=false;$('uid').value='superadmin';$('pw').value=DEMO_PW;$('capIn').value=CAP}}
-else $('demo').remove();
+if(DEMO){
+  function fillStaffCredentials(){$('s3').hidden=true;$('s2').hidden=true;$('s1').hidden=false;$('uid').value='superadmin';$('pw').value=DEMO_PW;$('capIn').value=CAP}
+  $('demoFill').onclick=fillStaffCredentials;$('fillStaffLogin').onclick=fillStaffCredentials;
+  $('fillStaffOtp').onclick=function(){$('otp').value=DEMO_OTP};
+}else{
+  $('demo').remove();document.querySelectorAll('.sample-fill').forEach(function(button){button.hidden=true});
+}
 </script>
 </body>
 </html>
