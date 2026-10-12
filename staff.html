@@ -319,10 +319,11 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .dash-sidebar{display:grid;gap:4px}
 .dash-sidebar button{display:flex;align-items:center;gap:11px;width:100%;border:0;border-radius:3px;background:transparent;padding:10px 12px;text-align:left;color:#e8eef8;font:inherit;font-size:.83rem;font-weight:600;cursor:pointer}
 .dash-sidebar button:hover{background:#ffffff16;color:#fff}
-.dash-sidebar button[aria-current="page"]{background:var(--navy-2);color:#fff;box-shadow:inset 3px 0 var(--saffron)}
-.sidebar-icon{width:20px;flex:none;text-align:center;font-size:1rem}
-.sidebar-post{width:100%;text-align:left;background:#c96a05;border-radius:3px}
-.sidebar-post:hover{background:#a85700}
+.dash-sidebar button[aria-current="page"]{background:var(--navy-2);color:#fff;box-shadow:inset 3px 0 var(--saffron)}.sidebar-icon{width:20px;flex:none;text-align:center;font-size:1rem}
+.sidebar-post-item{border-top:1px solid #ffffff18;margin-top:6px;padding-top:14px}
+.sidebar-post-item .sidebar-icon{color:#f5a63b}
+.dash-sidebar button.sidebar-post-item:hover{background:#f28c1b22;color:#ffcf8a}
+.dash-sidebar button.sidebar-post-item[aria-current="page"]{background:#c96a05;color:#fff;box-shadow:inset 3px 0 #ffe08a}
 .sidebar-note{margin-top:auto;padding:12px;border:1px solid #ffffff2b;border-radius:3px;background:#ffffff0c;color:#dbe4f3;font-size:.72rem}
 .sidebar-note b{display:block;color:#fff;font-size:.75rem;margin-bottom:3px}
 .dashboard-main{min-width:0;padding:0 0 24px;background:var(--bg)}
@@ -384,7 +385,7 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
 .dash-view{min-width:0}
 @media(max-width:760px){.dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quick-actions,.module-grid,.workflow-list{grid-template-columns:1fr}}
 @media(max-width:1000px){.dashboard-shell{grid-template-columns:195px minmax(0,1fr)}.dashboard-main .dash-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mock-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.chart-grid{grid-template-columns:1fr}}
-@media(max-width:760px){.staff-dashboard .dashboard-header{padding:16px}.dashboard-shell{grid-template-columns:minmax(0,1fr)}.dashboard-sidebar{border-right:0;border-bottom:1px solid var(--line);padding:12px}.sidebar-kicker,.sidebar-note{display:none}.dash-sidebar{display:flex;overflow-x:auto;padding:2px 0 5px}.dash-sidebar button{width:auto;white-space:nowrap;flex:none}.dash-sidebar button[aria-current="page"]{box-shadow:inset 0 -3px var(--saffron)}.sidebar-post{width:auto}.dashboard-content{padding:0 12px}.dashboard-banner{padding:16px}.dashboard-main{padding:0 0 22px}}
+@media(max-width:760px){.staff-dashboard .dashboard-header{padding:16px}.dashboard-shell{grid-template-columns:minmax(0,1fr)}.dashboard-sidebar{border-right:0;border-bottom:1px solid var(--line);padding:12px}.sidebar-kicker,.sidebar-note{display:none}.dash-sidebar{display:flex;overflow-x:auto;padding:2px 0 5px}.dash-sidebar button{width:auto;white-space:nowrap;flex:none}.dash-sidebar button[aria-current="page"]{box-shadow:inset 0 -3px var(--saffron)}.sidebar-post-item{border-top:0;margin-top:0;padding-top:10px}.dashboard-content{padding:0 12px}.dashboard-banner{padding:16px}.dashboard-main{padding:0 0 22px}}
 @media(max-width:600px){.staff-dashboard .side-r{padding:12px 10px 24px}.institution-header .in{min-height:76px;padding:9px 14px;gap:10px}.institution-header img,.brand-mark{width:52px;height:52px}.institution-name-hi{font-size:.75rem}.institution-name-en{font-size:.72rem}.institution-ministry{font-size:.62rem;line-height:1.3}.portal-label{display:none}.staff-dashboard .dashboard-header{align-items:flex-start;flex-direction:column}.staff-dashboard .dash-user{width:100%;flex-wrap:wrap}.overview-heading{flex-direction:column}}
 </style>
 </head>
@@ -513,8 +514,8 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
                 <button type="button" data-dash-view="approvals" hidden><span class="sidebar-icon" aria-hidden="true">✓</span>Approvals</button>
                 <button type="button" data-dash-view="operations" hidden><span class="sidebar-icon" aria-hidden="true">◷</span>Recruitment operations</button>
                 <button type="button" data-dash-view="reports" hidden><span class="sidebar-icon" aria-hidden="true">▥</span>Reports &amp; audit</button>
+                <button type="button" data-dash-view="post-recruitment" hidden><span class="sidebar-icon" aria-hidden="true">＋</span>Post a recruitment</button>
               </nav>
-              <button type="button" class="btn btn-p sidebar-post" data-recruitment-action hidden>＋ Post a recruitment</button>
               <div class="sidebar-note"><b>Recruitment Management System</b>AIIMS Gorakhpur · Staff workspace<br><span class="hi" lang="hi">कर्मचारी पोर्टल</span></div>
             </aside>
             <div class="dashboard-main">
@@ -527,15 +528,15 @@ legend{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px}
                 <button type="button" class="btn btn-p" data-recruitment-action hidden>＋ Post a recruitment</button>
               </section>
               <div class="dashboard-content">
-          <div class="dash-grid" aria-label="Recruitment metrics">
-            <div class="dash-stat"><span>Total recruitments</span><b id="statTotal">0</b><small>All statuses</small></div>
-            <div class="dash-stat"><span>Draft recruitments</span><b id="statDrafts">0</b><small>Not yet submitted</small></div>
-            <div class="dash-stat"><span>Awaiting your action</span><b id="statPending">0</b><small>Role-based approval queue</small></div>
-            <div class="dash-stat"><span>Published recruitments</span><b id="statPublished">0</b><small>Currently accepting applications</small></div>
-            <div class="dash-stat"><span>Total vacancies</span><b id="statVacancies">0</b><small>Across all recruitments</small></div>
-            <div class="dash-stat"><span>Applications received</span><b id="statApplications">0</b><small>Recorded in this prototype</small></div>
-          </div>
           <section class="dash-view" id="viewOverview" aria-label="Recruitment overview">
+            <div class="dash-grid" aria-label="Recruitment metrics">
+              <div class="dash-stat"><span>Total recruitments</span><b id="statTotal">0</b><small>All statuses</small></div>
+              <div class="dash-stat"><span>Draft recruitments</span><b id="statDrafts">0</b><small>Not yet submitted</small></div>
+              <div class="dash-stat"><span>Awaiting your action</span><b id="statPending">0</b><small>Role-based approval queue</small></div>
+              <div class="dash-stat"><span>Published recruitments</span><b id="statPublished">0</b><small>Currently accepting applications</small></div>
+              <div class="dash-stat"><span>Total vacancies</span><b id="statVacancies">0</b><small>Across all recruitments</small></div>
+              <div class="dash-stat"><span>Applications received</span><b id="statApplications">0</b><small>Recorded in this prototype</small></div>
+            </div>
             <div class="overview-heading">
               <div><h3>Recruitment overview</h3><p>Monitor activity across the recruitment lifecycle.</p></div>
               <span class="mock-badge">Illustrative sample analytics</span>
@@ -818,8 +819,12 @@ function audit(record,event,remarks){
 }
 function setMessage(id,text,isError){$(id).textContent=text;$(id).classList.toggle('error',!!isError)}
 function setDashView(view){
-  var section=$('view'+view.charAt(0).toUpperCase()+view.slice(1));
+  // 'post-recruitment' is a virtual view: it highlights its nav item,
+  // shows the Recruitments panel and opens the new-recruitment form.
+  var targetPanel=view==='post-recruitment'?'recruitments':view;
+  var section=$('view'+targetPanel.charAt(0).toUpperCase()+targetPanel.slice(1));
   var item=document.querySelector('.dash-sidebar [data-dash-view="'+view+'"]');
+  // if the nav item for this view is hidden (role doesn't have access) skip
   if(!section||(item&&item.hidden))return;
   currentDashView=view;
   var pages={
@@ -827,7 +832,8 @@ function setDashView(view){
     recruitments:['Recruitments','Recruitment workspace','Create recruitment drafts, configure eligibility and roster details, and publish approved advertisements.'],
     approvals:['Approvals','Recruitment approvals','Review each recruitment at the approval stage assigned to your role.'],
     operations:['Recruitment operations','Recruitment operations','Review the operational stages defined for recruitment processing.'],
-    reports:['Reports & audit','Recruitment reports & audit','Review recorded recruitment actions and export the browser-local audit log.']
+    reports:['Reports & audit','Recruitment reports & audit','Review recorded recruitment actions and export the browser-local audit log.'],
+    'post-recruitment':['Post a recruitment','Post a recruitment','Create a new recruitment draft and configure eligibility and roster details.']
   };
   var page=pages[view];
   $('dashboardBreadcrumb').textContent=page[0];
@@ -838,9 +844,10 @@ function setDashView(view){
     if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
   });
   document.querySelectorAll('.dash-view').forEach(function(panel){panel.hidden=panel!==section});
-  if(view==='recruitments')renderRecruitments();
+  if(targetPanel==='recruitments')renderRecruitments();
   if(view==='approvals')renderApprovals();
   if(view==='reports')renderAudit();
+  if(view==='post-recruitment')toggleRecruitmentForm(true);
   updateDashboardStats();
 }
 document.querySelectorAll('.dash-sidebar [data-dash-view]').forEach(function(button){
@@ -862,12 +869,26 @@ function toggleRecruitmentForm(show){
   $('recruitmentForm').reset();
   $('recruitmentResult').hidden=true;
   setMessage('recruitmentMessage','',false);
-  if(show)$('recruitmentPostType').focus();
+  // hide all "Post a recruitment" buttons while the form is open
+  document.querySelectorAll('[data-recruitment-action]').forEach(function(button){button.hidden=show});
+  if(show){
+    $('recruitmentPostType').focus();
+  }else{
+    // form closed: move highlight back to Recruitments nav item
+    document.querySelectorAll('.dash-sidebar [data-dash-view]').forEach(function(button){
+      var active=button.dataset.dashView==='recruitments';
+      if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+    });
+    currentDashView='recruitments';
+    $('dashboardBreadcrumb').textContent='Recruitments';
+    $('dashboardPageTitle').textContent='Recruitment workspace';
+    $('dashboardPageDescription').textContent='Create recruitment drafts, configure eligibility and roster details, and publish approved advertisements.';
+  }
 }
 document.querySelectorAll('[data-recruitment-action]').forEach(function(button){
   button.onclick=function(){
     if(!isAdmin())return;
-    setDashView('recruitments');toggleRecruitmentForm(true);
+    setDashView('post-recruitment');
   };
 });
 $('cancelRecruitment').onclick=function(){toggleRecruitmentForm(false)};
@@ -1153,7 +1174,7 @@ function loggedIn(){
   document.querySelector('.dash-sidebar [data-dash-view="approvals"]').hidden=!canApprove;
   document.querySelector('.dash-sidebar [data-dash-view="operations"]').hidden=['screening01','panel01','recadmin','superadmin'].indexOf(user)===-1;
   document.querySelector('.dash-sidebar [data-dash-view="reports"]').hidden=['auditor01','recadmin','superadmin','director'].indexOf(user)===-1;
-  document.querySelector('.sidebar-post').hidden=!canCreate;
+  document.querySelector('.dash-sidebar [data-dash-view="post-recruitment"]').hidden=!canCreate;
   $('recruitmentTool').hidden=!canCreate;
   document.querySelectorAll('[data-recruitment-action]').forEach(function(button){button.hidden=!canCreate});
   document.querySelectorAll('[data-open-view="approvals"]').forEach(function(button){button.hidden=!canApprove});
